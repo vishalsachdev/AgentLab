@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentLab - Pioneering Multi-Agent AI for Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Value Propositions */
+        .value-props {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .value-props h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .prop-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .prop-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .prop-card h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        /* VentureBots Showcase */
+        .venturebot-showcase {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .showcase-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .showcase-tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .journey-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+
+        .journey-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            min-width: 150px;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .journey-arrow {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin: 0 10px;
+        }
+
+        /* News Section */
+        .news-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .news-meta {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-title {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .news-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 1rem;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .journey-timeline {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .journey-arrow {
+                transform: rotate(90deg);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">AgentLab</a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AgentLab: Pioneering Multi-Agent AI for Education</h1>
+            <p>Student-led research at Gies College of Business exploring how intelligent agent teams can transform learning experiences</p>
+            <div class="cta-buttons">
+                <a href="#venturebot-demo" class="btn btn-primary">Try VentureBots Live Demo</a>
+                <a href="#research" class="btn btn-secondary">View Research</a>
+                <a href="#get-involved" class="btn btn-secondary">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="value-props">
+        <div class="container">
+            <h2>Why AgentLab?</h2>
+            <div class="props-grid">
+                <div class="prop-card">
+                    <div class="prop-icon">🎓</div>
+                    <h3>Student-Led Innovation</h3>
+                    <p>Real students solving real educational challenges through hands-on research and development of AI systems</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">🤖</div>
+                    <h3>Multi-Agent Focus</h3>
+                    <p>Specialized AI teams working together, not just single chatbots. Each agent has expertise in different domains</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">📊</div>
+                    <h3>Research-Backed</h3>
+                    <p>Grounded in educational theory and empirical testing with measurable learning outcomes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VentureBots Showcase -->
+    <section class="venturebot-showcase" id="venturebot-demo">
+        <div class="container">
+            <div class="showcase-header">
+                <h2>VentureBots: From Idea 💡 to Pitch 🎤</h2>
+                <p class="showcase-tagline">Experience the complete startup journey in one session. Our AI coaching team guides you through every step.</p>
+            </div>
+
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="step-icon">💡</div>
+                    <div class="step-title">Problem Discovery</div>
+                    <div class="step-desc">Identify market gaps and frame problems</div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="step-icon">🧠</div>
+                    <div class="step-title">Idea Generation</div>
+                    <div class="step-desc">AI-guided brainstorming sessions</div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="step-icon">📊</div>
+                    <div class="step-title">Market Validation</div>
+                    <div class="step-desc">TAM/SAM analysis and competitor research</div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="step-icon">📋</div>
+                    <div class="step-title">Product Planning</div>
+                    <div class="step-desc">PRD creation and feature mapping</div>
+                </div>
+                <div class="journey-arrow">→</div>
+                <div class="journey-step">
+                    <div class="step-icon">🎤</div>
+                    <div class="step-title">Pitch Development</div>
+                    <div class="step-desc">90-second elevator pitch creation</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="venturebot.html" class="btn btn-primary">Learn More About VentureBots</a>
+                <a href="https://github.com/gies-ai-experiments/AgentLab" class="btn btn-secondary">View Source Code</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="news-section">
+        <div class="container">
+            <div class="news-header">
+                <h2>Latest from AgentLab</h2>
+                <a href="news.html" class="read-more">View All Updates →</a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-content">
+                        <div class="news-meta">January 15, 2025 • Milestone</div>
+                        <h3 class="news-title">VentureBots Successfully Pilots with 50+ Students</h3>
+                        <p class="news-excerpt">Initial pilot program shows 90% student satisfaction and measurable improvement in entrepreneurship confidence...</p>
+                        <a href="news-posts/2025-01-venturebot-pilot.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-content">
+                        <div class="news-meta">January 10, 2025 • Research</div>
+                        <h3 class="news-title">AgentLab Research Published in Education Technology Journal</h3>
+                        <p class="news-excerpt">Our findings on multi-agent systems in educational settings have been accepted for publication...</p>
+                        <a href="news-posts/2025-01-research-publication.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-content">
+                        <div class="news-meta">January 5, 2025 • Partnership</div>
+                        <h3 class="news-title">New Collaboration with MIT AgentLab Initiative</h3>
+                        <p class="news-excerpt">Exciting partnership announced to advance multi-agent AI research across institutions...</p>
+                        <a href="news-posts/2025-01-mit-collaboration.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="projects.html">All Projects</a>
+                    <a href="#">Future Initiatives</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Research</h3>
+                    <a href="research.html">Publications</a>
+                    <a href="#">Methodology</a>
+                    <a href="#">Open Datasets</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="team.html">Our Team</a>
+                    <a href="get-involved.html">Get Involved</a>
+                    <a href="#">Discord</a>
+                    <a href="https://github.com/vishalsachdev/AgentLab">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="docs.html">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Educator Guide</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab - Gies College of Business. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

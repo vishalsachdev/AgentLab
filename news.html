@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates - AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* News-specific styles */
+        .news-hero {
+            background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .news-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .news-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .news-main {
+            padding: 3rem 0;
+            background: #f8f9fa;
+        }
+
+        .news-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid #13294B;
+            color: #13294B;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #13294B;
+            color: white;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .news-category {
+            background: #13294B;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .news-category.research {
+            background: #4caf50;
+        }
+
+        .news-category.milestone {
+            background: #c84113;
+        }
+
+        .news-category.partnership {
+            background: #9c27b0;
+        }
+
+        .news-category.announcement {
+            background: #2196f3;
+        }
+
+        .news-title {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: #13294B;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            color: #c84113;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .no-results h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Load more button */
+        .load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .load-more-btn {
+            background: #13294B;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .load-more-btn:hover {
+            background: #c84113;
+            transform: translateY(-2px);
+        }
+
+        /* Archive section */
+        .archive-section {
+            background: white;
+            padding: 2rem 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .archive-years {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .archive-year {
+            color: #13294B;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .archive-year:hover {
+            background: #f0f0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .news-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .news-filters {
+                justify-content: flex-start;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">AgentLab</a>
+            <ul class="nav-links">
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="index.html#docs">Docs</a></li>
+                <li><a href="index.html#get-involved">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / News & Updates
+        </div>
+    </div>
+
+    <!-- News Hero -->
+    <section class="news-hero">
+        <div class="container">
+            <h1>News & Updates</h1>
+            <p>Stay up to date with the latest developments, research findings, and milestones from AgentLab</p>
+        </div>
+    </section>
+
+    <!-- News Main Content -->
+    <section class="news-main">
+        <div class="container">
+            <!-- Filters -->
+            <div class="news-filters">
+                <button class="filter-btn active" data-filter="all">All News</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+                <button class="filter-btn" data-filter="milestone">Milestones</button>
+                <button class="filter-btn" data-filter="partnership">Partnerships</button>
+                <button class="filter-btn" data-filter="announcement">Announcements</button>
+            </div>
+
+            <!-- News Grid -->
+            <div class="news-grid" id="newsGrid">
+                <!-- News Article 1 -->
+                <article class="news-card" data-category="milestone">
+                    <div class="news-image">🚀</div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">July 5, 2025</span>
+                            <span class="news-category milestone">Milestone</span>
+                        </div>
+                        <h3 class="news-title">VentureBots Summer Pilot Program Launches</h3>
+                        <p class="news-excerpt">AgentLab launches VentureBots summer pilot with 25 students, providing AI-powered entrepreneurship coaching through the complete startup journey from idea discovery to pitch presentation.</p>
+                        <a href="news-posts/2025-07-venturebot-launch.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <h3>No articles found</h3>
+                <p>Try selecting a different category or check back later for new updates.</p>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more">
+                <button class="load-more-btn" onclick="loadMoreNews()">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Archive Section -->
+    <section class="archive-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Archive</h2>
+                <div class="archive-years">
+                    <a href="#" class="archive-year">2025</a>
+                    <a href="#" class="archive-year">2024</a>
+                    <a href="#" class="archive-year">2023</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="projects.html">All Projects</a>
+                    <a href="#">Future Initiatives</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Research</h3>
+                    <a href="research.html">Publications</a>
+                    <a href="#">Methodology</a>
+                    <a href="#">Open Datasets</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="team.html">Our Team</a>
+                    <a href="get-involved.html">Get Involved</a>
+                    <a href="#">Discord</a>
+                    <a href="https://github.com/vishalsachdev/AgentLab">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="docs.html">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Educator Guide</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab - Gies College of Business. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

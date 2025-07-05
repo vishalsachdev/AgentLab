@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Additional styles for documentation */
+        .docs-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .docs-nav {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .docs-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .docs-nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .docs-nav a:hover {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        .docs-section {
+            padding: 4rem 0;
+        }
+        
+        .docs-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .docs-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .docs-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .docs-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .docs-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-inline {
+            background: #e2e8f0;
+            color: #2d3748;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .download-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .download-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .api-endpoint {
+            background: #f1f8e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .api-method {
+            color: #4caf50;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .research-paper {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .paper-title {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .paper-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 1px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .paper-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-list li:before {
+            content: "✓ ";
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .toc h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .docs-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .paper-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">AgentLab</a>
+            <ul class="nav-links">
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="index.html#get-involved">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > Documentation
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="docs-hero">
+        <div class="container">
+            <h1>AgentLab Documentation</h1>
+            <p>Comprehensive guides, API references, and resources for multi-agent AI systems in education</p>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#api-docs">API Documentation</a></li>
+                <li><a href="#developer-guides">Developer Guides</a></li>
+                <li><a href="#research-papers">Research Papers</a></li>
+                <li><a href="#educational-resources">Educational Resources</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="docs-section">
+        <div class="container">
+            <h2>Getting Started</h2>
+            <p>Welcome to AgentLab! Get up and running with our multi-agent AI systems in minutes.</p>
+            
+            <div class="toc">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#first-project">Your First Project</a></li>
+                    <li><a href="#basic-concepts">Basic Concepts</a></li>
+                    <li><a href="#examples">Examples</a></li>
+                </ul>
+            </div>
+
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h3 id="installation">🚀 Installation</h3>
+                    <p>Get AgentLab installed on your system with these simple steps:</p>
+                    <div class="code-block">
+# Clone the repository
+git clone https://github.com/gies-ai-experiments/AgentLab.git
+
+# Navigate to the project directory
+cd AgentLab
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys
+                    </div>
+                    <p>System requirements: Python 3.8+, Node.js 16+</p>
+                </div>
+
+                <div class="docs-card">
+                    <h3 id="first-project">✨ Your First Project</h3>
+                    <p>Create your first multi-agent system:</p>
+                    <div class="code-block">
+from agentlab import AgentTeam, Agent
+
+# Create a simple agent team
+team = AgentTeam(name="MyFirstTeam")
+
+# Add agents to the team
+researcher = Agent(
+    name="Researcher",
+    role="Research and gather information",
+    tools=["web_search", "document_analysis"]
+)
+
+writer = Agent(
+    name="Writer", 
+    role="Create content based on research",
+    tools=["text_generation", "editing"]
+)
+
+team.add_agent(researcher)
+team.add_agent(writer)
+
+# Run the team
+result = team.execute("Create a report on AI in education")
+print(result)
+                    </div>
+                </div>
+
+                <div class="docs-card">
+                    <h3 id="basic-concepts">🧠 Basic Concepts</h3>
+                    <p>Understanding the core concepts of AgentLab:</p>
+                    <ul class="feature-list">
+                        <li><strong>Agents:</strong> Individual AI entities with specific roles</li>
+                        <li><strong>Teams:</strong> Collections of agents working together</li>
+                        <li><strong>Tools:</strong> External capabilities agents can use</li>
+                        <li><strong>Workflows:</strong> Defined processes for agent collaboration</li>
+                        <li><strong>Memory:</strong> Persistent storage for agent knowledge</li>
+                    </ul>
+                </div>
+
+                <div class="docs-card">
+                    <h3 id="examples">📚 Examples</h3>
+                    <p>Ready-to-use examples to get you started:</p>
+                    <ul class="feature-list">
+                        <li><a href="#venturebot-example">VentureBots: Startup coaching system</a></li>
+                        <li><a href="#research-example">Research Assistant: Academic research team</a></li>
+                        <li><a href="#tutor-example">AI Tutor: Personalized learning system</a></li>
+                        <li><a href="#content-example">Content Creator: Multi-modal content generation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Documentation Section -->
+    <section id="api-docs" class="docs-section">
+        <div class="container">
+            <h2>API Documentation</h2>
+            <p>Complete reference for the AgentLab API endpoints and SDK methods.</p>
+
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h3>🔌 REST API</h3>
+                    <p>HTTP endpoints for integrating with AgentLab:</p>
+                    
+                    <div class="api-endpoint">
+                        <div class="api-method">POST</div>
+                        <code>/api/v1/teams</code>
+                        <p>Create a new agent team</p>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="api-method">GET</div>
+                        <code>/api/v1/teams/{team_id}/agents</code>
+                        <p>List all agents in a team</p>
+                    </div>
+                    
+                    <div class="api-endpoint">
+                        <div class="api-method">POST</div>
+                        <code>/api/v1/teams/{team_id}/execute</code>
+                        <p>Execute a task with the agent team</p>
+                    </div>
+                    
+                    <p><a href="#" class="btn btn-secondary">View Full API Reference</a></p>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🐍 Python SDK</h3>
+                    <p>Python library for building agent systems:</p>
+                    <div class="code-block">
+from agentlab import AgentLab
+
+# Initialize the client
+client = AgentLab(api_key="your_api_key")
+
+# Create an agent
+agent = client.create_agent(
+    name="Assistant",
+    role="Help with tasks",
+    model="gpt-4",
+    tools=["calculator", "web_search"]
+)
+
+# Execute a task
+response = agent.execute("Calculate 15% of 240")
+print(response.content)
+                    </div>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🌐 JavaScript SDK</h3>
+                    <p>JavaScript/TypeScript library for web applications:</p>
+                    <div class="code-block">
+import { AgentLab } from 'agentlab-js';
+
+const client = new AgentLab({
+  apiKey: 'your_api_key'
+});
+
+// Create a team
+const team = await client.createTeam({
+  name: 'Content Team',
+  agents: [
+    { name: 'Researcher', role: 'research' },
+    { name: 'Writer', role: 'writing' }
+  ]
+});
+
+// Execute task
+const result = await team.execute(
+  'Create a blog post about AI trends'
+);
+console.log(result);
+                    </div>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🔧 Configuration</h3>
+                    <p>Configure your agents and teams:</p>
+                    <div class="code-block">
+# .env configuration
+AGENTLAB_API_KEY=your_api_key_here
+AGENTLAB_BASE_URL=https://api.agentlab.ai
+OPENAI_API_KEY=your_openai_key
+ANTHROPIC_API_KEY=your_anthropic_key
+
+# Model configurations
+DEFAULT_MODEL=gpt-4
+TEMPERATURE=0.7
+MAX_TOKENS=2000
+
+# Tool configurations
+WEB_SEARCH_ENABLED=true
+DOCUMENT_ANALYSIS_ENABLED=true
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Guides Section -->
+    <section id="developer-guides" class="docs-section">
+        <div class="container">
+            <h2>Developer Guides</h2>
+            <p>In-depth tutorials and best practices for building with AgentLab.</p>
+
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h3>🏗️ Architecture Guide</h3>
+                    <p>Understanding the AgentLab architecture:</p>
+                    <ul class="feature-list">
+                        <li>Multi-agent system design patterns</li>
+                        <li>Communication protocols between agents</li>
+                        <li>Memory management and persistence</li>
+                        <li>Tool integration and custom tools</li>
+                        <li>Scaling and performance optimization</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Read Full Guide</a>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🔨 Building Custom Agents</h3>
+                    <p>Create specialized agents for your use case:</p>
+                    <div class="code-block">
+class CustomAgent(Agent):
+    def __init__(self, name, domain_knowledge):
+        super().__init__(name)
+        self.domain_knowledge = domain_knowledge
+    
+    def process_task(self, task):
+        # Custom processing logic
+        context = self.get_context(task)
+        response = self.generate_response(
+            task, context, self.domain_knowledge
+        )
+        return response
+    
+    def get_context(self, task):
+        # Retrieve relevant context
+        return self.memory.search(task.keywords)
+                    </div>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🔗 Tool Integration</h3>
+                    <p>Extend agent capabilities with custom tools:</p>
+                    <div class="code-block">
+from agentlab.tools import BaseTool
+
+class WeatherTool(BaseTool):
+    name = "weather"
+    description = "Get current weather information"
+    
+    def execute(self, location: str) -> dict:
+        # Implementation to fetch weather data
+        api_key = self.config.get('weather_api_key')
+        url = f"https://api.weather.com/v1/current"
+        
+        response = requests.get(url, params={
+            'key': api_key,
+            'q': location
+        })
+        
+        return response.json()
+
+# Register the tool
+agent.add_tool(WeatherTool())
+                    </div>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🎯 Best Practices</h3>
+                    <p>Guidelines for effective agent development:</p>
+                    <ul class="feature-list">
+                        <li>Design clear agent roles and responsibilities</li>
+                        <li>Implement proper error handling and fallbacks</li>
+                        <li>Use structured prompts for consistency</li>
+                        <li>Monitor agent performance and costs</li>
+                        <li>Test with diverse scenarios and edge cases</li>
+                        <li>Document agent capabilities and limitations</li>
+                    </ul>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🚀 Deployment Guide</h3>
+                    <p>Deploy your agent systems to production:</p>
+                    <div class="code-block">
+# Docker deployment
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+                    </div>
+                    <p>Supports Docker, Kubernetes, and cloud platforms.</p>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🔍 Testing & Debugging</h3>
+                    <p>Ensure your agents work reliably:</p>
+                    <div class="code-block">
+import pytest
+from agentlab.testing import AgentTestCase
+
+class TestResearchAgent(AgentTestCase):
+    def setUp(self):
+        self.agent = ResearchAgent(
+            name="Test Researcher"
+        )
+    
+    def test_web_search(self):
+        result = self.agent.execute(
+            "Find information about AI trends"
+        )
+        self.assertIn("artificial intelligence", result.lower())
+        self.assertGreater(len(result), 100)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Papers Section -->
+    <section id="research-papers" class="docs-section">
+        <div class="container">
+            <h2>Research Papers</h2>
+            <p>Academic publications and research findings from the AgentLab team.</p>
+
+            <div class="research-paper">
+                <h3 class="paper-title">Multi-Agent Systems in Educational Technology: A Comprehensive Study</h3>
+                <div class="paper-authors">V. Sachdev, J. Johnson, M. Chen, S. Kumar</div>
+                <div class="paper-abstract">
+                    This paper presents a comprehensive analysis of multi-agent systems in educational settings, 
+                    focusing on collaborative learning, personalized instruction, and adaptive assessment. 
+                    We introduce the AgentLab framework and demonstrate its effectiveness through empirical 
+                    studies with over 500 students across various educational contexts.
+                </div>
+                <div class="paper-links">
+                    <a href="#" class="paper-link">Read Full Paper</a>
+                    <a href="#" class="paper-link">Download PDF</a>
+                    <a href="#" class="paper-link">View Dataset</a>
+                </div>
+            </div>
+
+            <div class="research-paper">
+                <h3 class="paper-title">VentureBots: AI-Powered Entrepreneurship Education Through Multi-Agent Coaching</h3>
+                <div class="paper-authors">M. Rodriguez, A. Thompson, V. Sachdev</div>
+                <div class="paper-abstract">
+                    We present VentureBots, a novel multi-agent system designed to guide students through 
+                    the entrepreneurship process. Our system combines domain-specific agents for market 
+                    research, product development, and pitch creation, resulting in measurable improvements 
+                    in student engagement and learning outcomes.
+                </div>
+                <div class="paper-links">
+                    <a href="#" class="paper-link">Read Full Paper</a>
+                    <a href="#" class="paper-link">Download PDF</a>
+                    <a href="#" class="paper-link">Try Demo</a>
+                </div>
+            </div>
+
+            <div class="research-paper">
+                <h3 class="paper-title">Collaborative AI Agents for Personalized Learning: Architecture and Implementation</h3>
+                <div class="paper-authors">L. Park, D. Williams, K. Anderson</div>
+                <div class="paper-abstract">
+                    This technical paper describes the architecture and implementation of collaborative 
+                    AI agents for personalized learning. We detail the communication protocols, 
+                    knowledge sharing mechanisms, and adaptation strategies that enable effective 
+                    multi-agent collaboration in educational contexts.
+                </div>
+                <div class="paper-links">
+                    <a href="#" class="paper-link">Read Full Paper</a>
+                    <a href="#" class="paper-link">Download PDF</a>
+                    <a href="#" class="paper-link">View Code</a>
+                </div>
+            </div>
+
+            <div class="research-paper">
+                <h3 class="paper-title">Measuring Learning Outcomes in Multi-Agent Educational Systems</h3>
+                <div class="paper-authors">R. Davis, T. Wilson, J. Lee</div>
+                <div class="paper-abstract">
+                    This paper introduces novel metrics and methodologies for evaluating learning 
+                    outcomes in multi-agent educational systems. We present statistical frameworks 
+                    for measuring engagement, comprehension, and skill development across diverse 
+                    learning scenarios and student populations.
+                </div>
+                <div class="paper-links">
+                    <a href="#" class="paper-link">Read Full Paper</a>
+                    <a href="#" class="paper-link">Download PDF</a>
+                    <a href="#" class="paper-link">View Metrics</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn btn-primary">View All Publications</a>
+                <a href="#" class="btn btn-secondary">Submit Research</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Resources Section -->
+    <section id="educational-resources" class="docs-section">
+        <div class="container">
+            <h2>Educational Resources</h2>
+            <p>Learning materials, tutorials, and resources for educators and students.</p>
+
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <h3>📚 Course Materials</h3>
+                    <p>Ready-to-use materials for incorporating AgentLab into your curriculum:</p>
+                    <ul class="feature-list">
+                        <li>Introduction to Multi-Agent Systems (Week 1-2)</li>
+                        <li>Building Your First Agent Team (Week 3-4)</li>
+                        <li>Advanced Agent Coordination (Week 5-6)</li>
+                        <li>Real-World Applications (Week 7-8)</li>
+                        <li>Final Project Guidelines</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Download Course Pack</a>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🎥 Video Tutorials</h3>
+                    <p>Step-by-step video guides for common tasks:</p>
+                    <ul class="feature-list">
+                        <li>Getting Started with AgentLab (15 min)</li>
+                        <li>Creating Your First Agent Team (20 min)</li>
+                        <li>Advanced Agent Configuration (25 min)</li>
+                        <li>Troubleshooting Common Issues (18 min)</li>
+                        <li>Best Practices for Educators (30 min)</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Watch Tutorials</a>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🧪 Interactive Labs</h3>
+                    <p>Hands-on exercises and experiments:</p>
+                    <ul class="feature-list">
+                        <li>Lab 1: Basic Agent Creation</li>
+                        <li>Lab 2: Multi-Agent Coordination</li>
+                        <li>Lab 3: Tool Integration</li>
+                        <li>Lab 4: Performance Optimization</li>
+                        <li>Lab 5: Custom Agent Development</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Start Labs</a>
+                </div>
+
+                <div class="docs-card">
+                    <h3>📖 Educator's Guide</h3>
+                    <p>Comprehensive guide for instructors:</p>
+                    <ul class="feature-list">
+                        <li>Pedagogical approaches for AI education</li>
+                        <li>Assessment strategies and rubrics</li>
+                        <li>Managing student projects</li>
+                        <li>Addressing common challenges</li>
+                        <li>Integrating with existing curricula</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Download Guide</a>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🎓 Student Resources</h3>
+                    <p>Materials specifically designed for students:</p>
+                    <ul class="feature-list">
+                        <li>Quick Start Guide</li>
+                        <li>Code Examples and Templates</li>
+                        <li>Debugging Checklist</li>
+                        <li>Project Ideas and Inspirations</li>
+                        <li>Peer Learning Community</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Student Portal</a>
+                </div>
+
+                <div class="docs-card">
+                    <h3>🔬 Research Resources</h3>
+                    <p>Tools and datasets for researchers:</p>
+                    <ul class="feature-list">
+                        <li>Open datasets for AI education research</li>
+                        <li>Evaluation metrics and benchmarks</li>
+                        <li>Statistical analysis tools</li>
+                        <li>Collaboration platform</li>
+                        <li>Publication guidelines</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Research Hub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="download-section">
+        <div class="container">
+            <h2>Downloads</h2>
+            <p>Get the latest versions of AgentLab tools and resources</p>
+            
+            <div class="download-buttons">
+                <a href="https://github.com/gies-ai-experiments/AgentLab" class="download-btn">
+                    📦 Download Source Code
+                </a>
+                <a href="#" class="download-btn">
+                    🐍 Python Package (PyPI)
+                </a>
+                <a href="#" class="download-btn">
+                    📱 JavaScript Package (npm)
+                </a>
+                <a href="#" class="download-btn">
+                    🐳 Docker Images
+                </a>
+                <a href="#" class="download-btn">
+                    📚 Documentation PDF
+                </a>
+                <a href="#" class="download-btn">
+                    🎓 Course Materials
+                </a>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <h3>System Requirements</h3>
+                <p>Python 3.8+, Node.js 16+, 4GB RAM minimum, 8GB RAM recommended</p>
+                <p>Supports Windows, macOS, and Linux</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="projects.html">All Projects</a>
+                    <a href="#">Future Initiatives</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Research</h3>
+                    <a href="research.html">Publications</a>
+                    <a href="#">Methodology</a>
+                    <a href="#">Open Datasets</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="team.html">Our Team</a>
+                    <a href="get-involved.html">Get Involved</a>
+                    <a href="#">Discord</a>
+                    <a href="https://github.com/vishalsachdev/AgentLab">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="docs.html">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Educator Guide</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab - Gies College of Business. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

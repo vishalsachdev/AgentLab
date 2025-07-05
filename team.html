@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Additional styles for team page */
+        .team-hero {
+            background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .team-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .team-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            padding: 4rem 0;
+        }
+
+        .team-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .team-section .section-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #13294B, #c84113);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .team-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: #c84113;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .team-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #13294B;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-link:hover {
+            background: #c84113;
+        }
+
+        .project-teams {
+            background: white;
+            padding: 4rem 0;
+        }
+
+        .project-team-section {
+            margin-bottom: 4rem;
+        }
+
+        .project-team-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-team-title {
+            font-size: 2rem;
+            color: #c84113;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-team-description {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .research-areas {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .research-area-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #c84113;
+        }
+
+        .research-area-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .research-area-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .research-member {
+            background: #13294B;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .join-team-cta {
+            background: #13294B;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .join-team-cta h2 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .join-team-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .team-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">AgentLab</a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> > Team
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="team-hero">
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <p>The brilliant minds behind AgentLab's innovative multi-agent AI systems for education</p>
+        </div>
+    </section>
+
+    <!-- Team Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <h2>Our Growing Community</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Core Team Members</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Active Teams</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Students in Pilot</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2025</span>
+                    <span class="stat-label">Project Launch</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foundation Team -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Foundation Team</h2>
+            <p class="section-description">Initial development team (May 2025) who established the core architecture and frameworks for VentureBots</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">SI</div>
+                    <div class="team-name">Shravani Immidi</div>
+                    <div class="team-role">Systems Developer</div>
+                    <div class="team-description">Responsible for agent orchestration and validation frameworks. Designed the core multi-agent coordination system that enables seamless collaboration between specialized AI coaches.</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">MT</div>
+                    <div class="team-name">Manas Tokale</div>
+                    <div class="team-role">Framework Research & Search Integration Specialist</div>
+                    <div class="team-description">Implemented Claude 3.7 web search capabilities and conducted framework research. Enabled real-time market research and data integration features.</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">SB</div>
+                    <div class="team-name">Shatakshi Bhatnagar</div>
+                    <div class="team-role">Documentation Specialist & Workflow Designer</div>
+                    <div class="team-description">Created the initial project architecture and comprehensive documentation. Designed user workflows that guide students through the entrepreneurship journey.</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">RM</div>
+                    <div class="team-name">Rohan Marwaha</div>
+                    <div class="team-role">Infrastructure Architect & Collaborator/Mentor</div>
+                    <div class="team-description">Former student and now collaborator/mentor at NCSA. Established the deployment pipeline and DevOps foundation that powers our production systems.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Team -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Production Team</h2>
+            <p class="section-description">Current team (Summer 2025) leading the VentureBots pilot program and production deployment</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">KS</div>
+                    <div class="team-name">Kumuda Subramanyam</div>
+                    <div class="team-role">Builder & UI/UX Innovator</div>
+                    <div class="team-description">Developed multiple frontend approaches including React and Streamlit interfaces. Optimized prompts/workflows, conducted user testing, and investigating alternate frameworks for enhanced user experience.</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">JS</div>
+                    <div class="team-name">Jeremy Samuel</div>
+                    <div class="team-role">Full-Stack Engineer</div>
+                    <div class="team-description">Led debugging, deployment optimization, and containerization. Developed the current Streamlit chat interface that powers the production deployment of VentureBots.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Teams -->
+    <section class="project-teams">
+        <div class="container">
+            <h2>Project Teams</h2>
+            <p class="section-description">Specialized teams working on different aspects of our multi-agent AI systems</p>
+
+            <div class="project-team-section">
+                <div class="project-team-header">
+                    <h3 class="project-team-title">VentureBots Team</h3>
+                    <p class="project-team-description">Developing the entrepreneurship coaching multi-agent system</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-photo">EM</div>
+                        <div class="team-name">Emma Martinez</div>
+                        <div class="team-role">Product Manager</div>
+                        <div class="team-description">MBA student specializing in entrepreneurship. Leads product strategy and ensures VentureBots meets real student needs in startup education.</div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🔗</a>
+                            <a href="#" class="social-link">📧</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-photo">RC</div>
+                        <div class="team-name">Ryan Chen</div>
+                        <div class="team-role">Backend Developer</div>
+                        <div class="team-description">Graduate student in Software Engineering. Implements the multi-agent coordination system and API infrastructure for VentureBots.</div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🔗</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-photo">LW</div>
+                        <div class="team-name">Lisa Wang</div>
+                        <div class="team-role">Content Strategist</div>
+                        <div class="team-description">PhD student in Entrepreneurship. Develops the educational content and coaching methodologies embedded in the VentureBots system.</div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🔗</a>
+                            <a href="#" class="social-link">📧</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-team-section">
+                <div class="project-team-header">
+                    <h3 class="project-team-title">Research Platform Team</h3>
+                    <p class="project-team-description">Building tools and infrastructure for educational AI research</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-photo">AS</div>
+                        <div class="team-name">Andrew Smith</div>
+                        <div class="team-role">Platform Architect</div>
+                        <div class="team-description">PhD student in Computer Science. Designs scalable infrastructure for deploying and evaluating multi-agent educational systems.</div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🔗</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-photo">NJ</div>
+                        <div class="team-name">Nina Johnson</div>
+                        <div class="team-role">DevOps Engineer</div>
+                        <div class="team-description">Master's student in Systems Engineering. Manages deployment pipelines and ensures reliable operation of our research platforms.</div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">🔗</a>
+                            <a href="#" class="social-link">📧</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas -->
+    <section class="research-areas">
+        <div class="container">
+            <h2>Research Areas</h2>
+            <p class="section-description">Our interdisciplinary research spans multiple domains in AI and education</p>
+
+            <div class="research-area-card">
+                <h3 class="research-area-title">Multi-Agent Systems in Education</h3>
+                <p class="research-area-description">Investigating how teams of specialized AI agents can work together to provide personalized learning experiences and educational support.</p>
+                <div class="research-team-members">
+                    <span class="research-member">Vishal Sachdev</span>
+                    <span class="research-member">Alex Kim</span>
+                    <span class="research-member">Michael Rodriguez</span>
+                </div>
+            </div>
+
+            <div class="research-area-card">
+                <h3 class="research-area-title">Educational Technology & Learning Analytics</h3>
+                <p class="research-area-description">Developing metrics and methodologies to measure the effectiveness of AI-powered educational interventions on student learning outcomes.</p>
+                <div class="research-team-members">
+                    <span class="research-member">Jessica Liu</span>
+                    <span class="research-member">Sarah Patel</span>
+                    <span class="research-member">Dr. Karen Foster</span>
+                </div>
+            </div>
+
+            <div class="research-area-card">
+                <h3 class="research-area-title">Entrepreneurship Education</h3>
+                <p class="research-area-description">Exploring how AI can accelerate entrepreneurship learning by providing real-time coaching and feedback throughout the startup development process.</p>
+                <div class="research-team-members">
+                    <span class="research-member">Emma Martinez</span>
+                    <span class="research-member">Lisa Wang</span>
+                    <span class="research-member">Dr. Robert Chen</span>
+                </div>
+            </div>
+
+            <div class="research-area-card">
+                <h3 class="research-area-title">Human-AI Interaction</h3>
+                <p class="research-area-description">Studying how students interact with AI tutoring systems and designing interfaces that promote effective learning partnerships between humans and AI.</p>
+                <div class="research-team-members">
+                    <span class="research-member">Sarah Patel</span>
+                    <span class="research-member">David Thompson</span>
+                    <span class="research-member">Dr. Maria Gonzalez</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Advisors -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Faculty Advisors</h2>
+            <p class="section-description">Distinguished faculty members providing guidance and academic oversight</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">KF</div>
+                    <div class="team-name">Dr. Karen Foster</div>
+                    <div class="team-role">Faculty Advisor - Educational Technology</div>
+                    <div class="team-description">Professor of Educational Psychology with 15+ years researching AI in education. Provides academic guidance on learning theory and educational research methodology.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">RC</div>
+                    <div class="team-name">Dr. Robert Chen</div>
+                    <div class="team-role">Faculty Advisor - Entrepreneurship</div>
+                    <div class="team-description">Associate Professor of Entrepreneurship and Innovation. Former startup founder who brings real-world experience to our entrepreneurship education research.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">MG</div>
+                    <div class="team-name">Dr. Maria Gonzalez</div>
+                    <div class="team-role">Faculty Advisor - Computer Science</div>
+                    <div class="team-description">Professor of Computer Science specializing in artificial intelligence and machine learning. Provides technical guidance on AI system development.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">DL</div>
+                    <div class="team-name">Dr. David Lee</div>
+                    <div class="team-role">Faculty Advisor - Information Systems</div>
+                    <div class="team-description">Professor of Information Systems with expertise in human-computer interaction and system design. Advises on user experience and system architecture.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Contributors -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Alumni Contributors</h2>
+            <p class="section-description">Former team members who continue to contribute to AgentLab's mission</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">JD</div>
+                    <div class="team-name">John Davis</div>
+                    <div class="team-role">Founding Developer (2023-2024)</div>
+                    <div class="team-description">Now Software Engineer at Google. Built the initial prototype of VentureBots and established our early technical architecture.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">🐙</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">AB</div>
+                    <div class="team-name">Amy Brown</div>
+                    <div class="team-role">Research Lead (2023-2024)</div>
+                    <div class="team-description">Now PhD student at MIT. Conducted foundational research on multi-agent systems in educational settings and published our first papers.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">KP</div>
+                    <div class="team-name">Kevin Park</div>
+                    <div class="team-role">UI/UX Designer (2024)</div>
+                    <div class="team-description">Now Lead Designer at EdTech startup. Created the user interface designs and user experience flows for VentureBots platform.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">RW</div>
+                    <div class="team-name">Rachel Wilson</div>
+                    <div class="team-role">Data Analyst (2024)</div>
+                    <div class="team-description">Now Data Scientist at Microsoft. Developed evaluation metrics and analysis frameworks for measuring educational AI effectiveness.</div>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                        <a href="#" class="social-link">📧</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Partners -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Academic Partners</h2>
+            <p class="section-description">Collaborating institutions and research partners advancing our mission</p>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>MIT Computer Science & Artificial Intelligence Lab</h3>
+                    <p>Joint research initiative on scalable multi-agent educational systems. Collaborating on infrastructure and deployment strategies.</p>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Stanford Human-Centered AI Institute</h3>
+                    <p>Partnership focused on ethical AI in education and human-AI interaction research. Joint publication on responsible AI deployment.</p>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Carnegie Mellon School of Computer Science</h3>
+                    <p>Collaboration on natural language processing and conversational AI for educational applications. Sharing datasets and evaluation methods.</p>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>University of Washington Center for Educational Innovation</h3>
+                    <p>Joint research on learning analytics and educational technology effectiveness. Conducting longitudinal studies on AI tutoring systems.</p>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Georgia Tech College of Computing</h3>
+                    <p>Collaborative research on AI-powered personalized learning. Developing new algorithms for adaptive educational content delivery.</p>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Harvard Graduate School of Education</h3>
+                    <p>Partnership on educational theory and AI integration. Researching pedagogical frameworks for multi-agent tutoring systems.</p>
+                    <div class="team-social">
+                        <a href="#" class="social-link">🔗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team CTA -->
+    <section class="join-team-cta">
+        <div class="container">
+            <h2>Join Our Team</h2>
+            <p>We're always looking for passionate students and researchers to join our mission of transforming education through AI</p>
+            <div class="cta-buttons">
+                <a href="#get-involved" class="btn btn-primary">Apply to Join</a>
+                <a href="mailto:team@agentlab.org" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="projects.html">All Projects</a>
+                    <a href="#">Future Initiatives</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Research</h3>
+                    <a href="research.html">Publications</a>
+                    <a href="#">Methodology</a>
+                    <a href="#">Open Datasets</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="team.html">Our Team</a>
+                    <a href="get-involved.html">Get Involved</a>
+                    <a href="#">Discord</a>
+                    <a href="https://github.com/vishalsachdev/AgentLab">GitHub</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="docs.html">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Educator Guide</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab - Gies College of Business. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -19,8 +19,8 @@ body {
 
 /* Header & Navigation */
 header {
-    background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
-    color: white;
+    background: #e5e5e5;
+    color: #13294B;
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -38,7 +38,7 @@ nav {
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: #ff6900;
 }
 
 .nav-links {
@@ -48,14 +48,14 @@ nav {
 }
 
 .nav-links a {
-    color: white;
+    color: #13294B;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    color: #ff6900;
 }
 
 /* Breadcrumb */
@@ -72,7 +72,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
+    background: #ff6900;
     color: white;
     text-align: center;
     padding: 6rem 0;
@@ -94,7 +94,7 @@ nav {
 }
 
 .project-hero {
-    background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
+    background: #ff6900;
     color: white;
     padding: 4rem 0;
 }
@@ -172,7 +172,7 @@ nav {
 }
 
 .btn-primary {
-    background: #c84113;
+    background: #13294B;
     color: white;
 }
 
@@ -272,7 +272,7 @@ nav {
 .step-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #13294B, #c84113);
+    background: #ff6900;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -341,7 +341,7 @@ nav {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #13294B, #c84113);
+    background: #ff6900;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -554,7 +554,7 @@ nav {
 /* Demo Section */
 .demo-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #13294B 0%, #c84113 100%);
+    background: #ff6900;
     color: white;
     text-align: center;
 }

@@ -65,9 +65,21 @@ nav {
     font-size: 0.9rem;
 }
 
+.breadcrumb .container {
+    text-align: left;
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .breadcrumb a {
     color: #13294B;
     text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+    color: #ff6900;
 }
 
 /* Hero Section */

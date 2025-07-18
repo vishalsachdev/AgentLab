@@ -112,10 +112,16 @@ nav {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
 }
 
 .hero-text h1 {

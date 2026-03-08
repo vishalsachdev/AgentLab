@@ -102,10 +102,48 @@
         .join-team-cta h2 { margin-bottom: 1rem; color: white; font-size: 2.25rem; font-weight: 700; }
         .join-team-cta p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.85; line-height: 1.6; }
 
+        /* Timeline */
+        .timeline { max-width: 700px; margin: 0 auto; }
+        .timeline-entry {
+            display: flex;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-entry:last-child { border-bottom: none; }
+        .timeline-term {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.95rem;
+            min-width: 120px;
+            flex-shrink: 0;
+            padding-top: 0.15rem;
+        }
+        .timeline-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .timeline-member {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--navy);
+            font-weight: 600;
+        }
+        .timeline-role {
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-left: 0.25rem;
+        }
+
         @media (max-width: 768px) {
             .team-hero h1 { font-size: 2.25rem; }
             .team-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline-entry { flex-direction: column; gap: 0.75rem; }
+            .timeline-term { min-width: unset; }
         }
     </style>
 </head>
@@ -132,93 +170,68 @@
     <!-- Hero Section -->
     <section class="team-hero">
         <div class="container">
-            <h1>Meet Our Team</h1>
-            <p>The brilliant minds behind AgentLab's innovative multi-agent AI systems for education</p>
+            <h1>Our Team</h1>
+            <p>Student developers building multi-agent AI systems for education at Gies College of Business</p>
         </div>
     </section>
 
-    <!-- Team Stats -->
-    <section class="stats-section">
+    <!-- Current Team -->
+    <section class="team-section">
         <div class="container">
-            <h2>Our Growing Community</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Core Team Members</span>
+            <h2>Spring 2026</h2>
+            <p class="section-description">Current team</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">KD</div>
+                    <div class="team-name">Keshav Dalmia</div>
+                    <div class="team-role">AI Developer</div>
+                    <div class="team-description">Building at the intersection of data, business, and AI. Graduate student at Gies College of Business.</div>
+                    <div style="margin-top: 1rem;"><a href="https://github.com/keshavdalmia10" class="read-more" target="_blank">GitHub &rarr;</a></div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">Active Teams</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">25</span>
-                    <span class="stat-label">Students in Pilot</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">2025</span>
-                    <span class="stat-label">Project Launch</span>
+
+                <div class="team-card">
+                    <div class="team-photo">AC</div>
+                    <div class="team-name">Ash Castelino</div>
+                    <div class="team-role">AI Developer</div>
+                    <div class="team-description">Builder. Developing AI-powered educational tools and multi-agent systems.</div>
+                    <div style="margin-top: 1rem;"><a href="https://github.com/ashcastelinocs124" class="read-more" target="_blank">GitHub &rarr;</a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Foundation Team -->
+    <!-- Timeline -->
     <section class="team-section">
         <div class="container">
-            <h2>Foundation Team</h2>
-            <p class="section-description">Initial development team (May 2025) who established the core architecture and frameworks for VentureBots</p>
-            
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">SI</div>
-                    <div class="team-name">Shravani Immidi</div>
-                    <div class="team-role">Systems Developer</div>
-                    <div class="team-description">Responsible for agent orchestration and validation frameworks. Designed the core multi-agent coordination system that enables seamless collaboration between specialized AI coaches.</div>
+            <h2>Team Timeline</h2>
+            <p class="section-description">AgentLab teams rotate each semester. Here's who built what.</p>
+
+            <div class="timeline">
+                <div class="timeline-entry">
+                    <div class="timeline-term">Fall 2025</div>
+                    <div class="timeline-members">
+                        <span class="timeline-member">Kumuda Subramanyam <span class="timeline-role">Builder &amp; UI/UX</span></span>
+                        <span class="timeline-member">Keshav Dalmia <span class="timeline-role">AI Developer</span></span>
+                    </div>
                 </div>
 
-                <div class="team-card">
-                    <div class="team-photo">MT</div>
-                    <div class="team-name">Manas Tokale</div>
-                    <div class="team-role">Framework Development & Search Integration Specialist</div>
-                    <div class="team-description">Implemented Claude 3.7 web search capabilities and conducted framework development. Enabled real-time market data and integration features.</div>
+                <div class="timeline-entry">
+                    <div class="timeline-term">Summer 2025</div>
+                    <div class="timeline-members">
+                        <span class="timeline-member">Kumuda Subramanyam <span class="timeline-role">Builder &amp; UI/UX</span></span>
+                        <span class="timeline-member">Jeremy Samuel <span class="timeline-role">Full-Stack Engineer</span></span>
+                    </div>
                 </div>
 
-                <div class="team-card">
-                    <div class="team-photo">SB</div>
-                    <div class="team-name">Shatakshi Bhatnagar</div>
-                    <div class="team-role">Documentation Specialist & Workflow Designer</div>
-                    <div class="team-description">Created the initial project architecture and comprehensive documentation. Designed user workflows that guide students through the entrepreneurship journey.</div>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo">RM</div>
-                    <div class="team-name">Rohan Marwaha</div>
-                    <div class="team-role">Infrastructure Architect & Collaborator/Mentor</div>
-                    <div class="team-description">Former student and now collaborator/mentor at NCSA. Established the deployment pipeline and DevOps foundation that powers our production systems.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Production Team -->
-    <section class="team-section">
-        <div class="container">
-            <h2>Production Team</h2>
-            <p class="section-description">Current team (Summer 2025) leading the VentureBots pilot program and production deployment</p>
-            
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">KS</div>
-                    <div class="team-name">Kumuda Subramanyam</div>
-                    <div class="team-role">Builder & UI/UX Innovator</div>
-                    <div class="team-description">Developed multiple frontend approaches including React and Streamlit interfaces. Optimized prompts/workflows, conducted user testing, and investigating alternate frameworks for enhanced user experience.</div>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-photo">JS</div>
-                    <div class="team-name">Jeremy Samuel</div>
-                    <div class="team-role">Full-Stack Engineer</div>
-                    <div class="team-description">Led debugging, deployment optimization, and containerization. Developed the current Streamlit chat interface that powers the production deployment of VentureBots.</div>
+                <div class="timeline-entry">
+                    <div class="timeline-term">Spring 2025</div>
+                    <div class="timeline-members">
+                        <span class="timeline-member">Shravani Immidi <span class="timeline-role">Systems Developer</span></span>
+                        <span class="timeline-member">Manas Tokale <span class="timeline-role">Framework &amp; Search</span></span>
+                        <span class="timeline-member">Shatakshi Bhatnagar <span class="timeline-role">Docs &amp; Workflow</span></span>
+                        <span class="timeline-member">Rohan Marwaha <span class="timeline-role">Infrastructure</span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -233,33 +246,24 @@
             <div class="research-area-card">
                 <h3 class="research-area-title">Multi-Agent Systems in Education</h3>
                 <p class="research-area-description">Developing teams of specialized AI agents that work together to provide personalized learning experiences and educational support.</p>
-                <div class="research-team-members">
-                </div>
             </div>
 
             <div class="research-area-card">
-                <h3 class="research-area-title">Educational Technology & Learning Analytics</h3>
+                <h3 class="research-area-title">Educational Technology &amp; Learning Analytics</h3>
                 <p class="research-area-description">Building metrics and methodologies to measure the effectiveness of AI-powered educational interventions on student learning outcomes.</p>
-                <div class="research-team-members">
-                </div>
             </div>
 
             <div class="research-area-card">
                 <h3 class="research-area-title">Entrepreneurship Education</h3>
                 <p class="research-area-description">Creating AI systems that accelerate entrepreneurship learning by providing real-time coaching and feedback throughout the startup development process.</p>
-                <div class="research-team-members">
-                </div>
             </div>
 
             <div class="research-area-card">
                 <h3 class="research-area-title">Human-AI Interaction</h3>
                 <p class="research-area-description">Designing how students interact with AI tutoring systems and creating interfaces that promote effective learning partnerships between humans and AI.</p>
-                <div class="research-team-members">
-                </div>
             </div>
         </div>
     </section>
-
 
     <!-- Join Team CTA -->
     <section class="join-team-cta">

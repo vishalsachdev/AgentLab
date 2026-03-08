@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas MCP Server Open-Sourced - AgentLab</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
+        .article-category { background: var(--orange); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
+        .article-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.2; font-weight: 800; }
+        .article-excerpt { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
+        .article-content { line-height: 1.8; font-size: 1rem; }
+        .article-content h2 { color: var(--navy); margin: 2rem 0 1rem 0; font-size: 1.5rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0; padding-left: 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-alt); padding: 1.5rem; border-left: 4px solid var(--orange); margin: 2rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .navigation-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .back-link:hover { color: var(--orange-dark); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .article-container { padding: 1rem; }
+            .navigation-links { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../team.html">Team</a></li>
+                <li><a href="../news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / Canvas MCP Server Open-Sourced
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <main class="container">
+        <article class="article-container">
+            <header class="article-header">
+                <div class="article-meta">Published on February 28, 2025</div>
+                <span class="article-category">Milestone</span>
+                <h1 class="article-title">Canvas MCP Server Open-Sourced</h1>
+                <p class="article-excerpt">AgentLab releases Canvas MCP, an open-source MCP server that gives AI coding agents full access to Canvas LMS through 90+ tools and 8 agent skills.</p>
+            </header>
+
+            <div class="article-content">
+                <p>We're excited to announce the open-source release of Canvas MCP, an MCP server that bridges AI coding agents and Canvas LMS. Available on PyPI and the MCP Registry, Canvas MCP enables Claude, Cursor, Codex, and 40+ other AI agents to manage courses through natural language.</p>
+
+                <h2>Why Canvas MCP?</h2>
+                <p>Instructors spend significant time on repetitive LMS tasks: creating assignments, grading submissions, managing modules, and sending announcements. Canvas MCP automates these workflows by letting AI agents interact with Canvas directly, turning natural language instructions into API calls.</p>
+
+                <h2>What's Included</h2>
+                <ul>
+                    <li><strong>90+ tools</strong> covering assignments, grades, discussions, modules, pages, rubrics, peer reviews, and more</li>
+                    <li><strong>8 agent skills</strong> for complex multi-step workflows like course audits and bulk grading</li>
+                    <li><strong>290+ tests</strong> ensuring reliability across Canvas API endpoints</li>
+                    <li><strong>Multiple distribution channels</strong> &mdash; PyPI, MCP Registry, skills.sh, and a hosted service at mcp.illinihunt.org</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>No installation needed:</strong> Canvas MCP is available as a hosted service, so educators can start using it immediately without any local setup.</p>
+                </div>
+
+                <h2>Built for the AI Agent Ecosystem</h2>
+                <p>Canvas MCP follows the Model Context Protocol (MCP) standard, making it compatible with any MCP-aware AI agent. This means as new AI coding tools emerge, they can immediately leverage Canvas MCP without any modifications.</p>
+
+                <h2>Get Started</h2>
+                <p>Canvas MCP is available now on <a href="https://github.com/vishalsachdev/canvas-mcp" target="_blank">GitHub</a>. Visit the <a href="../canvas-mcp.html">project page</a> for full documentation and setup instructions.</p>
+            </div>
+
+            <nav class="navigation-links">
+                <a href="../news.html" class="back-link">&larr; Back to News</a>
+                <a href="../canvas-mcp.html" class="back-link">Learn More About Canvas MCP &rarr;</a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../team.html">Team</a>
+                    <a href="../news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="../venturebot.html">VentureBots</a>
+                    <a href="../pathshaper.html">PathShaper</a>
+                    <a href="../canvas-mcp.html">Canvas MCP</a>
+                    <a href="../illiniclaw.html">IlliniClaw</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

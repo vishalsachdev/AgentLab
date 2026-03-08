@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BADM 554 Bot - AI WhatsApp Course Assistant | AgentLab</title>
+    <title>IlliniClaw - WhatsApp AI Teaching Assistant Blueprint | AgentLab</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / BADM 554 Bot
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / IlliniClaw
         </div>
     </div>
 
@@ -31,12 +31,14 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>BADM 554 Bot</h1>
-                    <p>AI-powered WhatsApp assistant that brings course knowledge to students where they already communicate&mdash;on their phones.</p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <img src="assets/illiniclaw-logo.svg" alt="IlliniClaw" style="max-width: 420px; width: 100%; border-radius: 12px;">
+                    </div>
+                    <p>Open architecture spec for WhatsApp AI teaching assistants. Feed it to any AI coding agent and get a working bot customized for your course.</p>
                     <div class="hero-stats">
                         <div class="stat-item">
                             <span class="stat-number">36</span>
-                            <span class="stat-label">Students Enrolled</span>
+                            <span class="stat-label">Students (BADM 554 pilot)</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">109</span>
@@ -46,9 +48,13 @@
                             <span class="stat-number">97+</span>
                             <span class="stat-label">Hours Engagement</span>
                         </div>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/vishalsachdev/illiniclaw" class="btn btn-primary">View Spec (IlliniClaw)</a>
                     </div>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/vishalsachdev/illiniclaw" class="btn btn-primary">View Spec on GitHub</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Visual placeholder -->
                 </div>
             </div>
         </div>
@@ -59,7 +65,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>How It Works</h2>
-                <p class="section-subtitle">Two sides of the same system: students ask, professors broadcast</p>
+                <p class="section-subtitle">Feed the spec to an AI coding agent. It builds the entire system for your course.</p>
             </div>
 
             <div class="journey-steps">
@@ -67,7 +73,7 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Student Q&amp;A via WhatsApp</h3>
-                        <p>Students join their course on WhatsApp and ask questions anytime. Claude AI answers using RAG over course materials&mdash;lecture notes, assignments, textbooks&mdash;with conversation context maintained across 2-hour sessions.</p>
+                        <p>Students join their course on WhatsApp and ask questions anytime. AI answers using RAG over course materials&mdash;lecture notes, assignments, textbooks&mdash;with conversation context maintained across 2-hour sessions.</p>
                         <ul class="outputs-list">
                             <li>Instant answers grounded in course materials</li>
                             <li>Context-aware conversations with session memory</li>
@@ -93,11 +99,11 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Drip Campaigns</h3>
-                        <p>Professors schedule multi-message drip campaigns to deliver content over time&mdash;test review materials, weekly study guides, or concept reinforcement. Three major campaigns deployed to date.</p>
+                        <p>Professors schedule multi-message drip campaigns to deliver content over time&mdash;test review materials, weekly study guides, or concept reinforcement.</p>
                         <ul class="outputs-list">
-                            <li>Test 1 review: 12 scheduled messages</li>
-                            <li>Week 7 content: 6 messages</li>
-                            <li>Week 8 content: 10 messages</li>
+                            <li>Scheduled multi-message sequences</li>
+                            <li>Customizable per course and topic</li>
+                            <li>Proven in production with 3 campaigns deployed</li>
                         </ul>
                     </div>
                 </div>
@@ -110,7 +116,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Technical Architecture</h2>
-                <p class="section-subtitle">Production system running on VPS with enterprise-grade security</p>
+                <p class="section-subtitle">The spec produces a production-ready system with these components</p>
             </div>
 
             <div class="tech-grid">
@@ -129,10 +135,10 @@
                     <span class="tech-icon">&#129302;</span>
                     <h3>AI System</h3>
                     <ul class="tech-list">
-                        <li>Claude AI for student Q&amp;A (via clawdbot)</li>
-                        <li>GPT-4o for professor agent</li>
+                        <li>Claude or OpenAI for student Q&amp;A</li>
                         <li>RAG over course materials</li>
                         <li>2-hour conversation session windows</li>
+                        <li>Customizable persona per course</li>
                     </ul>
                 </div>
 
@@ -140,7 +146,7 @@
                     <span class="tech-icon">&#128241;</span>
                     <h3>WhatsApp</h3>
                     <ul class="tech-list">
-                        <li>clawdbot CLI gateway</li>
+                        <li>WhatsApp Business API integration</li>
                         <li>Canvas LMS integration</li>
                         <li>Drip campaign scheduler</li>
                         <li>Broadcast messaging</li>
@@ -153,9 +159,34 @@
                     <ul class="tech-list">
                         <li>JWT authentication (7-day expiry)</li>
                         <li>bcrypt password hashing (12 rounds)</li>
-                        <li>Tailscale VPN for dashboard access</li>
+                        <li>VPN-ready dashboard access</li>
                         <li>Rate limiting (30 AI calls/hour)</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Implementation -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>BADM 554 Pilot</h2>
+                <p class="section-subtitle">IlliniClaw was proven with a private implementation for BADM 554 at Gies</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Live Deployment</h3>
+                    <p>The BADM 554 bot ran for a full semester serving 36 students in Enterprise Database Management, accumulating 97+ hours of student engagement across 109 sessions.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Drip Campaigns</h3>
+                    <p>Three major drip campaigns were deployed: Test 1 review (12 messages), Week 7 content (6 messages), and Week 8 content (10 messages).</p>
+                </div>
+                <div class="content-card">
+                    <h3>Open Spec, Private Code</h3>
+                    <p>The bot code is a private implementation. The IlliniClaw spec is the open-source blueprint that lets anyone replicate the system for their own course.</p>
                 </div>
             </div>
         </div>
@@ -176,7 +207,7 @@
                     <a href="venturebot.html">VentureBots</a>
                     <a href="pathshaper.html">PathShaper</a>
                     <a href="canvas-mcp.html">Canvas MCP</a>
-                    <a href="badm554-bot.html">BADM 554 Bot</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>

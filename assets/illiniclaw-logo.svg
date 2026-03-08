@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#13294B"/>
+      <stop offset="100%" style="stop-color:#1B3A6B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="240" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Claw icon (inspired by OpenClaw's lobster motif, recolored Illini) -->
+  <g transform="translate(48, 40)">
+    <!-- Claw body -->
+    <circle cx="72" cy="100" r="44" fill="#E84A27"/>
+    <!-- Head -->
+    <circle cx="72" cy="65" r="28" fill="#E84A27"/>
+    <!-- Eyes (stalks) -->
+    <circle cx="55" cy="50" r="12" fill="#E84A27"/>
+    <circle cx="89" cy="50" r="12" fill="#E84A27"/>
+    <!-- Eye pupils -->
+    <circle cx="55" cy="48" r="4" fill="#13294B"/>
+    <circle cx="89" cy="48" r="4" fill="#13294B"/>
+    <!-- Pincers (left) -->
+    <path d="M10 30 C20 38 28 48 38 58" stroke="#E84A27" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M5 20 C12 26 18 34 24 42" stroke="#E84A27" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <!-- Pincers (right) -->
+    <path d="M134 30 C124 38 116 48 106 58" stroke="#E84A27" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M139 20 C132 26 126 34 120 42" stroke="#E84A27" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <!-- Legs (left) -->
+    <path d="M35 120 C22 128 12 138 8 148" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M32 132 C20 138 12 146 10 158" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <!-- Legs (right) -->
+    <path d="M109 120 C122 128 132 138 136 148" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M112 132 C124 138 132 146 134 158" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <!-- Mouth -->
+    <path d="M62 80 Q72 88 82 80" stroke="#13294B" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Text: IlliniClaw -->
+  <text x="220" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="bold" fill="#FFFFFF" letter-spacing="2">
+    Illini<tspan fill="#E84A27">Claw</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="223" y="163" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#8899BB" letter-spacing="1">
+    WhatsApp AI Teaching Assistant Blueprint
+  </text>
+
+  <!-- Accent line -->
+  <rect x="222" y="178" width="120" height="3" rx="1.5" fill="#E84A27" opacity="0.8"/>
+
+  <!-- Powered by OpenClaw -->
+  <text x="223" y="205" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#556B8A" letter-spacing="0.5">
+    Powered by OpenClaw
+  </text>
+</svg>

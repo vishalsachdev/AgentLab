@@ -18,13 +18,13 @@
         }
         
         .article-meta {
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 1rem;
             font-size: 0.9rem;
         }
         
         .article-category {
-            background: #ff9800;
+            background: var(--orange);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
@@ -37,13 +37,14 @@
         .article-title {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--navy);
             line-height: 1.2;
+            font-weight: 800;
         }
         
         .article-excerpt {
             font-size: 1.2rem;
-            color: #666;
+            color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 2rem;
         }
@@ -54,7 +55,7 @@
         }
         
         .article-content h2 {
-            color: #333;
+            color: var(--navy);
             margin: 2rem 0 1rem 0;
             font-size: 1.5rem;
         }
@@ -73,10 +74,11 @@
         }
         
         .highlight-box {
-            background: #f8f9fa;
+            background: var(--bg-alt);
             padding: 1.5rem;
-            border-left: 4px solid #c84113;
+            border-left: 4px solid var(--orange);
             margin: 2rem 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
         }
         
         .stats-grid {
@@ -97,12 +99,12 @@
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: #667eea;
+            color: var(--orange);
             display: block;
         }
-        
+
         .stat-label {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.9rem;
             margin-top: 0.5rem;
         }
@@ -117,13 +119,13 @@
         }
         
         .back-link {
-            color: #667eea;
+            color: var(--orange);
             text-decoration: none;
             font-weight: 600;
         }
-        
+
         .back-link:hover {
-            color: #764ba2;
+            color: var(--orange-dark);
         }
         
         @media (max-width: 768px) {
@@ -147,7 +149,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="../index.html" class="logo">AgentLab</a>
+            <a href="../index.html" class="logo">Agent<span>Lab</span></a>
             <ul class="nav-links">
                 <li><a href="../projects.html">Projects</a></li>
                 <li><a href="../team.html">Team</a></li>
@@ -262,33 +264,26 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../team.html">Team</a>
+                    <a href="../news.html">News</a>
+                </div>
+                <div class="footer-section">
                     <h3>Projects</h3>
                     <a href="../venturebot.html">VentureBots</a>
-                    <a href="../projects.html">All Projects</a>
-                    <a href="#">Future Initiatives</a>
+                    <a href="../pathshaper.html">PathShaper</a>
+                    <a href="../canvas-mcp.html">Canvas MCP</a>
+                    <a href="../illiniclaw.html">IlliniClaw</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Research</h3>
-                    <a href="#">Publications</a>
-                    <a href="#">Methodology</a>
-                    <a href="#">Open Datasets</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Community</h3>
-                    <a href="../team.html">Our Team</a>
-                    <a href="../team.html">Get Involved</a>
-                    <a href="#">Discord</a>
-                    <a href="https://github.com/gies-ai-experiments/VentureBot">GitHub</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <a href="#">Documentation</a>
-                    <a href="#">API Reference</a>
-                    <a href="#">Educator Guide</a>
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 AgentLab - Gies College of Business. All rights reserved.</p>
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
             </div>
         </div>
     </footer>

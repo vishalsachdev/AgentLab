@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IlliniClaw Spec Published - AgentLab</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
+        .article-category { background: var(--navy); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
+        .article-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.2; font-weight: 800; }
+        .article-excerpt { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
+        .article-content { line-height: 1.8; font-size: 1rem; }
+        .article-content h2 { color: var(--navy); margin: 2rem 0 1rem 0; font-size: 1.5rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0; padding-left: 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-alt); padding: 1.5rem; border-left: 4px solid var(--orange); margin: 2rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .navigation-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .back-link:hover { color: var(--orange-dark); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .article-container { padding: 1rem; }
+            .navigation-links { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../team.html">Team</a></li>
+                <li><a href="../news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / IlliniClaw Spec Published
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <main class="container">
+        <article class="article-container">
+            <header class="article-header">
+                <div class="article-meta">Published on March 8, 2026</div>
+                <span class="article-category">Release</span>
+                <h1 class="article-title">IlliniClaw Spec Published</h1>
+                <p class="article-excerpt">AgentLab publishes IlliniClaw, the open-source architecture spec for WhatsApp AI teaching assistants, enabling any educator to build a course bot with an AI coding agent.</p>
+            </header>
+
+            <div class="article-content">
+                <p>After a successful private deployment serving 36 students in BADM 554 (Enterprise Database Management), we're publishing IlliniClaw&mdash;the complete architecture spec for building WhatsApp AI teaching assistants&mdash;as an open-source blueprint.</p>
+
+                <h2>Proven in Production</h2>
+                <p>The BADM 554 bot (a private implementation of IlliniClaw) has been running live throughout the semester, providing students with instant AI-powered answers to course questions via WhatsApp. The system uses AI with RAG (Retrieval-Augmented Generation) over course materials to deliver accurate, contextual responses.</p>
+
+                <ul>
+                    <li><strong>36 students</strong> actively using the bot throughout the semester</li>
+                    <li><strong>109 sessions</strong> of student-bot interaction</li>
+                    <li><strong>97+ hours</strong> of total student engagement</li>
+                    <li><strong>3 drip campaigns</strong> for proactive course communication</li>
+                </ul>
+
+                <h2>What the Spec Covers</h2>
+                <p>The published specification includes the complete architecture for building a WhatsApp-based course assistant:</p>
+                <ul>
+                    <li>WhatsApp Business API integration for student messaging</li>
+                    <li>Claude AI with RAG for grounding responses in course materials</li>
+                    <li>Professor dashboard for managing broadcasts and drip campaigns</li>
+                    <li>PostgreSQL schema for conversation history and analytics</li>
+                    <li>JWT authentication for secure dashboard access</li>
+                    <li>Canvas LMS integration for course data synchronization</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Open for replication:</strong> Feed the IlliniClaw spec to any AI coding agent (Claude Code, Cursor, Copilot) and it builds the entire working system for your course. <a href="https://github.com/vishalsachdev/illiniclaw" target="_blank">View the spec on GitHub &rarr;</a></p>
+                </div>
+
+                <h2>Why WhatsApp?</h2>
+                <p>Students already use WhatsApp daily. By meeting students where they are, the bot removes friction from asking questions and accessing course support. There's no new app to install, no new interface to learn &mdash; just text a question and get an answer grounded in course materials.</p>
+
+                <p>Visit the <a href="../illiniclaw.html">IlliniClaw project page</a> for the full architecture breakdown.</p>
+            </div>
+
+            <nav class="navigation-links">
+                <a href="../news.html" class="back-link">&larr; Back to News</a>
+                <a href="../illiniclaw.html" class="back-link">Learn More About IlliniClaw &rarr;</a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../team.html">Team</a>
+                    <a href="../news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="../venturebot.html">VentureBots</a>
+                    <a href="../pathshaper.html">PathShaper</a>
+                    <a href="../canvas-mcp.html">Canvas MCP</a>
+                    <a href="../illiniclaw.html">IlliniClaw</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

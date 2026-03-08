@@ -8,23 +8,37 @@
     <style>
         /* News-specific styles */
         .news-hero {
-            background: linear-gradient(135deg, #13294B 0%, #ff6900 100%);
+            background: var(--navy);
             color: white;
             text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
         }
+
+        .news-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 105, 0, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .news-hero .container { position: relative; z-index: 1; }
 
         .news-hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .news-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.15rem;
+            opacity: 0.85;
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         .news-main {
@@ -42,18 +56,20 @@
 
         .filter-btn {
             background: white;
-            border: 2px solid #13294B;
-            color: #13294B;
+            border: 1.5px solid var(--border);
+            color: var(--text-muted);
             padding: 0.5rem 1rem;
-            border-radius: 25px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
+            transition: all 0.2s;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .filter-btn:hover,
         .filter-btn.active {
-            background: #13294B;
+            background: var(--navy);
+            border-color: var(--navy);
             color: white;
         }
 
@@ -66,21 +82,21 @@
 
         .news-card {
             background: white;
-            border-radius: 15px;
+            border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
         .news-image {
             width: 100%;
             height: 200px;
-            background: #ff6900;
+            background: var(--navy);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -105,7 +121,7 @@
         }
 
         .news-category {
-            background: #13294B;
+            background: var(--navy);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
@@ -115,15 +131,15 @@
 
 
         .news-category.milestone {
-            background: #ff6900;
+            background: var(--orange);
         }
 
         .news-category.partnership {
-            background: #9c27b0;
+            background: #7c3aed;
         }
 
         .news-category.announcement {
-            background: #2196f3;
+            background: #2563eb;
         }
 
         .news-title {
@@ -141,16 +157,17 @@
         }
 
         .read-more {
-            color: #13294B;
+            color: var(--orange);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .read-more:hover {
-            color: #ff6900;
+            color: var(--orange-dark);
         }
 
         .no-results {
@@ -171,19 +188,20 @@
         }
 
         .load-more-btn {
-            background: #13294B;
+            background: var(--navy);
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            border-radius: 25px;
+            padding: 12px 28px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            transition: all 0.2s;
         }
 
         .load-more-btn:hover {
-            background: #ff6900;
-            transform: translateY(-2px);
+            background: var(--orange);
+            transform: translateY(-1px);
         }
 
         /* Archive section */

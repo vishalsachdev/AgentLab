@@ -6,256 +6,106 @@
     <title>Our Team - AgentLab</title>
     <link rel="stylesheet" href="css/main.css">
     <style>
-        /* Additional styles for team page */
         .team-hero {
-            background: #ff6900;
+            background: var(--navy);
             color: white;
             text-align: center;
-            padding: 4rem 0;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
         }
+        .team-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 105, 0, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .team-hero .container { position: relative; z-index: 1; }
+        .team-hero h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 800; letter-spacing: -1px; }
+        .team-hero p { font-size: 1.15rem; opacity: 0.85; max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
-        .team-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
+        .team-section { padding: 4rem 0; }
+        .team-section:nth-child(even) { background: var(--bg-alt); }
+        .team-section h2 { text-align: center; font-size: 2.25rem; margin-bottom: 1rem; color: var(--navy); font-weight: 700; letter-spacing: -0.5px; }
+        .team-section .section-description { text-align: center; font-size: 1.05rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-        .team-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .team-section {
-            padding: 4rem 0;
-        }
-
-        .team-section:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .team-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .team-section .section-description {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
 
         .team-card {
             background: white;
-            border-radius: 15px;
+            border-radius: var(--radius);
             padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
+        .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
         .team-photo {
-            width: 120px;
-            height: 120px;
+            width: 80px; height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #13294B, #ff6900);
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
+            background: var(--navy);
+            margin: 0 auto 1.25rem;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.5rem; font-weight: 700;
         }
-
-        .team-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-role {
-            color: #ff6900;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .team-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .team-social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .social-link {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #13294B;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
-
-        .social-link:hover {
-            background: #ff6900;
-        }
-
-        .project-teams {
-            background: white;
-            padding: 4rem 0;
-        }
-
-        .project-team-section {
-            margin-bottom: 4rem;
-        }
-
-        .project-team-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .project-team-title {
-            font-size: 2rem;
-            color: #ff6900;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-team-description {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .research-areas {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-
-        .research-area-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-left: 5px solid #ff6900;
-        }
-
-        .research-area-title {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .research-area-description {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .research-team-members {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .research-member {
-            background: #13294B;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
+        .team-name { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+        .team-role { color: var(--orange); font-weight: 600; margin-bottom: 0.75rem; font-size: 0.9rem; }
+        .team-description { color: var(--text-muted); line-height: 1.6; font-size: 0.925rem; }
 
         .stats-section {
-            background: #ff6900;
+            background: var(--navy);
             color: white;
             padding: 3rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 105, 0, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .stats-section .container { position: relative; z-index: 1; }
+        .stats-section h2 { color: white; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .stat-card { background: rgba(255,255,255,0.08); padding: 1.5rem; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1); }
+        .stat-card .stat-number { font-size: 2.25rem; font-weight: 800; display: block; margin-bottom: 0.35rem; color: var(--orange); }
+        .stat-card .stat-label { font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
+        .research-areas { background: var(--bg-alt); padding: 4rem 0; }
+        .research-areas h2 { text-align: center; font-size: 2.25rem; color: var(--navy); font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .research-areas .section-description { text-align: center; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2.5rem; }
+        .research-area-card { background: white; border-radius: var(--radius); padding: 1.75rem; margin-bottom: 1.25rem; border-left: 4px solid var(--orange); border: 1px solid var(--border); border-left: 4px solid var(--orange); }
+        .research-area-title { font-size: 1.2rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 700; }
+        .research-area-description { color: var(--text-muted); font-size: 0.925rem; line-height: 1.6; }
 
         .join-team-cta {
-            background: #13294B;
+            background: var(--navy);
             color: white;
-            padding: 3rem 0;
+            padding: 4rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-
-        .join-team-cta h2 {
-            margin-bottom: 1rem;
-            color: white;
+        .join-team-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 105, 0, 0.12) 0%, transparent 60%);
+            pointer-events: none;
         }
-
-        .join-team-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+        .join-team-cta .container { position: relative; z-index: 1; }
+        .join-team-cta h2 { margin-bottom: 1rem; color: white; font-size: 2.25rem; font-weight: 700; }
+        .join-team-cta p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.85; line-height: 1.6; }
 
         @media (max-width: 768px) {
-            .team-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .team-hero h1 { font-size: 2.25rem; }
+            .team-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>

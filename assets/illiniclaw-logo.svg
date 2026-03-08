@@ -1,57 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 200" fill="none">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#13294B"/>
       <stop offset="100%" style="stop-color:#1B3A6B"/>
     </linearGradient>
+    <!-- Lobster body shading -->
+    <radialGradient id="bodyGrad" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#FF6B47"/>
+      <stop offset="100%" style="stop-color:#E84A27"/>
+    </radialGradient>
+    <radialGradient id="clawGrad" cx="40%" cy="30%">
+      <stop offset="0%" style="stop-color:#FF6B47"/>
+      <stop offset="100%" style="stop-color:#D4401F"/>
+    </radialGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="240" rx="16" fill="url(#bgGrad)"/>
+  <rect width="840" height="200" rx="14" fill="url(#bgGrad)"/>
 
-  <!-- Claw icon (inspired by OpenClaw's lobster motif, recolored Illini) -->
-  <g transform="translate(48, 40)">
-    <!-- Claw body -->
-    <circle cx="72" cy="100" r="44" fill="#E84A27"/>
+  <!-- === LOBSTER MASCOT (left side) === -->
+  <g transform="translate(28, 16) scale(0.82)">
+
+    <!-- Tail segments (bottom) -->
+    <ellipse cx="78" cy="175" rx="18" ry="10" fill="#D4401F"/>
+    <ellipse cx="78" cy="160" rx="22" ry="12" fill="url(#bodyGrad)"/>
+    <ellipse cx="78" cy="145" rx="24" ry="12" fill="url(#bodyGrad)"/>
+
+    <!-- Small legs -->
+    <g stroke="#D4401F" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M55 150 Q40 160 35 172"/>
+      <path d="M55 138 Q38 145 30 155"/>
+      <path d="M100 150 Q115 160 120 172"/>
+      <path d="M100 138 Q117 145 125 155"/>
+    </g>
+
+    <!-- Body (torso) -->
+    <ellipse cx="78" cy="118" rx="32" ry="28" fill="url(#bodyGrad)"/>
+    <!-- Body segment lines -->
+    <path d="M50 108 Q78 112 106 108" stroke="#D4401F" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M48 120 Q78 124 108 120" stroke="#D4401F" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M50 132 Q78 136 106 132" stroke="#D4401F" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+    <!-- Left arm -->
+    <path d="M48 105 Q30 85 22 70" stroke="url(#bodyGrad)" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <!-- Left claw (big pincer) -->
+    <ellipse cx="14" cy="52" rx="20" ry="28" fill="url(#clawGrad)" transform="rotate(-15, 14, 52)"/>
+    <!-- Left claw inner -->
+    <path d="M6 38 Q14 28 22 38" stroke="#FF8866" stroke-width="2" fill="none" opacity="0.6"/>
+    <!-- Left claw split -->
+    <path d="M8 30 Q14 22 20 30" stroke="#D4401F" stroke-width="2.5" fill="none"/>
+
+    <!-- Right arm -->
+    <path d="M108 105 Q126 85 134 70" stroke="url(#bodyGrad)" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <!-- Right claw (big pincer, raised higher) -->
+    <ellipse cx="142" cy="42" rx="22" ry="32" fill="url(#clawGrad)" transform="rotate(15, 142, 42)"/>
+    <!-- Right claw highlight -->
+    <path d="M134 28 Q142 16 150 28" stroke="#FF8866" stroke-width="2" fill="none" opacity="0.6"/>
+    <!-- Right claw split -->
+    <path d="M136 18 Q142 10 148 18" stroke="#D4401F" stroke-width="2.5" fill="none"/>
+
     <!-- Head -->
-    <circle cx="72" cy="65" r="28" fill="#E84A27"/>
-    <!-- Eyes (stalks) -->
-    <circle cx="55" cy="50" r="12" fill="#E84A27"/>
-    <circle cx="89" cy="50" r="12" fill="#E84A27"/>
-    <!-- Eye pupils -->
-    <circle cx="55" cy="48" r="4" fill="#13294B"/>
-    <circle cx="89" cy="48" r="4" fill="#13294B"/>
-    <!-- Pincers (left) -->
-    <path d="M10 30 C20 38 28 48 38 58" stroke="#E84A27" stroke-width="6" stroke-linecap="round" fill="none"/>
-    <path d="M5 20 C12 26 18 34 24 42" stroke="#E84A27" stroke-width="5" stroke-linecap="round" fill="none"/>
-    <!-- Pincers (right) -->
-    <path d="M134 30 C124 38 116 48 106 58" stroke="#E84A27" stroke-width="6" stroke-linecap="round" fill="none"/>
-    <path d="M139 20 C132 26 126 34 120 42" stroke="#E84A27" stroke-width="5" stroke-linecap="round" fill="none"/>
-    <!-- Legs (left) -->
-    <path d="M35 120 C22 128 12 138 8 148" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <path d="M32 132 C20 138 12 146 10 158" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <!-- Legs (right) -->
-    <path d="M109 120 C122 128 132 138 136 148" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <path d="M112 132 C124 138 132 146 134 158" stroke="#E84A27" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <!-- Mouth -->
-    <path d="M62 80 Q72 88 82 80" stroke="#13294B" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="78" cy="82" r="26" fill="url(#bodyGrad)"/>
+
+    <!-- Antennae -->
+    <path d="M65 62 Q58 38 50 22" stroke="#E84A27" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M91 62 Q98 38 106 22" stroke="#E84A27" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <!-- Antenna tips -->
+    <circle cx="49" cy="20" r="3" fill="#E84A27"/>
+    <circle cx="107" cy="20" r="3" fill="#E84A27"/>
+
+    <!-- Eyes -->
+    <ellipse cx="68" cy="76" rx="8" ry="9" fill="white"/>
+    <ellipse cx="88" cy="76" rx="8" ry="9" fill="white"/>
+    <!-- Pupils (looking slightly to the right, mischievous) -->
+    <circle cx="71" cy="77" r="4.5" fill="#13294B"/>
+    <circle cx="91" cy="77" r="4.5" fill="#13294B"/>
+    <!-- Eye shine -->
+    <circle cx="69" cy="74" r="1.8" fill="white"/>
+    <circle cx="89" cy="74" r="1.8" fill="white"/>
+
+    <!-- Eyebrows (mischievous angle) -->
+    <path d="M60 68 Q68 64 76 67" stroke="#B8351A" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M80 67 Q88 64 96 68" stroke="#B8351A" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Mouth (smirk) -->
+    <path d="M66 90 Q78 100 90 90" stroke="#B8351A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Smirk corner -->
+    <path d="M90 90 Q93 88 94 86" stroke="#B8351A" stroke-width="2" stroke-linecap="round" fill="none"/>
+
   </g>
 
-  <!-- Text: IlliniClaw -->
-  <text x="220" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="bold" fill="#FFFFFF" letter-spacing="2">
-    Illini<tspan fill="#E84A27">Claw</tspan>
-  </text>
+  <!-- === TEXT === -->
+
+  <!-- "Illini" in white -->
+  <text x="210" y="112" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="bold" fill="#FFFFFF" letter-spacing="2">Illini</text>
+
+  <!-- "CLAW" in Illini orange, chunky style -->
+  <text x="460" y="114" font-family="'Impact', 'Arial Black', sans-serif" font-size="74" font-weight="900" fill="#E84A27" letter-spacing="3">CLAW</text>
 
   <!-- Tagline -->
-  <text x="223" y="163" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#8899BB" letter-spacing="1">
+  <text x="213" y="152" font-family="'Helvetica Neue', Arial, sans-serif" font-size="17" fill="#8899BB" letter-spacing="0.8">
     WhatsApp AI Teaching Assistant Blueprint
   </text>
 
   <!-- Accent line -->
-  <rect x="222" y="178" width="120" height="3" rx="1.5" fill="#E84A27" opacity="0.8"/>
+  <rect x="212" y="164" width="100" height="2.5" rx="1.25" fill="#E84A27" opacity="0.7"/>
 
-  <!-- Powered by OpenClaw -->
-  <text x="223" y="205" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" fill="#556B8A" letter-spacing="0.5">
+  <!-- Powered by -->
+  <text x="213" y="185" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" fill="#556B8A" letter-spacing="0.5">
     Powered by OpenClaw
   </text>
+
 </svg>

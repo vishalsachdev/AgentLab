@@ -97,7 +97,7 @@ function addMobileNavigationStyles() {
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: #13294B;
                 flex-direction: column;
                 gap: 0;
                 padding: 1rem 0;
@@ -130,6 +130,10 @@ function addMobileNavigationStyles() {
                 transition: background-color 0.3s;
             }
             
+            .nav-links a {
+                color: white;
+            }
+
             .nav-links a:hover {
                 background-color: rgba(255, 255, 255, 0.1);
             }
@@ -218,7 +222,7 @@ function createBackToTopButton() {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background: #667eea;
+            background: #13294B;
             color: white;
             border: none;
             border-radius: 50%;
@@ -232,7 +236,7 @@ function createBackToTopButton() {
         }
         
         .back-to-top:hover {
-            background: #764ba2;
+            background: #ff6900;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }

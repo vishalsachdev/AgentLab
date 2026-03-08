@@ -10,7 +10,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">AgentLab</a>
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
             <ul class="nav-links">
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="team.html">Team</a></li>
@@ -22,10 +22,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>AgentLab: Multi-Agent AI for Education</h1>
+            <h1>Multi-Agent AI for Education</h1>
             <p>Student-led development at Gies College of Business exploring how intelligent agent teams can transform learning experiences</p>
             <div class="cta-buttons">
-                <a href="venturebot.html" class="btn btn-primary">Learn About VentureBots</a>
+                <a href="projects.html" class="btn btn-primary">Our Projects</a>
                 <a href="team.html" class="btn btn-secondary">Meet the Team</a>
             </div>
         </div>
@@ -37,17 +37,17 @@
             <h2>Why AgentLab?</h2>
             <div class="props-grid">
                 <div class="prop-card">
-                    <div class="prop-icon">🎓</div>
+                    <span class="prop-icon">&#127891;</span>
                     <h3>Student-Led Innovation</h3>
                     <p>Real students solving real educational challenges through hands-on development of AI systems</p>
                 </div>
                 <div class="prop-card">
-                    <div class="prop-icon">🤖</div>
+                    <span class="prop-icon">&#129302;</span>
                     <h3>Multi-Agent Focus</h3>
-                    <p>Specialized AI teams working together, not just single chatbots. Each agent has expertise in different domains</p>
+                    <p>Specialized AI teams working together, not just single chatbots. Each agent has domain expertise</p>
                 </div>
                 <div class="prop-card">
-                    <div class="prop-icon">📊</div>
+                    <span class="prop-icon">&#128202;</span>
                     <h3>Evidence-Based</h3>
                     <p>Grounded in educational theory and practical testing with measurable learning outcomes</p>
                 </div>
@@ -55,49 +55,134 @@
         </div>
     </section>
 
-    <!-- VentureBots Showcase -->
-    <section class="venturebot-showcase" id="venturebot-demo">
+    <!-- Projects Showcase -->
+    <section class="projects-showcase">
         <div class="container">
-            <div class="showcase-header">
-                <h2>VentureBots: From Idea 💡 to Pitch 🎤</h2>
-                <p class="showcase-tagline">Experience the complete startup journey in one session. Our AI coaching team guides you through every step.</p>
+            <div class="section-header">
+                <h2>Our Projects</h2>
+                <p>Building production AI systems that bridge research and real classroom use</p>
             </div>
 
-            <div class="journey-timeline">
-                <div class="journey-step">
-                    <div class="step-icon">💡</div>
-                    <div class="step-title">Problem Discovery</div>
-                    <div class="step-desc">Identify market gaps and frame problems</div>
+            <div class="project-cards">
+                <!-- VentureBots -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-card-icon orange">&#128161;</div>
+                        <div>
+                            <h3>VentureBots</h3>
+                            <span class="project-tag">Flagship</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <p>AI-powered entrepreneurship coaching that guides students from problem discovery to pitch-ready presentation using 5 specialized agents.</p>
+                    </div>
+                    <div class="project-card-stats">
+                        <span class="stat"><strong>5</strong> Agents</span>
+                        <span class="stat"><strong>25</strong> Students</span>
+                        <span class="stat"><strong>90%</strong> Satisfaction</span>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google ADK</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="venturebot.html" class="btn btn-sm-primary">Learn More</a>
+                        <a href="https://github.com/gies-ai-experiments/VentureBot" class="btn btn-sm-outline">GitHub</a>
+                    </div>
                 </div>
-                <div class="journey-arrow">→</div>
-                <div class="journey-step">
-                    <div class="step-icon">🧠</div>
-                    <div class="step-title">Idea Generation</div>
-                    <div class="step-desc">AI-guided brainstorming sessions</div>
+
+                <!-- PathShaper -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-card-icon teal">&#129517;</div>
+                        <div>
+                            <h3>PathShaper</h3>
+                            <span class="project-tag">Adaptive Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <p>Learning 3.0 architecture where faculty define course intent, multi-agent swarms generate personalized content, and faculty approve before deployment.</p>
+                    </div>
+                    <div class="project-card-stats">
+                        <span class="stat"><strong>186</strong> Concepts</span>
+                        <span class="stat"><strong>39</strong> Content Items</span>
+                        <span class="stat"><strong>8</strong> Weeks</span>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 15</span>
+                        <span class="tech-tag">React 19</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="pathshaper.html" class="btn btn-sm-primary">Learn More</a>
+                    </div>
                 </div>
-                <div class="journey-arrow">→</div>
-                <div class="journey-step">
-                    <div class="step-icon">📊</div>
-                    <div class="step-title">Market Validation</div>
-                    <div class="step-desc">TAM/SAM analysis and competitor analysis</div>
-                </div>
-                <div class="journey-arrow">→</div>
-                <div class="journey-step">
-                    <div class="step-icon">📋</div>
-                    <div class="step-title">Product Planning</div>
-                    <div class="step-desc">PRD creation and feature mapping</div>
-                </div>
-                <div class="journey-arrow">→</div>
-                <div class="journey-step">
-                    <div class="step-icon">🎤</div>
-                    <div class="step-title">Pitch Development</div>
-                    <div class="step-desc">90-second elevator pitch creation</div>
+
+                <!-- Canvas MCP -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-card-icon navy">&#128218;</div>
+                        <div>
+                            <h3>Canvas MCP</h3>
+                            <span class="project-tag">Infrastructure</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <p>MCP server providing 90+ tools and 8 agent skills for Canvas LMS. Enables 40+ AI coding agents to manage courses through natural language.</p>
+                    </div>
+                    <div class="project-card-stats">
+                        <span class="stat"><strong>90+</strong> Tools</span>
+                        <span class="stat"><strong>8</strong> Skills</span>
+                        <span class="stat"><strong>290+</strong> Tests</span>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastMCP</span>
+                        <span class="tech-tag">PyPI</span>
+                        <span class="tech-tag">Canvas API</span>
+                    </div>
+                    <div class="project-card-footer">
+                        <a href="canvas-mcp.html" class="btn btn-sm-primary">Learn More</a>
+                        <a href="https://github.com/vishalsachdev/canvas-mcp" class="btn btn-sm-outline">GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="venturebot.html" class="btn btn-primary">Learn More About VentureBots</a>
-                <a href="https://github.com/gies-ai-experiments/VentureBot" class="btn btn-secondary">View Source Code</a>
+            <!-- BADM 554 Bot - full width card below -->
+            <div class="project-card" style="margin-top: 1.5rem;">
+                <div class="project-card-header">
+                    <div class="project-card-icon orange">&#128172;</div>
+                    <div>
+                        <h3>BADM 554 Bot</h3>
+                        <span class="project-tag">Course Assistant</span>
+                    </div>
+                </div>
+                <div class="project-card-body">
+                    <p>AI-powered WhatsApp bot for professor-student communication. Students ask course questions via WhatsApp and get AI answers grounded in course materials. Professors manage broadcasts and drip campaigns via a web dashboard.</p>
+                </div>
+                <div class="project-card-stats">
+                    <span class="stat"><strong>36</strong> Students</span>
+                    <span class="stat"><strong>109</strong> Sessions</span>
+                    <span class="stat"><strong>97+</strong> Hours Engagement</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Claude AI</span>
+                    <span class="tech-tag">WhatsApp</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Canvas LMS</span>
+                </div>
+                <div class="project-card-footer">
+                    <a href="badm554-bot.html" class="btn btn-sm-primary">Learn More</a>
+                    <a href="https://github.com/vishalsachdev/illiniclaw" class="btn btn-sm-outline">Spec</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="projects.html" class="btn btn-outline">View All Projects</a>
             </div>
         </div>
     </section>
@@ -107,15 +192,15 @@
         <div class="container">
             <div class="news-header">
                 <h2>Latest from AgentLab</h2>
-                <a href="news.html" class="read-more">View All Updates →</a>
+                <a href="news.html" class="read-more">View All Updates &rarr;</a>
             </div>
             <div class="news-grid">
                 <article class="news-card">
                     <div class="news-content">
-                        <div class="news-meta">July 5, 2025 • Milestone</div>
+                        <div class="news-meta">July 5, 2025 &middot; Milestone</div>
                         <h3 class="news-title">VentureBots Summer Pilot Program Launches</h3>
                         <p class="news-excerpt">AgentLab launches VentureBots summer pilot with 25 students, providing AI-powered entrepreneurship coaching through the complete startup journey...</p>
-                        <a href="news-posts/2025-07-venturebot-launch.html" class="read-more">Read More →</a>
+                        <a href="news-posts/2025-07-venturebot-launch.html" class="read-more">Read More &rarr;</a>
                     </div>
                 </article>
             </div>
@@ -133,26 +218,24 @@
                     <a href="news.html">News</a>
                 </div>
                 <div class="footer-section">
-                    <h3>Featured Project</h3>
+                    <h3>Projects</h3>
                     <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="badm554-bot.html">BADM 554 Bot</a>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <a href="mailto:contact@agentlab.edu">Contact Us</a>
-                    <a href="https://github.com/gies-ai-experiments/VentureBot" target="_blank">GitHub</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-                <div class="footer-section">
-                    <h3>About</h3>
-                    <a href="#">About Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 AgentLab - Gies College of Business. All rights reserved.</p>
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
             </div>
         </div>
     </footer>
-    
+
     <script src="js/main.js"></script>
 </body>
 </html>

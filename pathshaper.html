@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathShaper - Adaptive Learning Architecture | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / PathShaper
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>PathShaper</h1>
+                    <p>The production pilot of Learning 3.0&mdash;an adaptive learning architecture where faculty define course intent and multi-agent swarms generate personalized content.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">186</span>
+                            <span class="stat-label">Concept Graph</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">39</span>
+                            <span class="stat-label">Content Items</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Week Curriculum</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://pathshaper-554.vercel.app" class="btn btn-primary">View Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Faculty as Shapers on the Path</h2>
+                <p class="section-subtitle">A two-phase model: instructors define intent, agents generate and personalize, faculty approve before deployment</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Define Course Intent via NLSpec</h3>
+                        <p>Faculty author Natural Language Specification files that describe learning outcomes, concept dependencies, and content structure. PathShaper's NLSpec viewer lets instructors see and edit their course blueprint.</p>
+                        <ul class="outputs-list">
+                            <li>9 Learning-Competency-Evidence outcomes (Bloom's framework)</li>
+                            <li>186-concept learning graph with DAG visualization</li>
+                            <li>8 taxonomy categories: FOUND, SQL, MODEL, PYTHON, ETL, NOSQL, CLOUD, GOVERN</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Multi-Agent Content Generation</h3>
+                        <p>Coordinated agent swarms generate personalized content across the curriculum. The generation dashboard tracks 39 content items: chapters, overviews, quizzes, studio guides, labs, rubrics, and discussions.</p>
+                        <div class="agent-info">
+                            <div class="agent-name">Agent Swarm Architecture</div>
+                            <p>TextbookGenerator, AdaptiveEngine, and DigitalTwin agents work in coordination with xAPI learning analytics and persistent memory</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Faculty Review &amp; Approval</h3>
+                        <p>Generated content goes through a faculty approval workflow before reaching students. The generation dashboard shows status across all content types with approve/reject/regenerate controls.</p>
+                        <ul class="outputs-list">
+                            <li>8 chapters with overviews</li>
+                            <li>6 quizzes with adaptive difficulty</li>
+                            <li>8 studio guides + 7 labs with rubrics</li>
+                            <li>3 progressive projects with AIAS levels</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Student Personalization</h3>
+                        <p>In the student phase, agents adapt content and pathways based on individual progress, prior knowledge, and learning pace. Students see personalized pathways through the concept graph.</p>
+                        <ul class="outputs-list">
+                            <li>Personalized learning pathways</li>
+                            <li>Progress tracking across concepts</li>
+                            <li>Adaptive content difficulty</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Architecture</h2>
+                <p class="section-subtitle">Built on modern web technologies with a focus on visualization and adaptive learning</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128736;</span>
+                    <h3>Frontend</h3>
+                    <ul class="tech-list">
+                        <li>Next.js 15 with App Router</li>
+                        <li>React 19 with TypeScript strict mode</li>
+                        <li>Tailwind CSS 4</li>
+                        <li>vis-network for DAG visualization</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#129302;</span>
+                    <h3>Agent System</h3>
+                    <ul class="tech-list">
+                        <li>Multi-agent swarm coordination</li>
+                        <li>TextbookGenerator agent</li>
+                        <li>AdaptiveEngine agent</li>
+                        <li>DigitalTwin agent</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128202;</span>
+                    <h3>Learning Science</h3>
+                    <ul class="tech-list">
+                        <li>xAPI learning analytics</li>
+                        <li>Bloom's taxonomy alignment</li>
+                        <li>AIAS (AI Assessment Integration Scale)</li>
+                        <li>Concept dependency graphs</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#9729;&#65039;</span>
+                    <h3>Deployment</h3>
+                    <ul class="tech-list">
+                        <li>Vercel auto-deploy from GitHub</li>
+                        <li>Textbook on GitHub Pages</li>
+                        <li>Supabase (Phase 3)</li>
+                        <li>API routes for approval workflow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Status -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Pilot: BADM 554</h2>
+                <p class="section-subtitle">Enterprise database course at Gies College of Business</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Course Structure</h3>
+                    <p>8-week curriculum spanning foundations, SQL, data modeling, Python integration, ETL pipelines, NoSQL, cloud databases, and data governance. 169 core concepts + 17 studio concepts.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Content Pipeline</h3>
+                    <p>39 content items tracked in the generation dashboard across 7 content types. Faculty can review, approve, or request regeneration for each item before student deployment.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Progressive Projects</h3>
+                    <p>3 milestone projects with increasing AI Assessment Integration Scale (AIAS) levels, designed to gradually build student competency from guided to independent work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="badm554-bot.html">BADM 554 Bot</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

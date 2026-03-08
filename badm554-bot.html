@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BADM 554 Bot - AI WhatsApp Course Assistant | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / BADM 554 Bot
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>BADM 554 Bot</h1>
+                    <p>AI-powered WhatsApp assistant that brings course knowledge to students where they already communicate&mdash;on their phones.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">36</span>
+                            <span class="stat-label">Students Enrolled</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">109</span>
+                            <span class="stat-label">Sessions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">97+</span>
+                            <span class="stat-label">Hours Engagement</span>
+                        </div>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/vishalsachdev/illiniclaw" class="btn btn-primary">View Spec (IlliniClaw)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p class="section-subtitle">Two sides of the same system: students ask, professors broadcast</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Student Q&amp;A via WhatsApp</h3>
+                        <p>Students join their course on WhatsApp and ask questions anytime. Claude AI answers using RAG over course materials&mdash;lecture notes, assignments, textbooks&mdash;with conversation context maintained across 2-hour sessions.</p>
+                        <ul class="outputs-list">
+                            <li>Instant answers grounded in course materials</li>
+                            <li>Context-aware conversations with session memory</li>
+                            <li>Canvas LMS integration for real-time course data</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Professor Dashboard</h3>
+                        <p>A web dashboard lets professors manage their courses, send broadcasts, and create drip campaigns. JWT authentication ensures only authorized faculty can access course controls.</p>
+                        <ul class="outputs-list">
+                            <li>Course management and student enrollment</li>
+                            <li>Broadcast messaging to all enrolled students</li>
+                            <li>30 AI calls/hour rate limiting per professor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Drip Campaigns</h3>
+                        <p>Professors schedule multi-message drip campaigns to deliver content over time&mdash;test review materials, weekly study guides, or concept reinforcement. Three major campaigns deployed to date.</p>
+                        <ul class="outputs-list">
+                            <li>Test 1 review: 12 scheduled messages</li>
+                            <li>Week 7 content: 6 messages</li>
+                            <li>Week 8 content: 10 messages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Architecture</h2>
+                <p class="section-subtitle">Production system running on VPS with enterprise-grade security</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128295;</span>
+                    <h3>Backend</h3>
+                    <ul class="tech-list">
+                        <li>Node.js 20+ with ES Modules</li>
+                        <li>Express web framework</li>
+                        <li>PostgreSQL database</li>
+                        <li>PM2 process management</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#129302;</span>
+                    <h3>AI System</h3>
+                    <ul class="tech-list">
+                        <li>Claude AI for student Q&amp;A (via clawdbot)</li>
+                        <li>GPT-4o for professor agent</li>
+                        <li>RAG over course materials</li>
+                        <li>2-hour conversation session windows</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128241;</span>
+                    <h3>WhatsApp</h3>
+                    <ul class="tech-list">
+                        <li>clawdbot CLI gateway</li>
+                        <li>Canvas LMS integration</li>
+                        <li>Drip campaign scheduler</li>
+                        <li>Broadcast messaging</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128274;</span>
+                    <h3>Security</h3>
+                    <ul class="tech-list">
+                        <li>JWT authentication (7-day expiry)</li>
+                        <li>bcrypt password hashing (12 rounds)</li>
+                        <li>Tailscale VPN for dashboard access</li>
+                        <li>Rate limiting (30 AI calls/hour)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="badm554-bot.html">BADM 554 Bot</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

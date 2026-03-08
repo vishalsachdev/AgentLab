@@ -32,6 +32,9 @@ Navy (`--navy: #13294B`) + orange (`--orange: #ff6900`). Hero sections use navy 
 
 ## Session Log
 
+### 2026-03-08
+- Completed: Added Cloudflare Web Analytics beacon to all 12 HTML pages. Updated IlliniClaw logo to new lobster mascot from /code/illiniclaw. Reframed BADM 554 as ongoing experiment (present-tense language across illiniclaw.html, projects.html, index.html). Created project CLAUDE.md with deploy command and site structure.
+- Next: None pending.
+
 ### 2026-03-07
 - Completed: Full site overhaul — added PathShaper, Canvas MCP, IlliniClaw pages. Redesigned UI. Restructured team page with semester timeline. Added 4 news items. Renamed BADM 554 Bot → IlliniClaw. Migrated to Cloudflare Pages.
-- Next: Add Cloudflare Web Analytics beacon to all pages.

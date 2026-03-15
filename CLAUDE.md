@@ -17,8 +17,8 @@ Cloudflare Pages via wrangler (not GitHub Pages — Actions is disabled on this 
 ## Structure
 
 - `index.html` — Homepage with project showcase and latest news
-- `projects.html` — All 4 projects with stats and tech tags
-- `venturebot.html`, `pathshaper.html`, `canvas-mcp.html`, `illiniclaw.html` — Project detail pages
+- `projects.html` — All 6 projects with stats and tech tags
+- `venturebot.html`, `pathshaper.html`, `canvas-mcp.html`, `illiniclaw.html`, `inquiring-agents.html`, `cognitive-swarm.html` — Project detail pages
 - `team.html` — Current team (Spring 2026) + semester timeline
 - `news.html` — News grid with filter buttons
 - `news-posts/` — Individual news article pages

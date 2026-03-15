@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PathShaper Launches for BADM 554 - AgentLab</title>
+    <title>Inquiring Agents Brings AI Ethics Debates to the Classroom - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
         .article-header { text-align: center; margin-bottom: 3rem; }
         .article-meta { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
-        .article-category { background: #2563eb; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
+        .article-category { background: var(--navy); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
         .article-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.2; font-weight: 800; }
         .article-excerpt { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
         .article-content { line-height: 1.8; font-size: 1rem; }
@@ -44,7 +44,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / PathShaper Launches for BADM 554
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / Inquiring Agents Launch
         </div>
     </div>
 
@@ -52,40 +52,46 @@
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on February 20, 2026</div>
-                <span class="article-category">Announcement</span>
-                <h1 class="article-title">PathShaper Launches for BADM 554</h1>
-                <p class="article-excerpt">AgentLab deploys PathShaper, an adaptive learning platform powered by multi-agent content generation, for BADM 554 at Gies College of Business.</p>
+                <div class="article-meta">Published on March 10, 2026</div>
+                <span class="article-category">Release</span>
+                <h1 class="article-title">Inquiring Agents Brings AI Ethics Debates to the Classroom</h1>
+                <p class="article-excerpt">Five philosopher-agents debate AI ethics dilemmas in real time using Churchman&rsquo;s Inquiring Systems framework, with students injecting their own perspectives between rounds.</p>
             </header>
 
             <div class="article-content">
-                <p>PathShaper, the production pilot of our Learning 3.0 architecture, is now live for BADM 554 (Enterprise Database Management) at Gies College of Business. The platform introduces a new model for course content creation where faculty define intent and AI agent swarms generate personalized learning materials.</p>
+                <p>AgentLab releases Inquiring Agents, an interactive teaching tool that stages multi-agent Delphi debates on AI ethics. Built as a single Cloudflare Worker file with zero dependencies, it deploys in seconds and streams philosopher responses in real time.</p>
 
-                <h2>How PathShaper Works</h2>
-                <p>PathShaper follows a four-step workflow that keeps faculty in control while leveraging AI for content generation at scale:</p>
+                <h2>Five Philosophical Traditions</h2>
+                <p>Each agent embodies a distinct epistemological tradition from Churchman&rsquo;s 1971 <em>Design of Inquiring Systems</em>:</p>
                 <ul>
-                    <li><strong>NLSpec Definition</strong> &mdash; Faculty write natural language specifications describing learning outcomes, concepts, and pedagogical intent</li>
-                    <li><strong>Agent Generation</strong> &mdash; Coordinated multi-agent swarms generate textbooks, quizzes, labs, and studio guides from the specs</li>
-                    <li><strong>Faculty Review</strong> &mdash; All generated content goes through faculty approval before students see it</li>
-                    <li><strong>Student Personalization</strong> &mdash; Students navigate a 186-concept learning graph with adaptive content tailored to their pace</li>
+                    <li><strong>Leibnitz (Rationalist)</strong> &mdash; argues from first principles and logical axioms</li>
+                    <li><strong>Locke (Empiricist)</strong> &mdash; grounds analysis in observable evidence and data</li>
+                    <li><strong>Kant (Duty)</strong> &mdash; applies the categorical imperative and deontological ethics</li>
+                    <li><strong>Hegel (Dialectical)</strong> &mdash; seeks synthesis through thesis-antithesis resolution</li>
+                    <li><strong>Singer (Pragmatist)</strong> &mdash; evaluates consequences and real-world outcomes</li>
                 </ul>
 
+                <h2>How the Debate Works</h2>
+                <p>The system follows a three-round Delphi method. In Round 0, all five philosophers respond in parallel to an AI ethics dilemma&mdash;topics like autonomous hiring, deepfake regulation, or algorithmic sentencing. In subsequent rounds, philosophers respond sequentially, referencing prior positions and sharpening their arguments.</p>
+
+                <p>Between rounds, students can inject their own perspectives, challenging philosopher assumptions or raising new dimensions. A coordinator agent then synthesizes all positions into a final policy recommendation, mapping areas of convergence and persistent disagreement.</p>
+
                 <div class="highlight-box">
-                    <p><strong>Faculty as Shapers:</strong> PathShaper redefines the faculty role from content creator to "shaper on the path" &mdash; defining the learning journey while AI handles the heavy lifting of content production.</p>
+                    <p><strong>8 built-in dilemmas</strong> covering autonomous weapons, surveillance, algorithmic bias, and more. Students can also submit custom topics for debate. <a href="https://github.com/vishalsachdev/inquiring-agents" target="_blank">View on GitHub &rarr;</a></p>
                 </div>
 
-                <h2>BADM 554 Pilot</h2>
-                <p>The initial deployment covers 8 weeks of enterprise database curriculum with 186 concepts, 39 content items, and 9 learning outcomes. Students interact with an interactive knowledge graph that visualizes their learning progress and adapts to their individual needs.</p>
+                <h2>Zero-Dependency Deployment</h2>
+                <p>The entire application&mdash;HTML, CSS, JavaScript, and API proxy&mdash;is a single Cloudflare Worker file. There&rsquo;s no build step, no package installation, and no infrastructure to manage. It deploys in seconds and runs at the edge globally.</p>
 
-                <h2>Technology Stack</h2>
-                <p>PathShaper is built with Next.js 15, React 19, and TypeScript, with vis-network powering the interactive learning graph visualization. The platform is deployed on Vercel for fast, reliable access.</p>
+                <h2>Research Foundation</h2>
+                <p>Inquiring Agents is adapted from <a href="https://github.com/snerur/Inquiring-Agents" style="color: var(--orange);">Sridhar Nerur&rsquo;s original CrewAI notebook</a>, reimagined as a real-time web application with streaming responses and student participation.</p>
 
-                <p>Visit the <a href="../pathshaper.html">PathShaper project page</a> to learn more about the architecture and roadmap.</p>
+                <p>Visit the <a href="../inquiring-agents.html">Inquiring Agents project page</a> for the full architecture breakdown.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../pathshaper.html" class="back-link">Learn More About PathShaper &rarr;</a>
+                <a href="../inquiring-agents.html" class="back-link">Learn More About Inquiring Agents &rarr;</a>
             </nav>
         </article>
     </main>

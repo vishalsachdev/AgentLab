@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cognitive Swarm Joins AgentLab - AgentLab</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
+        .article-category { background: var(--navy); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
+        .article-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.2; font-weight: 800; }
+        .article-excerpt { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
+        .article-content { line-height: 1.8; font-size: 1rem; }
+        .article-content h2 { color: var(--navy); margin: 2rem 0 1rem 0; font-size: 1.5rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0; padding-left: 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-alt); padding: 1.5rem; border-left: 4px solid var(--orange); margin: 2rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .navigation-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .back-link:hover { color: var(--orange-dark); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .article-container { padding: 1rem; }
+            .navigation-links { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../team.html">Team</a></li>
+                <li><a href="../news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / The Cognitive Swarm Joins AgentLab
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <main class="container">
+        <article class="article-container">
+            <header class="article-header">
+                <div class="article-meta">Published on March 15, 2026</div>
+                <span class="article-category">Release</span>
+                <h1 class="article-title">The Cognitive Swarm Joins AgentLab</h1>
+                <p class="article-excerpt">A real-time, multimodal brainstorming application that enables groups to generate, cluster, and converge on ideas through voice, 3D visualization, and quadratic voting.</p>
+            </header>
+
+            <div class="article-content">
+                <p>AgentLab welcomes The Cognitive Swarm to its project portfolio. Built by Keshav Dalmia, the application brings real-time collaborative brainstorming to large groups&mdash;combining voice input, AI-powered idea extraction, and a 3D swarm visualization into one seamless experience.</p>
+
+                <h2>Brainstorming, Reimagined</h2>
+                <p>Traditional brainstorming tools struggle with scale. Post-it notes don&rsquo;t work for 50 people, and text-based tools lose the energy of live conversation. The Cognitive Swarm solves both problems: participants contribute ideas through voice while AI extracts and clusters them in real time.</p>
+
+                <ul>
+                    <li><strong>Live voice anchor</strong> &mdash; an AI facilitator powered by Google Gemini Live that keeps sessions focused and energized</li>
+                    <li><strong>3D swarm visualization</strong> &mdash; ideas rendered as particles that form visible constellations as clusters emerge</li>
+                    <li><strong>Automatic clustering</strong> &mdash; Gemini-powered semantic analysis groups related ideas without manual sorting</li>
+                    <li><strong>Quadratic voting</strong> &mdash; fair, credit-based prioritization that prevents any single voice from dominating</li>
+                </ul>
+
+                <h2>Built for Real-Time Collaboration</h2>
+                <p>The application uses Socket.IO for WebSocket connections, keeping brainstorm state synchronized across all participants with sub-second latency. Whether it&rsquo;s a classroom of 30 or a workshop of 100, everyone sees ideas appear, cluster, and evolve in real time.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Modern stack:</strong> React + Vite frontend, Express.js + Socket.IO backend, 88% TypeScript, with Docker support for easy deployment. <a href="https://github.com/keshavdalmia10/the_cognitive_swarm" target="_blank">View on GitHub &rarr;</a></p>
+                </div>
+
+                <h2>From Divergence to Convergence</h2>
+                <p>The session flow mirrors the best practices of design thinking. It starts with open-ended ideation where anything goes, moves through AI-powered clustering that surfaces themes, and ends with quadratic voting that democratically identifies the strongest ideas. The system then generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes.</p>
+
+                <h2>Use Cases in Education</h2>
+                <p>The Cognitive Swarm is designed for any scenario where groups need to think together: classroom brainstorms, design sprints, strategic planning sessions, and research workshops. By combining voice, visualization, and voting, it gives every participant a voice&mdash;not just the loudest ones in the room.</p>
+
+                <p>Visit the <a href="../cognitive-swarm.html">Cognitive Swarm project page</a> for the full technical architecture and use cases.</p>
+            </div>
+
+            <nav class="navigation-links">
+                <a href="../news.html" class="back-link">&larr; Back to News</a>
+                <a href="../cognitive-swarm.html" class="back-link">Learn More About The Cognitive Swarm &rarr;</a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../team.html">Team</a>
+                    <a href="../news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="../venturebot.html">VentureBots</a>
+                    <a href="../pathshaper.html">PathShaper</a>
+                    <a href="../canvas-mcp.html">Canvas MCP</a>
+                    <a href="../illiniclaw.html">IlliniClaw</a>
+                    <a href="../inquiring-agents.html">Inquiring Agents</a>
+                    <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

@@ -32,13 +32,8 @@ Navy (`--navy: #13294B`) + orange (`--orange: #ff6900`). Hero sections use navy 
 
 ## Session Log
 
-### 2026-03-15
-- Completed: Housekeeping — pulled 3 commits (Cognitive Swarm project page, Inquiring Agents + Cognitive Swarm news posts). Deleted stale `cloudflare/workers-autoconfig` remote branch.
+### 2026-04-21
+- Completed: Added 3 new projects (MindForum, HackClaw, Text-2-SQL Agent) with full detail pages, cards on index.html + projects.html, individual launch news posts, and top-of-grid cards in news.html. Swapped homepage "Latest from AgentLab" to feature the new releases. Surfaced project leads in hero sections: Ash Castelino on HackClaw + Text-2-SQL, Keshav Dalmia on Cognitive Swarm, Vishal Sachdev on Inquiring Agents. Synced footer project lists across all 14 pages. Deployed to Cloudflare Pages twice; committed + pushed to GitHub (commit 4a517d8, +1538 lines across 23 files).
 - Next: None pending.
 
-### 2026-03-08
-- Completed: Added Cloudflare Web Analytics beacon to all 12 HTML pages. Updated IlliniClaw logo to new lobster mascot from /code/illiniclaw. Reframed BADM 554 as ongoing experiment (present-tense language across illiniclaw.html, projects.html, index.html). Created project CLAUDE.md with deploy command and site structure.
-- Next: None pending.
-
-### 2026-03-07
-- Completed: Full site overhaul — added PathShaper, Canvas MCP, IlliniClaw pages. Redesigned UI. Restructured team page with semester timeline. Added 4 news items. Renamed BADM 554 Bot → IlliniClaw. Migrated to Cloudflare Pages.
+*Older entries archived to `docs/session-archive.md`.*

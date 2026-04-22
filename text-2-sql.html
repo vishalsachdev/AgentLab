@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-2-SQL Agent - Natural Language to SQL with LangGraph | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / Text-2-SQL Agent
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Text-2-SQL Agent</h1>
+                    <p>A production-grade natural-language-to-SQL agent built with <strong>LangGraph</strong>, competing on the <a href="https://agentbeats.dev" style="color: var(--orange);">AgentBeats</a> platform. Ask a question in plain English&mdash;the agent decomposes it, writes SQL, executes it, scores itself on 7 dimensions, and retries with targeted feedback if quality is low.</p>
+                    <p style="opacity: 0.85; margin-top: -0.5rem;"><strong>Project Lead:</strong> <a href="https://github.com/ashcastelinocs124" style="color: var(--orange);" target="_blank">Ash Castelino</a></p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Scoring Dimensions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">A2A</span>
+                            <span class="stat-label">AgentBeats Compatible</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">SSE</span>
+                            <span class="stat-label">Streaming API</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/gies-ai-experiments/text-2-sql-agent" class="btn btn-primary">View on GitHub</a>
+                        <a href="https://agentbeats.dev" class="btn btn-secondary">AgentBeats Platform</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Query Pipeline</h2>
+                <p class="section-subtitle">Each node does one job and hands state to the next&mdash;a LangGraph workflow with a quality-gated retry loop</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Schema Analyzer</h3>
+                        <p>Introspects the database via <code>PRAGMA</code>&mdash;no LLM call. Hashes the schema (SHA-256) and caches with TTL, so repeat questions against the same DB skip the roundtrip entirely.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Planner</h3>
+                        <p>GPT-5 produces a structured <code>QueryPlan</code> using JSON Schema mode&mdash;guaranteed parseable. Decides whether one query or a multi-step chain is needed; predecessor results are injected into later steps.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Query Generator</h3>
+                        <p>Writes SQL for each sub-task. On retry, the previous attempt&rsquo;s targeted feedback (what was wrong, which dimension failed) is injected so the model can correct specifically rather than guess.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Executor &amp; Evaluator</h3>
+                        <p>Runs the SQL, scores it across 7 dimensions, then runs an independent LLM relevance check. Blends the scores (85% eval + 15% relevance) into a final quality number.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Quality Gate &amp; Retry</h3>
+                        <p>If the score falls below threshold, the pipeline loops back to the generator with category-specific feedback. If it passes, the task completes and the next sub-task begins. Final results are synthesized into a human-readable answer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why This Architecture</h2>
+                <p class="section-subtitle">Text-to-SQL is easy to prototype and hard to productionize</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Self-Evaluating</h3>
+                    <p>A single LLM call that writes SQL is fragile&mdash;bad joins, wrong aggregations, missing filters. Scoring each result across 7 dimensions gives the agent a clear signal about whether its own output is trustworthy.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Targeted Retries</h3>
+                    <p>Generic &ldquo;try again&rdquo; loops waste tokens. This agent tells the model <em>which</em> dimension failed and <em>why</em>, so the retry is corrective&mdash;not a random re-roll.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Multi-Step by Default</h3>
+                    <p>Real analytical questions rarely map to one SQL statement. The planner decomposes them, runs queries in sequence, and feeds predecessor results into later steps&mdash;just like a human analyst would.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech -->
+    <section class="tech-section" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Stack</h2>
+            </div>
+            <div class="tech-tags" style="justify-content: center;">
+                <span class="tech-tag">Python 3.10+</span>
+                <span class="tech-tag">LangGraph</span>
+                <span class="tech-tag">GPT-5</span>
+                <span class="tech-tag">JSON Schema Mode</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">Server-Sent Events</span>
+                <span class="tech-tag">A2A Protocol</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
+                    <a href="giesclaw.html">GiesClaw</a>
+                    <a href="inquiring-agents.html">Inquiring Agents</a>
+                    <a href="cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="mindforum.html">MindForum</a>
+                    <a href="hackclaw.html">HackClaw</a>
+                    <a href="text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

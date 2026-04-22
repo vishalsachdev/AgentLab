@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cognitive Swarm Joins AgentLab - AgentLab</title>
+    <title>MindForum Launches a Shared AI Workspace for Groups - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="../index.html" class="logo">Agent<span>Lab</span></a>
@@ -41,60 +40,53 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / The Cognitive Swarm Joins AgentLab
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / MindForum Launches
         </div>
     </div>
 
-    <!-- Article Content -->
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on March 15, 2026</div>
+                <div class="article-meta">Published on April 21, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">The Cognitive Swarm Joins AgentLab</h1>
-                <p class="article-excerpt">A real-time, multimodal brainstorming application that enables groups to generate, cluster, and converge on ideas through voice, 3D visualization, and quadratic voting.</p>
+                <h1 class="article-title">MindForum Launches a Shared AI Workspace for Small-Group Brainstorming</h1>
+                <p class="article-excerpt">A link-gated room where 2&ndash;6 people can chat together with an AI collaborator that stays silent until mentioned with <code>@ai</code>&mdash;keeping humans at the center of the conversation.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab welcomes The Cognitive Swarm to its project portfolio. Built by Keshav Dalmia, the application brings real-time collaborative brainstorming to large groups&mdash;combining voice input, AI-powered idea extraction, and a 3D swarm visualization into one seamless experience.</p>
+                <p>AgentLab is releasing <a href="../mindforum.html">MindForum</a>, a new shared AI workspace for small-group brainstorming. It answers a question that most AI chat tools get wrong: how do you bring an AI teammate into a group conversation without letting it dominate?</p>
 
-                <h2>Brainstorming, Reimagined</h2>
-                <p>Traditional brainstorming tools struggle with scale. Post-it notes don&rsquo;t work for 50 people, and text-based tools lose the energy of live conversation. The Cognitive Swarm solves both problems: participants contribute ideas through voice while AI extracts and clusters them in real time.</p>
+                <h2>Silent by Default</h2>
+                <p>In typical AI chat, every human message gets an AI response. That works for one person&mdash;but for a group, it kills conversation. People stop talking to each other because the AI is always talking first.</p>
+                <p>MindForum flips the pattern. The AI is a participant in the room, but it&rsquo;s silent by default. It only responds when someone mentions it with <code>@ai</code>. The rest of the time, the humans talk to each other&mdash;the way a brainstorm is supposed to work.</p>
 
+                <h2>What&rsquo;s in a Room</h2>
                 <ul>
-                    <li><strong>Live voice anchor</strong> &mdash; an AI facilitator powered by Google Gemini Live that keeps sessions focused and energized</li>
-                    <li><strong>3D swarm visualization</strong> &mdash; ideas rendered as particles that form visible constellations as clusters emerge</li>
-                    <li><strong>Automatic clustering</strong> &mdash; Gemini-powered semantic analysis groups related ideas without manual sorting</li>
-                    <li><strong>Quadratic voting</strong> &mdash; fair, credit-based prioritization that prevents any single voice from dominating</li>
+                    <li><strong>Link-gated access</strong> &mdash; create a room, share the link, and anyone with it can join with a name and email. The link is the access control; 2&ndash;6 participants is the comfortable range.</li>
+                    <li><strong>Live group chat</strong> &mdash; messages stream over Server-Sent Events, so everyone sees new contributions as they happen.</li>
+                    <li><strong>Document context</strong> &mdash; upload PDF, DOCX, TXT, or MD. The server parses and caches the text; check a file to feed it to the AI as context when you invoke it.</li>
+                    <li><strong>One-click project brief</strong> &mdash; turn the conversation into a structured brief with themes, outline, risks, next steps, and collaborator list. Posted back to the thread for everyone to see.</li>
                 </ul>
 
-                <h2>Built for Real-Time Collaboration</h2>
-                <p>The application uses Socket.IO for WebSocket connections, keeping brainstorm state synchronized across all participants with sub-second latency. Whether it&rsquo;s a classroom of 30 or a workshop of 100, everyone sees ideas appear, cluster, and evolve in real time.</p>
-
                 <div class="highlight-box">
-                    <p><strong>Modern stack:</strong> React + Vite frontend, Express.js + Socket.IO backend, 88% TypeScript, with Docker support for easy deployment. <a href="https://github.com/keshavdalmia10/the_cognitive_swarm" target="_blank">View on GitHub &rarr;</a></p>
+                    <p><strong>Stack:</strong> Next.js 15, React 19, TypeScript, OpenAI API, in-memory store. Deploys to a single VPS as a single long-lived Node process. <a href="https://github.com/gies-ai-experiments/MindForum" target="_blank">View on GitHub &rarr;</a></p>
                 </div>
 
-                <h2>From Divergence to Convergence</h2>
-                <p>The session flow mirrors the best practices of design thinking. It starts with open-ended ideation where anything goes, moves through AI-powered clustering that surfaces themes, and ends with quadratic voting that democratically identifies the strongest ideas. The system then generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes.</p>
+                <h2>Where It Fits</h2>
+                <p>MindForum is designed for short, focused brainstorms&mdash;the kind that happen before a project kicks off or when a small team needs to think through a problem together. The silent-by-default AI is a research collaborator, not a chat partner: it brings documents into the conversation, summarizes when asked, and turns the messy discussion into an artifact the group can take forward.</p>
 
-                <h2>Use Cases in Education</h2>
-                <p>The Cognitive Swarm is designed for any scenario where groups need to think together: classroom brainstorms, design sprints, strategic planning sessions, and research workshops. By combining voice, visualization, and voting, it gives every participant a voice&mdash;not just the loudest ones in the room.</p>
-
-                <p>Visit the <a href="../cognitive-swarm.html">Cognitive Swarm project page</a> for the full technical architecture and use cases.</p>
+                <p>Visit the <a href="../mindforum.html">MindForum project page</a> for more on the architecture and deployment.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../cognitive-swarm.html" class="back-link">Learn More About The Cognitive Swarm &rarr;</a>
+                <a href="../mindforum.html" class="back-link">Learn More About MindForum &rarr;</a>
             </nav>
         </article>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -113,6 +105,9 @@
                     <a href="../giesclaw.html">GiesClaw</a>
                     <a href="../inquiring-agents.html">Inquiring Agents</a>
                     <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="../mindforum.html">MindForum</a>
+                    <a href="../hackclaw.html">HackClaw</a>
+                    <a href="../text-2-sql.html">Text-2-SQL Agent</a>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindForum - Shared AI Workspace for Group Brainstorming | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / MindForum
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>MindForum</h1>
+                    <p>A shared AI workspace for small-group brainstorming. Create a room, share the link, upload documents, and chat together with an AI collaborator that only speaks when mentioned with <code>@ai</code>.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2&ndash;6</span>
+                            <span class="stat-label">Participants per Room</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">@ai</span>
+                            <span class="stat-label">Mention to Invoke</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">SSE</span>
+                            <span class="stat-label">Live Streaming</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/gies-ai-experiments/MindForum" class="btn btn-primary">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p class="section-subtitle">Built around a simple idea: the AI is a teammate, not a moderator</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128279;</span>
+                    <h3>Link-Gated Rooms</h3>
+                    <ul class="tech-list">
+                        <li>Create a room in one click</li>
+                        <li>Share the link with collaborators</li>
+                        <li>Join with name + email&mdash;no verification</li>
+                        <li>The link itself is the access control</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128172;</span>
+                    <h3>Silent-by-Default AI</h3>
+                    <ul class="tech-list">
+                        <li>Humans talk to each other first</li>
+                        <li>AI only responds when mentioned with <code>@ai</code></li>
+                        <li>Has access to recent chat history</li>
+                        <li>Pulls in any selected document context</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128196;</span>
+                    <h3>Document Context</h3>
+                    <ul class="tech-list">
+                        <li>Upload PDF, DOCX, TXT, or MD</li>
+                        <li>Parsed server-side on upload</li>
+                        <li>Extracted text cached in memory</li>
+                        <li>Check a file to feed it to the AI</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128221;</span>
+                    <h3>One-Click Brief</h3>
+                    <ul class="tech-list">
+                        <li>Turn a conversation into a structured brief</li>
+                        <li>Themes, outline, risks, next steps</li>
+                        <li>Collaborator list auto-generated</li>
+                        <li>Posted back to the thread for everyone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why It Works -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Group AI Brainstorming Is Hard</h2>
+                <p class="section-subtitle">Most AI chat is one-on-one. MindForum rethinks the pattern for teams.</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Human First, AI Second</h3>
+                    <p>When the AI speaks on every message, it dominates the conversation and people stop talking to each other. The <code>@ai</code> mention pattern puts humans back at the center&mdash;the AI only joins when it&rsquo;s actually wanted.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Shared Context</h3>
+                    <p>Everyone in the room sees the same AI responses and the same uploaded documents. No one has to copy-paste or re-summarize for teammates&mdash;the conversation and its context are collective.</p>
+                </div>
+                <div class="content-card">
+                    <h3>From Chat to Artifact</h3>
+                    <p>Good brainstorms produce something. MindForum&rsquo;s project brief turns a messy conversation into a structured document that the group can take forward, without anyone having to be the scribe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech -->
+    <section class="tech-section" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Stack</h2>
+                <p class="section-subtitle">Small, fast, and deployable to a single VPS</p>
+            </div>
+            <div class="tech-tags" style="justify-content: center;">
+                <span class="tech-tag">Next.js 15</span>
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Server-Sent Events</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">In-Memory Store</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
+                    <a href="giesclaw.html">GiesClaw</a>
+                    <a href="inquiring-agents.html">Inquiring Agents</a>
+                    <a href="cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="mindforum.html">MindForum</a>
+                    <a href="hackclaw.html">HackClaw</a>
+                    <a href="text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

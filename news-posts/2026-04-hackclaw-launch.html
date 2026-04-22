@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cognitive Swarm Joins AgentLab - AgentLab</title>
+    <title>HackClaw Powers the Gies AI for Impact Challenge - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="../index.html" class="logo">Agent<span>Lab</span></a>
@@ -41,60 +40,53 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / The Cognitive Swarm Joins AgentLab
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / HackClaw Launches
         </div>
     </div>
 
-    <!-- Article Content -->
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on March 15, 2026</div>
+                <div class="article-meta">Published on April 18, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">The Cognitive Swarm Joins AgentLab</h1>
-                <p class="article-excerpt">A real-time, multimodal brainstorming application that enables groups to generate, cluster, and converge on ideas through voice, 3D visualization, and quadratic voting.</p>
+                <h1 class="article-title">HackClaw Powers the Gies AI for Impact Challenge</h1>
+                <p class="article-excerpt">A Discord + Email AI assistant built to support a 24-hour hackathon&mdash;routing questions through topic-specific brain files, managing help tickets, and growing its knowledge base with every resolution.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab welcomes The Cognitive Swarm to its project portfolio. Built by Keshav Dalmia, the application brings real-time collaborative brainstorming to large groups&mdash;combining voice input, AI-powered idea extraction, and a 3D swarm visualization into one seamless experience.</p>
+                <p>AgentLab is launching <a href="../hackclaw.html">HackClaw</a>, an AI-powered hackathon assistant built for the Gies <em>AI for Impact Challenge</em>&mdash;a 24-hour event where students build AI agents with no-code and low-code tools. Hackathons are one of the hardest environments to mentor: the same questions repeat all night, mentors burn out, and good solutions get lost in channel noise. HackClaw addresses all three.</p>
 
-                <h2>Brainstorming, Reimagined</h2>
-                <p>Traditional brainstorming tools struggle with scale. Post-it notes don&rsquo;t work for 50 people, and text-based tools lose the energy of live conversation. The Cognitive Swarm solves both problems: participants contribute ideas through voice while AI extracts and clusters them in real time.</p>
+                <h2>Brain-Routed Knowledge</h2>
+                <p>Instead of cramming the full hackathon rulebook into one giant prompt, HackClaw&rsquo;s knowledge is split into topic-specific brain files&mdash;schedule, rules, tracks, judging, Copilot Studio. When a question arrives, a router reads the index, picks the relevant section, and loads only that targeted content. The result is faster, more accurate answers and no context bloat.</p>
+
+                <h2>Help Ticket Queue</h2>
+                <p>Participants ask for help with <code>/helpme</code>. HackClaw posts the request to a dedicated <code>#help-queue</code> channel with Claim, Unclaim, and Resolve buttons for mentors. When a mentor claims a ticket, they&rsquo;re auto-added to the team&rsquo;s private channel; when they resolve it, they&rsquo;re removed. Unclaimed tickets re-ping after ten minutes so nothing falls through.</p>
 
                 <ul>
-                    <li><strong>Live voice anchor</strong> &mdash; an AI facilitator powered by Google Gemini Live that keeps sessions focused and energized</li>
-                    <li><strong>3D swarm visualization</strong> &mdash; ideas rendered as particles that form visible constellations as clusters emerge</li>
-                    <li><strong>Automatic clustering</strong> &mdash; Gemini-powered semantic analysis groups related ideas without manual sorting</li>
-                    <li><strong>Quadratic voting</strong> &mdash; fair, credit-based prioritization that prevents any single voice from dominating</li>
+                    <li><strong>Auto-suggest past solutions</strong> &mdash; new tickets check past resolutions via embedding similarity and offer them before creating a ticket</li>
+                    <li><strong>Resolution capture</strong> &mdash; when a mentor resolves a ticket, a modal asks &ldquo;how did you solve this?&rdquo; and adds the answer to the solutions KB</li>
+                    <li><strong>Interactive flow</strong> &mdash; users can try a suggested solution first; if it doesn&rsquo;t work, the ticket is created automatically</li>
                 </ul>
 
-                <h2>Built for Real-Time Collaboration</h2>
-                <p>The application uses Socket.IO for WebSocket connections, keeping brainstorm state synchronized across all participants with sub-second latency. Whether it&rsquo;s a classroom of 30 or a workshop of 100, everyone sees ideas appear, cluster, and evolve in real time.</p>
-
                 <div class="highlight-box">
-                    <p><strong>Modern stack:</strong> React + Vite frontend, Express.js + Socket.IO backend, 88% TypeScript, with Docker support for easy deployment. <a href="https://github.com/keshavdalmia10/the_cognitive_swarm" target="_blank">View on GitHub &rarr;</a></p>
+                    <p><strong>Gets smarter as the night goes on.</strong> Every resolved ticket feeds the KB. By 3am, common issues have auto-suggestions before a mentor even sees the ticket. <a href="https://github.com/gies-ai-experiments/hackclaw" target="_blank">View on GitHub &rarr;</a></p>
                 </div>
 
-                <h2>From Divergence to Convergence</h2>
-                <p>The session flow mirrors the best practices of design thinking. It starts with open-ended ideation where anything goes, moves through AI-powered clustering that surfaces themes, and ends with quadratic voting that democratically identifies the strongest ideas. The system then generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes.</p>
+                <h2>Copilot Studio Expert Channel</h2>
+                <p>A dedicated <code>#ask-hackclaw-copilot</code> channel answers questions exclusively from the Copilot Studio textbook. No general hackathon knowledge leaks in, which keeps tool-specific help focused and reliable when students are deep in a build.</p>
 
-                <h2>Use Cases in Education</h2>
-                <p>The Cognitive Swarm is designed for any scenario where groups need to think together: classroom brainstorms, design sprints, strategic planning sessions, and research workshops. By combining voice, visualization, and voting, it gives every participant a voice&mdash;not just the loudest ones in the room.</p>
-
-                <p>Visit the <a href="../cognitive-swarm.html">Cognitive Swarm project page</a> for the full technical architecture and use cases.</p>
+                <p>Visit the <a href="../hackclaw.html">HackClaw project page</a> for the full architecture and setup guide.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../cognitive-swarm.html" class="back-link">Learn More About The Cognitive Swarm &rarr;</a>
+                <a href="../hackclaw.html" class="back-link">Learn More About HackClaw &rarr;</a>
             </nav>
         </article>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -113,6 +105,9 @@
                     <a href="../giesclaw.html">GiesClaw</a>
                     <a href="../inquiring-agents.html">Inquiring Agents</a>
                     <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="../mindforum.html">MindForum</a>
+                    <a href="../hackclaw.html">HackClaw</a>
+                    <a href="../text-2-sql.html">Text-2-SQL Agent</a>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>

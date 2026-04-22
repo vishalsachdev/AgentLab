@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackClaw - AI Hackathon Assistant for Discord | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / HackClaw
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>HackClaw</h1>
+                    <p>AI-powered Discord assistant built for the Gies <em>AI for Impact Challenge</em>&mdash;a 24-hour hackathon where students build AI agents with no-code and low-code tools. HackClaw answers questions, routes help tickets to mentors, and learns from every resolution.</p>
+                    <p style="opacity: 0.85; margin-top: -0.5rem;"><strong>Project Lead:</strong> <a href="https://github.com/ashcastelinocs124" style="color: var(--orange);" target="_blank">Ash Castelino</a></p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Hackathon Coverage</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Channels (Discord + Email)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">KB</span>
+                            <span class="stat-label">Self-Building Knowledge</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/gies-ai-experiments/hackclaw" class="btn btn-primary">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What HackClaw Does</h2>
+                <p class="section-subtitle">Three systems working together to support participants and mentors</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#129504;</span>
+                    <h3>Brain-Routed Knowledge</h3>
+                    <ul class="tech-list">
+                        <li>Topic-specific brain files&mdash;schedule, rules, tracks, judging</li>
+                        <li>Router reads the index to pick the right section</li>
+                        <li>Loads only targeted content for accurate answers</li>
+                        <li>No context bloat, no hallucinated rules</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#127903;&#65039;</span>
+                    <h3>Help Ticket Queue</h3>
+                    <ul class="tech-list">
+                        <li><code>/helpme</code> posts to <code>#help-queue</code> with mentor buttons</li>
+                        <li>Claim / Unclaim / Resolve directly from Discord</li>
+                        <li>Mentors auto-added to team channels on claim</li>
+                        <li>Unclaimed tickets re-ping after 10 minutes</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128161;</span>
+                    <h3>Learning Loop</h3>
+                    <ul class="tech-list">
+                        <li>New tickets check past resolutions via embedding similarity</li>
+                        <li>Suggests prior solutions before creating a ticket</li>
+                        <li>Resolving a ticket prompts &ldquo;how did you fix it?&rdquo;</li>
+                        <li>Answers grow the knowledge base automatically</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#127891;</span>
+                    <h3>Copilot Studio Expert</h3>
+                    <ul class="tech-list">
+                        <li>Dedicated <code>#ask-hackclaw-copilot</code> channel</li>
+                        <li>Answers only from the Copilot Studio textbook</li>
+                        <li>No general hackathon knowledge leaks in</li>
+                        <li>Keeps tool-specific help focused and reliable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Build It</h2>
+                <p class="section-subtitle">Hackathons don&rsquo;t have enough mentors, and the same questions repeat all night</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Answer the FAQ Instantly</h3>
+                    <p>Most hackathon questions have been asked before. HackClaw answers schedule, rules, and tooling questions in seconds&mdash;so mentors can spend their time on real technical problems.</p>
+                </div>
+                <div class="content-card">
+                    <h3>A Queue, Not a Flood</h3>
+                    <p>Without a system, help requests get lost in channel noise. The ticket queue gives mentors a clear list, with claim buttons and reminders so nothing falls through.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Gets Smarter as the Night Goes On</h3>
+                    <p>Every resolved ticket adds to the solutions KB. Common issues get auto-suggested answers on the second occurrence&mdash;so by 3am, HackClaw is handling what took mentors all evening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech -->
+    <section class="tech-section" style="background: var(--bg-alt);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Stack</h2>
+            </div>
+            <div class="tech-tags" style="justify-content: center;">
+                <span class="tech-tag">Python 3.11+</span>
+                <span class="tech-tag">Discord.py</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">Embedding Similarity</span>
+                <span class="tech-tag">Markdown Brain Files</span>
+                <span class="tech-tag">Email Channel</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
+                    <a href="giesclaw.html">GiesClaw</a>
+                    <a href="inquiring-agents.html">Inquiring Agents</a>
+                    <a href="cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="mindforum.html">MindForum</a>
+                    <a href="hackclaw.html">HackClaw</a>
+                    <a href="text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cognitive Swarm Joins AgentLab - AgentLab</title>
+    <title>Text-2-SQL Agent Enters AgentBeats Competition - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="../index.html" class="logo">Agent<span>Lab</span></a>
@@ -41,60 +40,56 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / The Cognitive Swarm Joins AgentLab
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / Text-2-SQL Agent Launch
         </div>
     </div>
 
-    <!-- Article Content -->
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on March 15, 2026</div>
+                <div class="article-meta">Published on March 1, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">The Cognitive Swarm Joins AgentLab</h1>
-                <p class="article-excerpt">A real-time, multimodal brainstorming application that enables groups to generate, cluster, and converge on ideas through voice, 3D visualization, and quadratic voting.</p>
+                <h1 class="article-title">Text-2-SQL Agent Enters AgentBeats Competition</h1>
+                <p class="article-excerpt">A production-grade natural-language-to-SQL agent built on LangGraph&mdash;with schema caching, multi-step planning, 7-dimensional self-scoring, and targeted retry feedback&mdash;joins AgentLab&rsquo;s portfolio.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab welcomes The Cognitive Swarm to its project portfolio. Built by Keshav Dalmia, the application brings real-time collaborative brainstorming to large groups&mdash;combining voice input, AI-powered idea extraction, and a 3D swarm visualization into one seamless experience.</p>
+                <p>AgentLab is announcing <a href="../text-2-sql.html">Text-2-SQL Agent</a>, a production-grade natural-language-to-SQL system that competes on the <a href="https://agentbeats.dev" target="_blank">AgentBeats</a> platform. Text-to-SQL is one of those deceptively simple AI tasks: a one-shot prompt gets you a working demo in five minutes, and a working system in roughly never. This agent is designed for the latter.</p>
 
-                <h2>Brainstorming, Reimagined</h2>
-                <p>Traditional brainstorming tools struggle with scale. Post-it notes don&rsquo;t work for 50 people, and text-based tools lose the energy of live conversation. The Cognitive Swarm solves both problems: participants contribute ideas through voice while AI extracts and clusters them in real time.</p>
+                <h2>A Pipeline, Not a Prompt</h2>
+                <p>The core architecture is a LangGraph workflow with five nodes. The schema analyzer introspects the database through <code>PRAGMA</code> calls&mdash;no LLM&mdash;and caches the result with a SHA-256 hash and TTL so repeat questions skip the roundtrip. The planner then produces a structured <code>QueryPlan</code> using JSON Schema mode, which guarantees the output is parseable. For multi-step questions, each sub-task runs in sequence and predecessor results are injected into later prompts.</p>
+
+                <h2>Self-Evaluating, Not Self-Congratulating</h2>
+                <p>After each query executes, the executor scores the result on seven dimensions and runs an independent LLM relevance check. The two scores are blended (85% eval + 15% relevance) into a single quality number. If it falls below threshold, the agent retries&mdash;but not with a generic &ldquo;try again.&rdquo; The retry prompt includes category-specific feedback: which dimension failed, and why. That makes each retry corrective rather than a random re-roll.</p>
 
                 <ul>
-                    <li><strong>Live voice anchor</strong> &mdash; an AI facilitator powered by Google Gemini Live that keeps sessions focused and energized</li>
-                    <li><strong>3D swarm visualization</strong> &mdash; ideas rendered as particles that form visible constellations as clusters emerge</li>
-                    <li><strong>Automatic clustering</strong> &mdash; Gemini-powered semantic analysis groups related ideas without manual sorting</li>
-                    <li><strong>Quadratic voting</strong> &mdash; fair, credit-based prioritization that prevents any single voice from dominating</li>
+                    <li><strong>Multi-step query plans</strong> for analytical questions that don&rsquo;t fit one statement</li>
+                    <li><strong>Quality gate with targeted retries</strong> that pass specific feedback back to the generator</li>
+                    <li><strong>Independent relevance check</strong> that catches technically-correct-but-wrong answers</li>
+                    <li><strong>Schema caching</strong> that eliminates repeated introspection roundtrips</li>
+                    <li><strong>Server-Sent Events API</strong> for streaming responses through the workflow</li>
+                    <li><strong>A2A protocol compatibility</strong> for plugging into AgentBeats and other agent platforms</li>
                 </ul>
 
-                <h2>Built for Real-Time Collaboration</h2>
-                <p>The application uses Socket.IO for WebSocket connections, keeping brainstorm state synchronized across all participants with sub-second latency. Whether it&rsquo;s a classroom of 30 or a workshop of 100, everyone sees ideas appear, cluster, and evolve in real time.</p>
-
                 <div class="highlight-box">
-                    <p><strong>Modern stack:</strong> React + Vite frontend, Express.js + Socket.IO backend, 88% TypeScript, with Docker support for easy deployment. <a href="https://github.com/keshavdalmia10/the_cognitive_swarm" target="_blank">View on GitHub &rarr;</a></p>
+                    <p><strong>Stack:</strong> Python 3.10+, LangGraph, GPT-5 with JSON Schema mode, SQLite, SSE streaming. <a href="https://github.com/gies-ai-experiments/text-2-sql-agent" target="_blank">View on GitHub &rarr;</a></p>
                 </div>
 
-                <h2>From Divergence to Convergence</h2>
-                <p>The session flow mirrors the best practices of design thinking. It starts with open-ended ideation where anything goes, moves through AI-powered clustering that surfaces themes, and ends with quadratic voting that democratically identifies the strongest ideas. The system then generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes.</p>
+                <h2>Why It Matters</h2>
+                <p>Natural-language database interfaces are how non-technical stakeholders will interact with data going forward. But the gap between a demo and a trustworthy system is enormous&mdash;bad joins, wrong aggregations, hallucinated columns, and technically-correct-but-irrelevant answers all look identical until someone catches them. A self-evaluating pipeline with a retry loop closes that gap by giving the agent a real signal about its own output, not just a vibe check.</p>
 
-                <h2>Use Cases in Education</h2>
-                <p>The Cognitive Swarm is designed for any scenario where groups need to think together: classroom brainstorms, design sprints, strategic planning sessions, and research workshops. By combining voice, visualization, and voting, it gives every participant a voice&mdash;not just the loudest ones in the room.</p>
-
-                <p>Visit the <a href="../cognitive-swarm.html">Cognitive Swarm project page</a> for the full technical architecture and use cases.</p>
+                <p>Visit the <a href="../text-2-sql.html">Text-2-SQL Agent project page</a> for the full pipeline diagram and node reference.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../cognitive-swarm.html" class="back-link">Learn More About The Cognitive Swarm &rarr;</a>
+                <a href="../text-2-sql.html" class="back-link">Learn More About Text-2-SQL &rarr;</a>
             </nav>
         </article>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -113,6 +108,9 @@
                     <a href="../giesclaw.html">GiesClaw</a>
                     <a href="../inquiring-agents.html">Inquiring Agents</a>
                     <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="../mindforum.html">MindForum</a>
+                    <a href="../hackclaw.html">HackClaw</a>
+                    <a href="../text-2-sql.html">Text-2-SQL Agent</a>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>

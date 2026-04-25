@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProgramClaw: An Open Spec for AI Program Coordinators - AgentLab</title>
+    <title>ProgramOS: An Open Spec for AI Program Coordinators - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -42,7 +42,7 @@
 
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / ProgramClaw Launch
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / ProgramOS Launch
         </div>
     </div>
 
@@ -51,12 +51,12 @@
             <header class="article-header">
                 <div class="article-meta">Published on April 25, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">ProgramClaw: An Open Spec for AI Program Coordinators</h1>
+                <h1 class="article-title">ProgramOS: An Open Spec for AI Program Coordinators</h1>
                 <p class="article-excerpt">A spec, not a fork. Hand <code>SPEC.md</code> to your coding agent along with a fresh NanoClaw clone, and you get a multi-channel program coordinator covering email, Telegram, Teams, and web chat&mdash;extracted from a production deployment serving an online Master&rsquo;s program.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab is releasing <a href="../programclaw.html">ProgramClaw</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, Microsoft Teams, web chat, and Microsoft Copilot Studio&mdash;all from a single process, with a Markdown-only audit trail that lives in the program&rsquo;s curriculum repository.</p>
+                <p>AgentLab is releasing <a href="../programos.html">ProgramOS</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, Microsoft Teams, web chat, and Microsoft Copilot Studio&mdash;all from a single process, with a Markdown-only audit trail that lives in the program&rsquo;s curriculum repository.</p>
 
                 <h2>Why a Spec, Not a Template</h2>
                 <p>The temptation with a working system is to template it. Fork it, scrub it, push it. We tried that mentally and walked it back. Two reasons.</p>
@@ -83,22 +83,22 @@
                 <p>The reference deployment fits in roughly 1,000&ndash;1,500 lines of code on top of NanoClaw, plus the curriculum repo content. Most of the program-specific behavior lives in agent prompts and channel handlers&mdash;not in framework changes.</p>
 
                 <div class="highlight-box">
-                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programclaw" target="_blank">github.com/vishalsachdev/programclaw</a> (public, MIT). Six markdown docs, four agent prompt templates, and a curriculum-repo skeleton. Zero lines of code&mdash;the engine is NanoClaw.</p>
+                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programos" target="_blank">github.com/vishalsachdev/programos</a> (public, MIT). Six markdown docs, four agent prompt templates, and a curriculum-repo skeleton. Zero lines of code&mdash;the engine is NanoClaw.</p>
                 </div>
 
                 <h2>What&rsquo;s Public, What&rsquo;s Not</h2>
                 <p>The spec is public; the production deployment that informed it is not. The reference instance contains stakeholder PII, real allowlists, internal program strategy, and accreditation drafts&mdash;none of that generalizes, none of that should leak. The spec captures only the part that other programs can pick up and adapt.</p>
-                <p>That privacy posture is itself part of the spec: ProgramClaw assumes the curriculum repo is private, the audit log is private, and the bot fork is the adopter&rsquo;s choice. The spec includes a scrub-script recommendation for adopters who want to make their fork public.</p>
+                <p>That privacy posture is itself part of the spec: ProgramOS assumes the curriculum repo is private, the audit log is private, and the bot fork is the adopter&rsquo;s choice. The spec includes a scrub-script recommendation for adopters who want to make their fork public.</p>
 
                 <h2>Where It Fits</h2>
-                <p>ProgramClaw sits alongside the other claws in the AgentLab portfolio&mdash;<a href="../illiniclaw.html">IlliniClaw</a> for student-facing course support, <a href="../canvas-mcp.html">Canvas MCP</a> for LMS integration&mdash;but it&rsquo;s the first to be released as a pattern rather than a service. If you run an academic program and you want a single AI coordinator that fields stakeholder questions and captures decisions across every channel your stakeholders actually use, ProgramClaw is what we&rsquo;d hand you.</p>
+                <p>ProgramOS sits alongside the other claws in the AgentLab portfolio&mdash;<a href="../illiniclaw.html">IlliniClaw</a> for student-facing course support, <a href="../canvas-mcp.html">Canvas MCP</a> for LMS integration&mdash;but it&rsquo;s the first to be released as a pattern rather than a service. If you run an academic program and you want a single AI coordinator that fields stakeholder questions and captures decisions across every channel your stakeholders actually use, ProgramOS is what we&rsquo;d hand you.</p>
 
-                <p>Visit the <a href="../programclaw.html">ProgramClaw project page</a> for the high-level summary, or jump straight to the <a href="https://github.com/vishalsachdev/programclaw/blob/main/SPEC.md" target="_blank">spec on GitHub</a>.</p>
+                <p>Visit the <a href="../programos.html">ProgramOS project page</a> for the high-level summary, or jump straight to the <a href="https://github.com/vishalsachdev/programos/blob/main/SPEC.md" target="_blank">spec on GitHub</a>.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../programclaw.html" class="back-link">Learn More About ProgramClaw &rarr;</a>
+                <a href="../programos.html" class="back-link">Learn More About ProgramOS &rarr;</a>
             </nav>
         </article>
     </main>
@@ -118,7 +118,7 @@
                     <a href="../pathshaper.html">PathShaper</a>
                     <a href="../canvas-mcp.html">Canvas MCP</a>
                     <a href="../illiniclaw.html">IlliniClaw</a>
-                    <a href="../programclaw.html">ProgramClaw</a>
+                    <a href="../programos.html">ProgramOS</a>
                     <a href="../inquiring-agents.html">Inquiring Agents</a>
                     <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
                     <a href="../mindforum.html">MindForum</a>

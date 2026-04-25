@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgramClaw: An Open Spec for AI Program Coordinators - AgentLab</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
+        .article-category { background: var(--navy); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
+        .article-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.2; font-weight: 800; }
+        .article-excerpt { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
+        .article-content { line-height: 1.8; font-size: 1rem; }
+        .article-content h2 { color: var(--navy); margin: 2rem 0 1rem 0; font-size: 1.5rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0; padding-left: 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-alt); padding: 1.5rem; border-left: 4px solid var(--orange); margin: 2rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .navigation-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .back-link:hover { color: var(--orange-dark); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .article-container { padding: 1rem; }
+            .navigation-links { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../team.html">Team</a></li>
+                <li><a href="../news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / ProgramClaw Launch
+        </div>
+    </div>
+
+    <main class="container">
+        <article class="article-container">
+            <header class="article-header">
+                <div class="article-meta">Published on April 25, 2026</div>
+                <span class="article-category">Release</span>
+                <h1 class="article-title">ProgramClaw: An Open Spec for AI Program Coordinators</h1>
+                <p class="article-excerpt">A spec, not a fork. Hand <code>SPEC.md</code> to your coding agent along with a fresh NanoClaw clone, and you get a multi-channel program coordinator covering email, Telegram, Teams, and web chat&mdash;extracted from a production deployment serving an online Master&rsquo;s program.</p>
+            </header>
+
+            <div class="article-content">
+                <p>AgentLab is releasing <a href="../programclaw.html">ProgramClaw</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, Microsoft Teams, web chat, and Microsoft Copilot Studio&mdash;all from a single process, with a Markdown-only audit trail that lives in the program&rsquo;s curriculum repository.</p>
+
+                <h2>Why a Spec, Not a Template</h2>
+                <p>The temptation with a working system is to template it. Fork it, scrub it, push it. We tried that mentally and walked it back. Two reasons.</p>
+                <p>First, NanoClaw moves. Upstream improves the framework on its own cadence&mdash;a fork-once template would freeze adopters at a point in time, with the rebase debt growing month over month. A spec stays useful: an adopter&rsquo;s coding agent reads the current NanoClaw and the current spec together, producing an adaptation that matches both.</p>
+                <p>Second, programs differ. Channels, sender allowlists, decision-authority rules, audit conventions, curriculum structure&mdash;every program has its own shape. A template would force adopters into someone else&rsquo;s shape. The spec describes contracts: this is what each channel handler must do, this is what the curriculum repo must contain, this is what the audit log must record. The implementation belongs to the adopter.</p>
+
+                <h2>What the Spec Covers</h2>
+                <ul>
+                    <li><strong>Six channels</strong> &mdash; email (HMAC webhook), Telegram, Teams (Bot Framework), Teams Outgoing Webhook, web chat, Microsoft Copilot Studio. Each with its own auth pattern, reply format, and JID convention.</li>
+                    <li><strong>Two operating modes</strong> &mdash; question (read-only sandbox, cite and reply) and status-update (workspace-write, extract decisions/actions/questions and commit). The mode is chosen at dispatch by the channel handler, not by the agent mid-run.</li>
+                    <li><strong>Curriculum repository contract</strong> &mdash; a separate, adopter-owned repo with a defined structure: <code>CURRICULUM.md</code>, <code>EMAIL_ALLOWLIST.md</code>, <code>DECISIONS.md</code>, <code>ACTION_ITEMS.md</code>, <code>OPEN_QUESTIONS.md</code>, and per-channel audit-log directories.</li>
+                    <li><strong>Audit log format</strong> &mdash; one Markdown file per inbound, one per outbound, with a YAML frontmatter capturing channel, sender, mode, files modified, and commit SHAs. Reviewable by anyone with <code>git log</code> and <code>cat</code>.</li>
+                    <li><strong>Customization checklist</strong> &mdash; a flat list of what to rename, what to leave generic, and what privacy decisions to make before going live.</li>
+                </ul>
+
+                <h2>How an Adopter Uses It</h2>
+                <p>Roughly four steps:</p>
+                <ol>
+                    <li>Fork NanoClaw upstream (<code>gh repo fork qwibitai/nanoclaw</code>).</li>
+                    <li>Create a private curriculum repository following the skeleton in <code>examples/curriculum-repo/SKELETON.md</code>.</li>
+                    <li>Hand <code>SPEC.md</code> to a coding agent (Claude Code, Cursor, Codex) along with the NanoClaw fork. The agent reads both and produces a working adaptation, asking clarifying questions as needed.</li>
+                    <li>Iterate on the per-channel <code>groups/&lt;channel&gt;/CLAUDE.md</code> agent prompts and the audit-log pipeline using the docs in the spec repo as reference.</li>
+                </ol>
+                <p>The reference deployment fits in roughly 1,000&ndash;1,500 lines of code on top of NanoClaw, plus the curriculum repo content. Most of the program-specific behavior lives in agent prompts and channel handlers&mdash;not in framework changes.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programclaw" target="_blank">github.com/vishalsachdev/programclaw</a> (public, MIT). Six markdown docs, four agent prompt templates, and a curriculum-repo skeleton. Zero lines of code&mdash;the engine is NanoClaw.</p>
+                </div>
+
+                <h2>What&rsquo;s Public, What&rsquo;s Not</h2>
+                <p>The spec is public; the production deployment that informed it is not. The reference instance contains stakeholder PII, real allowlists, internal program strategy, and accreditation drafts&mdash;none of that generalizes, none of that should leak. The spec captures only the part that other programs can pick up and adapt.</p>
+                <p>That privacy posture is itself part of the spec: ProgramClaw assumes the curriculum repo is private, the audit log is private, and the bot fork is the adopter&rsquo;s choice. The spec includes a scrub-script recommendation for adopters who want to make their fork public.</p>
+
+                <h2>Where It Fits</h2>
+                <p>ProgramClaw sits alongside the other claws in the AgentLab portfolio&mdash;<a href="../illiniclaw.html">IlliniClaw</a> for student-facing course support, <a href="../canvas-mcp.html">Canvas MCP</a> for LMS integration&mdash;but it&rsquo;s the first to be released as a pattern rather than a service. If you run an academic program and you want a single AI coordinator that fields stakeholder questions and captures decisions across every channel your stakeholders actually use, ProgramClaw is what we&rsquo;d hand you.</p>
+
+                <p>Visit the <a href="../programclaw.html">ProgramClaw project page</a> for the high-level summary, or jump straight to the <a href="https://github.com/vishalsachdev/programclaw/blob/main/SPEC.md" target="_blank">spec on GitHub</a>.</p>
+            </div>
+
+            <nav class="navigation-links">
+                <a href="../news.html" class="back-link">&larr; Back to News</a>
+                <a href="../programclaw.html" class="back-link">Learn More About ProgramClaw &rarr;</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../team.html">Team</a>
+                    <a href="../news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="../venturebot.html">VentureBots</a>
+                    <a href="../pathshaper.html">PathShaper</a>
+                    <a href="../canvas-mcp.html">Canvas MCP</a>
+                    <a href="../illiniclaw.html">IlliniClaw</a>
+                    <a href="../programclaw.html">ProgramClaw</a>
+                    <a href="../inquiring-agents.html">Inquiring Agents</a>
+                    <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="../mindforum.html">MindForum</a>
+                    <a href="../hackclaw.html">HackClaw</a>
+                    <a href="../text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

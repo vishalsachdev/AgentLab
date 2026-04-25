@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProgramClaw - Spec for AI Program Coordinators | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / ProgramClaw
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>ProgramClaw</h1>
+                    <p>An open spec for turning a NanoClaw deployment into a multi-channel AI academic program coordinator&mdash;extracted from a production deployment serving an online Master&rsquo;s program.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Channels</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Operating Modes</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Lines of Code</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/vishalsachdev/programclaw" class="btn btn-primary">View on GitHub</a>
+                        <a href="https://github.com/vishalsachdev/programclaw/blob/main/SPEC.md" class="btn btn-secondary">Read the Spec</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why a spec -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Spec, Not a Fork</h2>
+                <p class="section-subtitle">NanoClaw is the engine. The work to make it a program coordinator lives outside the framework.</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Fork NanoClaw</h3>
+                        <p>NanoClaw is the lightweight, container-isolated agent framework that handles channel registry, message routing, and Docker spawning. Adopters fork it directly from upstream.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Feed the spec to your agent</h3>
+                        <p>Hand <code>SPEC.md</code> to a coding agent (Claude Code, Cursor, Codex) along with your fresh NanoClaw fork. The agent reads both, asks clarifying questions, and produces an adaptation matched to your program.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Iterate on the prompts</h3>
+                        <p>Most program-specific behavior lives in per-channel agent prompts (<code>groups/&lt;channel&gt;/CLAUDE.md</code>) and in the structure of your curriculum repository. Both stay readable, both stay editable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What it does -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What a ProgramClaw Does</h2>
+                <p class="section-subtitle">One agent, six channels, one curriculum repository as source of truth</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128231;</span>
+                    <h3>Six Channels</h3>
+                    <ul class="tech-list">
+                        <li>Email (HMAC webhook)</li>
+                        <li>Telegram</li>
+                        <li>Microsoft Teams (Bot Framework)</li>
+                        <li>Teams Outgoing Webhook</li>
+                        <li>Web Chat</li>
+                        <li>Microsoft Copilot Studio</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128221;</span>
+                    <h3>Two Modes</h3>
+                    <ul class="tech-list">
+                        <li>Question mode (read-only sandbox)</li>
+                        <li>Status-update mode (workspace-write)</li>
+                        <li>Mode chosen at dispatch, not by agent</li>
+                        <li>Granular commits per category</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128194;</span>
+                    <h3>Curriculum Repo Contract</h3>
+                    <ul class="tech-list">
+                        <li>CURRICULUM.md, EMAIL_ALLOWLIST.md</li>
+                        <li>DECISIONS, ACTION_ITEMS, OPEN_QUESTIONS</li>
+                        <li>Per-channel audit log</li>
+                        <li>Markdown only&mdash;reviewable by humans</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128203;</span>
+                    <h3>Audit Trail</h3>
+                    <ul class="tech-list">
+                        <li>Every inbound and outbound logged</li>
+                        <li>Markdown files in git history</li>
+                        <li>Accreditation-ready</li>
+                        <li>Survives container destruction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why this approach -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why a Spec-Only Repo</h2>
+                <p class="section-subtitle">Cloned templates go stale. Specs stay useful.</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>The engine moves</h3>
+                    <p>NanoClaw upstream evolves. A fork-once template would freeze you at a point in time. With a spec, your agent reads the current NanoClaw and the spec together, producing an adaptation that matches both.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Programs are different</h3>
+                    <p>Your channels, sender allowlists, decision-authority rules, and curriculum structure are unique. A template would force you into someone else&rsquo;s shape. The spec describes contracts, not code.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Privacy by default</h3>
+                    <p>The reference deployment serves a real Master&rsquo;s program with stakeholder PII, internal allowlists, and accreditation drafts. The spec is the part that generalizes&mdash;everything sensitive stays in adopter-owned private repos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
+                    <a href="programclaw.html">ProgramClaw</a>
+                    <a href="inquiring-agents.html">Inquiring Agents</a>
+                    <a href="cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="mindforum.html">MindForum</a>
+                    <a href="hackclaw.html">HackClaw</a>
+                    <a href="text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="mailto:contact@agentlab.edu">Contact Us</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

@@ -61,39 +61,39 @@
         <div class="container">
             <div class="section-header">
                 <h2>How It Works</h2>
-                <p class="section-subtitle">From brainstorm to structured output in four phases</p>
+                <p class="section-subtitle">A session moves through three admin-controlled phases: Explore, Vote, Forge</p>
             </div>
 
             <div class="journey-steps">
                 <div class="step-detail">
+                    <div class="step-number">0</div>
+                    <div class="step-content">
+                        <h3>Create or Join a Room</h3>
+                        <p>An admin creates a room with a brainstorming topic and gets a 6-character room code. Participants join with the code and a display name. Admin and participant roles are distinct&mdash;the admin transitions between phases when the group is ready.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Join &amp; Brainstorm</h3>
-                        <p>Participants join a shared session and contribute ideas through voice or text. A live AI anchor facilitates engagement, keeping the energy high and the conversation focused.</p>
+                        <h3>Explore</h3>
+                        <p>Participants speak ideas aloud while the AI anchor listens, responds, and nudges quiet voices. Tool calls extract discrete ideas from natural speech and place them in the 3D swarm by semantic similarity. Three background agents work in parallel: a synthesizer discovers connections, a devil&rsquo;s advocate challenges weak ideas, and a direction suggester prompts new angles when conversation stalls.</p>
                     </div>
                 </div>
 
                 <div class="step-detail">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Extract &amp; Cluster</h3>
-                        <p>AI automatically extracts discrete ideas from the conversation and intelligently clusters them by theme. The 3D swarm visualization lets participants see ideas forming constellations in real time.</p>
+                        <h3>Vote</h3>
+                        <p>The admin transitions the room to the Vote phase. Each participant gets a fixed pool of credits and allocates them across ideas using quadratic voting&mdash;each additional vote on the same idea costs more, surfacing genuine group preference rather than the loudest voice.</p>
                     </div>
                 </div>
 
                 <div class="step-detail">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Vote &amp; Converge</h3>
-                        <p>Quadratic voting ensures fair prioritization&mdash;participants allocate limited credits across ideas, preventing any single voice from dominating. The best ideas rise to the top organically.</p>
-                    </div>
-                </div>
-
-                <div class="step-detail">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Synthesize &amp; Visualize</h3>
-                        <p>The system generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes. From raw brainstorm to actionable output in one seamless flow.</p>
+                        <h3>Forge</h3>
+                        <p>The admin transitions to Forge, and the top-weighted ideas are synthesized into a Mermaid diagram&mdash;flowchart, mindmap, ER diagram, class diagram, or journey map, with the type inferred from the topic. The artifact is shareable and exportable.</p>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Technical Architecture</h2>
-                <p class="section-subtitle">Built for real-time collaboration at scale</p>
+                <p class="section-subtitle">Production-deployed on GCP with full IaC and CI/CD</p>
             </div>
 
             <div class="tech-grid">
@@ -113,65 +113,65 @@
                     <span class="tech-icon">&#9889;</span>
                     <h3>Real-Time Sync</h3>
                     <ul class="tech-list">
-                        <li>Socket.IO WebSocket connections</li>
-                        <li>Shared brainstorm state across all participants</li>
-                        <li>Live updates as ideas are added and clustered</li>
+                        <li>Socket.IO with Redis adapter for horizontal scaling</li>
+                        <li>Shared room state across all participants</li>
+                        <li>15-second admin reconnect grace before room closes</li>
                         <li>Sub-second latency for smooth collaboration</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
                     <span class="tech-icon">&#127908;</span>
-                    <h3>Voice &amp; Multimodal</h3>
+                    <h3>Gemini Live Anchor</h3>
                     <ul class="tech-list">
-                        <li>Audio and video streaming via Gemini Live</li>
-                        <li>Live anchor voice system for facilitation</li>
-                        <li>Browser microphone integration</li>
-                        <li>Natural speech-to-idea extraction</li>
+                        <li>Full-duplex, interruption-aware voice via Gemini Live</li>
+                        <li>~1 JPEG/sec camera stream alongside audio</li>
+                        <li>Tool calling extracts ideas directly from speech</li>
+                        <li>Anchor praises contributors and nudges quiet voices</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
                     <span class="tech-icon">&#129504;</span>
-                    <h3>AI-Powered Clustering</h3>
+                    <h3>Semantic 3D Swarm</h3>
                     <ul class="tech-list">
-                        <li>Google Gemini API integration</li>
-                        <li>Automatic idea extraction from conversation</li>
-                        <li>Intelligent semantic clustering by theme</li>
-                        <li>Mermaid diagram generation for artifacts</li>
+                        <li>Gemini embeddings drive 3D position by similarity</li>
+                        <li>Clusters form visible constellations, not just colors</li>
+                        <li>200-idea cap with lowest-weight auto-prune</li>
+                        <li>Synthesizer agent draws edges between related ideas</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
-                    <span class="tech-icon">&#127922;</span>
-                    <h3>3D Swarm Visualization</h3>
+                    <span class="tech-icon">&#129313;</span>
+                    <h3>Background Agents</h3>
                     <ul class="tech-list">
-                        <li>Ideas rendered as particles in 3D space</li>
-                        <li>Clusters form visible constellations</li>
-                        <li>Interactive navigation and exploration</li>
-                        <li>Real-time updates as ideas evolve</li>
+                        <li>Synthesizer&mdash;discovers connections between ideas</li>
+                        <li>Devil&rsquo;s Advocate&mdash;challenges weak reasoning</li>
+                        <li>Direction Suggester&mdash;prompts new angles when stalled</li>
+                        <li>All three run in parallel during the Explore phase</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
                     <span class="tech-icon">&#9878;&#65039;</span>
-                    <h3>Quadratic Voting</h3>
+                    <h3>Convergence &amp; Forge</h3>
                     <ul class="tech-list">
-                        <li>Fair, democratic idea prioritization</li>
-                        <li>Credit-based allocation prevents dominance</li>
-                        <li>Convergence phase surfaces top ideas</li>
-                        <li>Transparent, equitable decision-making</li>
+                        <li>Quadratic voting&mdash;each extra vote costs more</li>
+                        <li>Credit allocation prevents dominant voices</li>
+                        <li>Topic-aware Mermaid synthesis: flowchart, mindmap, ER, class, journey</li>
+                        <li>Diagram type inferred from the room topic</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
-                    <span class="tech-icon">&#128295;</span>
-                    <h3>Modern Stack</h3>
+                    <span class="tech-icon">&#9729;&#65039;</span>
+                    <h3>Production Infrastructure</h3>
                     <ul class="tech-list">
-                        <li>React + Vite frontend</li>
-                        <li>Express.js + Socket.IO backend</li>
-                        <li>TypeScript throughout (88% of codebase)</li>
-                        <li>Docker support for deployment</li>
+                        <li>GCP Cloud Run, Memorystore Redis, Cloud Firestore</li>
+                        <li>Secret Manager + Artifact Registry + VPC Connector</li>
+                        <li>All resources defined in Terraform</li>
+                        <li>GitHub Actions for build, deploy, and Terraform apply</li>
                     </ul>
                 </div>
             </div>

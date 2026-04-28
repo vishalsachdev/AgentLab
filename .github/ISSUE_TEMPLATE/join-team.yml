@@ -1,0 +1,57 @@
+name: Join the Team
+description: Express interest in joining AgentLab as a student, developer, or collaborator.
+title: "[Join] "
+labels: ["join-team"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AgentLab is a student-led multi-agent AI lab at Gies College of Business. Tell us a bit about yourself and what you'd like to work on.
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+    validations:
+      required: true
+  - type: input
+    id: school
+    attributes:
+      label: School / program
+      placeholder: e.g., University of Illinois, BS Information Systems, Junior
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: How would you like to contribute?
+      multiple: true
+      options:
+        - Engineering (frontend, backend, full-stack)
+        - AI / agent development (LLMs, prompts, evals)
+        - Design (UX, branding, content)
+        - Research / writing
+        - Education / pedagogy
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Relevant background
+      description: Coursework, side projects, GitHub, or anything that shows what you've built or learned.
+    validations:
+      required: false
+  - type: textarea
+    id: interest
+    attributes:
+      label: Why AgentLab?
+      description: Which projects or problem areas interest you most, and what would you like to work on?
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Email (optional)
+      placeholder: you@illinois.edu
+    validations:
+      required: false

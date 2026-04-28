@@ -1,0 +1,52 @@
+name: Contact / Feedback
+description: Send a question, comment, partnership inquiry, or general feedback to the AgentLab team.
+title: "[Contact] "
+labels: ["contact"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out to AgentLab! Fill in the fields below and we'll follow up.
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+      placeholder: Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      description: Organization, school, or role (optional).
+      placeholder: University of Illinois, Gies College of Business
+    validations:
+      required: false
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What's this about?
+      options:
+        - General question
+        - Project feedback or bug report
+        - Partnership / collaboration
+        - Press / media
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: Message
+      description: Share as much detail as you'd like. If this is about a specific project, please mention it by name.
+      placeholder: I'd love to learn more about...
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Preferred contact (optional)
+      description: Email or other way to reach you, if you'd like a direct reply outside GitHub.
+      placeholder: you@example.com
+    validations:
+      required: false

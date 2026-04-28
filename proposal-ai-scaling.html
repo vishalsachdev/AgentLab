@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentLab Scaling Proposal - Gies College of Business</title>
+    <style>
+        :root {
+            --navy: #13294B;
+            --orange: #ff6900;
+            --text: #2d3748;
+            --text-muted: #64748b;
+            --bg-alt: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Print styles */
+        @media print {
+            body { font-size: 11pt; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+            .container { max-width: 100%; padding: 0; }
+            section { padding: 1.5rem 0 !important; }
+        }
+
+        /* Header */
+        .proposal-header {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .proposal-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 105, 0, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .proposal-header .container { position: relative; z-index: 1; }
+        .proposal-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem; }
+        .proposal-header .subtitle { font-size: 1.25rem; opacity: 0.85; margin-bottom: 0.25rem; }
+        .proposal-header .meta { font-size: 0.9rem; opacity: 0.6; }
+        .proposal-header .logo-text { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .proposal-header .logo-text span { color: var(--orange); }
+
+        /* Sections */
+        section { padding: 2.5rem 0; }
+        section:nth-child(even) { background: var(--bg-alt); }
+        h2 { font-size: 1.6rem; color: var(--navy); font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+        h3 { font-size: 1.15rem; color: var(--navy); font-weight: 700; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; }
+        .lead { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+        /* Stats bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            background: var(--navy);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-bar::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(255, 105, 0, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .stats-bar .stat-item { text-align: center; position: relative; z-index: 1; }
+        .stats-bar .stat-number { font-size: 2rem; font-weight: 800; color: var(--orange); display: block; }
+        .stats-bar .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; }
+
+        /* Cards */
+        .tier-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+            background: white;
+        }
+        .tier-card.featured { border-left: 4px solid var(--orange); }
+        .tier-amount { font-size: 1.4rem; font-weight: 800; color: var(--orange); margin-bottom: 0.25rem; }
+        .tier-name { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+
+        ul { margin-left: 1.25rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.4rem; }
+
+        /* Project grid */
+        .project-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .project-mini {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+            background: white;
+        }
+        .project-mini .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .project-mini h4 { font-size: 0.95rem; color: var(--navy); margin-bottom: 0.25rem; }
+        .project-mini p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; }
+
+        /* Budget table */
+        .budget-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .budget-table th, .budget-table td { text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
+        .budget-table th { background: var(--bg-alt); font-weight: 700; color: var(--navy); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .budget-table td { font-size: 0.95rem; }
+        .budget-table .amount { text-align: right; font-weight: 600; }
+        .budget-table .total td { font-weight: 800; border-top: 2px solid var(--navy); background: var(--bg-alt); }
+
+        /* Timeline */
+        .phase-row { display: flex; gap: 1.5rem; margin-bottom: 1.25rem; }
+        .phase-label { min-width: 140px; font-weight: 700; color: var(--navy); font-size: 0.95rem; padding-top: 0.15rem; flex-shrink: 0; }
+        .phase-content { flex: 1; }
+        .phase-content p { margin-bottom: 0.25rem; font-size: 0.95rem; }
+
+        /* Footer */
+        .proposal-footer {
+            background: var(--navy);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .proposal-footer a { color: var(--orange); text-decoration: none; }
+        .proposal-footer p { opacity: 0.7; margin-bottom: 0.5rem; }
+
+        @media (max-width: 768px) {
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .project-mini-grid { grid-template-columns: 1fr; }
+            .phase-row { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="proposal-header">
+        <div class="container">
+            <div class="logo-text">Agent<span>Lab</span> &mdash; Gies College of Business</div>
+            <h1>Scaling AI-Powered Education</h1>
+            <div class="subtitle">An Investment Proposal for AgentLab</div>
+            <div class="meta">Prepared March 2026 &middot; Origin Ventures &amp; Advancement</div>
+        </div>
+    </div>
+
+    <!-- What We've Built -->
+    <section>
+        <div class="container">
+            <h2>What We've Built</h2>
+            <p class="lead">AgentLab is a student-led development lab at Gies College of Business building multi-agent AI systems that transform how students learn. In under a year, a small team has shipped six production tools already in use at Illinois.</p>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Production Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">61+</span>
+                    <span class="stat-label">Students Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">97+</span>
+                    <span class="stat-label">Hours Engagement</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Student Developers</span>
+                </div>
+            </div>
+
+            <div class="project-mini-grid">
+                <div class="project-mini">
+                    <div class="icon">&#128161;</div>
+                    <h4>VentureBots</h4>
+                    <p>5-agent startup coaching. 25 students, 90% satisfaction.</p>
+                </div>
+                <div class="project-mini">
+                    <div class="icon">&#129517;</div>
+                    <h4>PathShaper</h4>
+                    <p>Adaptive learning with AI-generated curriculum. 186 concepts.</p>
+                </div>
+                <div class="project-mini">
+                    <div class="icon">&#128218;</div>
+                    <h4>Canvas MCP</h4>
+                    <p>90+ tools connecting AI agents to Canvas LMS. Open source.</p>
+                </div>
+                <div class="project-mini">
+                    <div class="icon">&#128172;</div>
+                    <h4>IlliniClaw</h4>
+                    <p>WhatsApp AI TA. 36 students, 109 sessions in BADM 554.</p>
+                </div>
+                <div class="project-mini">
+                    <div class="icon">&#9878;&#65039;</div>
+                    <h4>Inquiring Agents</h4>
+                    <p>5 philosopher-agents debate AI ethics with students.</p>
+                </div>
+                <div class="project-mini">
+                    <div class="icon">&#129504;</div>
+                    <h4>Cognitive Swarm</h4>
+                    <p>Real-time 3D brainstorming with voice + quadratic voting.</p>
+                </div>
+            </div>
+
+            <p>Every project is open-source, built by graduate students, and designed to work in real classrooms&mdash;not just demos. The model is lean: one faculty advisor, two student developers per semester, and commodity cloud infrastructure.</p>
+        </div>
+    </section>
+
+    <!-- The Opportunity -->
+    <section>
+        <div class="container">
+            <h2>The Opportunity</h2>
+            <p class="lead">We've proven the concept with minimal resources. Donor investment would let us move from "interesting experiment" to "institutional capability" that positions Gies as a national leader in AI-powered education.</p>
+
+            <h3>What Scaling Looks Like</h3>
+            <ul>
+                <li><strong>More students building.</strong> Expand from 2 developers/semester to 6&ndash;8, supporting 3&ndash;4 concurrent project teams and creating a pipeline of AI-skilled graduates.</li>
+                <li><strong>More classrooms deploying.</strong> Move from 2 courses to 10+ across Gies, with potential pilots in Engineering, LAS, and Education.</li>
+                <li><strong>Research rigor.</strong> Fund IRB-approved studies on learning outcomes. Publish findings. Present at conferences like AIED, LAK, and AAAI.</li>
+                <li><strong>Infrastructure for scale.</strong> Current API and hosting costs are absorbed informally. At scale, AI inference alone (Claude, GPT-4, Gemini) runs $3&ndash;5K/month for hundreds of concurrent student users.</li>
+                <li><strong>Open-source leadership.</strong> Canvas MCP already has external adoption. Funded documentation and community management would establish Gies as the go-to for AI + LMS integration.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Investment Tiers -->
+    <section class="page-break">
+        <div class="container">
+            <h2>Investment Tiers</h2>
+            <p class="lead">We've structured three giving levels, each with tangible deliverables. All tiers include naming recognition and annual impact reporting.</p>
+
+            <div class="tier-card">
+                <div class="tier-amount">$50,000 / year</div>
+                <div class="tier-name">Accelerator</div>
+                <p>Covers core operating costs and enables sustainability.</p>
+                <ul>
+                    <li>4 funded graduate research assistants (stipend top-up for existing students)</li>
+                    <li>AI API credits and cloud hosting for all active projects</li>
+                    <li>Basic learning-outcome measurement across deployed tools</li>
+                    <li>Annual impact report shared with donor</li>
+                </ul>
+            </div>
+
+            <div class="tier-card featured">
+                <div class="tier-amount">$150,000 / year</div>
+                <div class="tier-name">Innovation Lab (Recommended)</div>
+                <p>Establishes AgentLab as a recognized center with cross-campus reach.</p>
+                <ul>
+                    <li>Everything in Accelerator, plus:</li>
+                    <li>6&ndash;8 funded student developers with structured mentorship program</li>
+                    <li>Part-time program coordinator (staff or advanced doctoral student)</li>
+                    <li>IRB-approved research studies with peer-reviewed publications</li>
+                    <li>Expansion to 10+ courses across 2&ndash;3 colleges</li>
+                    <li>Annual showcase event for donors, faculty, and industry partners</li>
+                    <li>Named recognition: "[Donor] AgentLab at Gies"</li>
+                </ul>
+            </div>
+
+            <div class="tier-card">
+                <div class="tier-amount">$500,000 (endowed)</div>
+                <div class="tier-name">Founding Endowment</div>
+                <p>Creates a permanent, self-sustaining center for AI in education.</p>
+                <ul>
+                    <li>Everything in Innovation Lab, permanently funded</li>
+                    <li>Dedicated lab space in the Business Instructional Facility</li>
+                    <li>Full-time technical director hire</li>
+                    <li>Industry partnership program with practicum placements</li>
+                    <li>Cross-university collaboration fund (peer Big Ten institutions)</li>
+                    <li>Permanent naming: "[Donor] Center for AI-Powered Education"</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Breakdown -->
+    <section>
+        <div class="container">
+            <h2>Where the Money Goes</h2>
+            <p class="lead">Illustrative annual budget at the $150K Innovation Lab tier.</p>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th class="amount">Annual Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Graduate research assistants (6&ndash;8 students, stipend top-ups)</td>
+                        <td class="amount">$60,000</td>
+                    </tr>
+                    <tr>
+                        <td>Program coordinator (0.5 FTE staff or doctoral student)</td>
+                        <td class="amount">$35,000</td>
+                    </tr>
+                    <tr>
+                        <td>AI API costs (Claude, GPT-4, Gemini inference at scale)</td>
+                        <td class="amount">$25,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud infrastructure (hosting, databases, CDN)</td>
+                        <td class="amount">$8,000</td>
+                    </tr>
+                    <tr>
+                        <td>Research (IRB, conference travel, publication fees)</td>
+                        <td class="amount">$12,000</td>
+                    </tr>
+                    <tr>
+                        <td>Events, materials, and contingency</td>
+                        <td class="amount">$10,000</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total</td>
+                        <td class="amount">$150,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section>
+        <div class="container">
+            <h2>18-Month Roadmap</h2>
+            <p class="lead">With funding starting Fall 2026, here's what donors can expect.</p>
+
+            <div class="phase-row">
+                <div class="phase-label">Months 1&ndash;3</div>
+                <div class="phase-content">
+                    <p><strong>Foundation.</strong> Hire coordinator. Recruit expanded student cohort. Onboard 4&ndash;6 new courses for Spring 2027 deployment. Set up IRB protocols.</p>
+                </div>
+            </div>
+
+            <div class="phase-row">
+                <div class="phase-label">Months 4&ndash;9</div>
+                <div class="phase-content">
+                    <p><strong>Scale.</strong> Deploy AI tools in 10+ course sections (~500 students). Launch structured mentorship program. Begin first research study on learning outcomes. Host inaugural donor showcase.</p>
+                </div>
+            </div>
+
+            <div class="phase-row">
+                <div class="phase-label">Months 10&ndash;15</div>
+                <div class="phase-content">
+                    <p><strong>Publish &amp; Expand.</strong> Submit first peer-reviewed papers. Pilot cross-college deployment (Engineering or Education). Release Canvas MCP 2.0 with enterprise features. Establish industry partnership program.</p>
+                </div>
+            </div>
+
+            <div class="phase-row">
+                <div class="phase-label">Months 16&ndash;18</div>
+                <div class="phase-content">
+                    <p><strong>Sustain.</strong> Deliver annual impact report with measurable outcomes. Secure follow-on funding or matching grants. Plan multi-year roadmap with university leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Now -->
+    <section>
+        <div class="container">
+            <h2>Why Now</h2>
+            <ul>
+                <li><strong>First-mover advantage.</strong> Most business schools are still debating AI policy. Gies is already shipping tools students use daily. Donor support locks in this lead.</li>
+                <li><strong>Student talent pipeline.</strong> AgentLab alumni are getting hired at top tech companies. Scaling the program produces more AI-literate business graduates&mdash;a direct donor-to-impact story.</li>
+                <li><strong>Open-source flywheel.</strong> Every tool we build is freely available. Donor investment doesn't just help Illinois&mdash;it advances AI education nationally. Canvas MCP alone is used by educators outside Gies.</li>
+                <li><strong>Low cost, high leverage.</strong> We've built six production tools with functionally zero budget. Even modest investment produces outsized returns in visibility, research output, and student impact.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="proposal-footer">
+        <div class="container">
+            <p><strong>AgentLab</strong> &mdash; Gies College of Business, University of Illinois Urbana-Champaign</p>
+            <p><a href="https://agentlab.illinihunt.org">agentlab.illinihunt.org</a> &middot; <a href="https://github.com/gies-ai-experiments">github.com/gies-ai-experiments</a></p>
+            <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.8rem;">Draft &mdash; March 2026 &middot; Prepared for Advancement conversations</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProgramOS - Spec for AI Program Coordinators | AgentLab</title>
+    <title>ProgramOS - An AI Coordinator for Academic Programs | AgentLab</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -32,19 +32,19 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>ProgramOS</h1>
-                    <p>Academic programs lose half their decisions in email threads and meeting notes&mdash;and new stakeholders can&rsquo;t get up to speed without spelunking through inboxes. ProgramOS is an open spec for an AI program coordinator that fields questions across every stakeholder channel and captures every decision to a structured curriculum repository. Built at Gies to run the online MSBAi program, where it goes by the persona name K-ai.</p>
+                    <p>Academic programs lose half their decisions in email threads and meeting notes&mdash;and a new advisor or faculty member can&rsquo;t get up to speed without digging through old inboxes. ProgramOS is a recipe for an AI program coordinator that answers stakeholder questions on whatever channel they prefer (email, Telegram, Teams, web chat) and quietly writes every decision down in a shared, human-readable folder. Built at Gies to run the online <a href="https://giesonline.illinois.edu/explore-programs/msbai">MSBAi program</a>, where it goes by the persona name K-ai.</p>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Channels</span>
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Afternoon to First Bot</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Operating Modes</span>
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Channels Supported</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">0</span>
-                            <span class="stat-label">Lines of Code</span>
+                            <span class="stat-label">Lines of Code to Copy</span>
                         </div>
                     </div>
                     <div class="cta-buttons">
@@ -56,120 +56,237 @@
         </div>
     </section>
 
-    <!-- Why a spec -->
+    <!-- What it does -->
     <section class="journey-section">
         <div class="container">
             <div class="section-header">
-                <h2>A Spec, Not a Fork</h2>
-                <p class="section-subtitle">NanoClaw is the engine. The work to make it a program coordinator lives outside the framework.</p>
+                <h2>What It Does</h2>
+                <p class="section-subtitle">One coordinator that listens everywhere your program already lives</p>
             </div>
 
             <div class="journey-steps">
                 <div class="step-detail">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Fork NanoClaw</h3>
-                        <p>NanoClaw is the lightweight, container-isolated agent framework that handles channel registry, message routing, and Docker spawning. Adopters fork it directly from upstream.</p>
+                        <h3>Answers questions, with citations</h3>
+                        <p>Faculty, advisors, staff, and students message the bot the way they already prefer&mdash;email, Telegram, Teams, or a web chat box. The agent reads the program&rsquo;s shared folder of policies, syllabi, decisions, and FAQs, and answers with a citation back to the source so people can verify.</p>
                     </div>
                 </div>
 
                 <div class="step-detail">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Feed the spec to your agent</h3>
-                        <p>Hand <code>SPEC.md</code> to a coding agent (Claude Code, Cursor, Codex) along with your fresh NanoClaw fork. The agent reads both, asks clarifying questions, and produces an adaptation matched to your program.</p>
+                        <h3>Captures decisions as they happen</h3>
+                        <p>When someone sends a status update or makes a call (&ldquo;we&rsquo;re moving the deadline,&rdquo; &ldquo;Dr. X is teaching this section now&rdquo;), the agent files it into the program folder as a dated decision, action item, or open question. No more &ldquo;wait, what did we decide in March?&rdquo;</p>
                     </div>
                 </div>
 
                 <div class="step-detail">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Iterate on the prompts</h3>
-                        <p>Most program-specific behavior lives in per-channel agent prompts (<code>groups/&lt;channel&gt;/CLAUDE.md</code>) and in the structure of your curriculum repository. Both stay readable, both stay editable.</p>
+                        <h3>Keeps a clean audit trail</h3>
+                        <p>Every message in, every reply out, and every change to the program folder is logged in a way an accreditor (or a successor coordinator) can read end-to-end. The folder is plain markdown in version control&mdash;no proprietary database, nothing locked behind a vendor.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What it does -->
-    <section class="tech-section">
+    <!-- Why it matters -->
+    <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>What a ProgramOS Does</h2>
-                <p class="section-subtitle">One agent, six channels, one curriculum repository as source of truth</p>
+                <h2>Why It Matters</h2>
+                <p class="section-subtitle">Built for the people who actually run programs</p>
             </div>
 
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <span class="tech-icon">&#128231;</span>
-                    <h3>Six Channels</h3>
-                    <ul class="tech-list">
-                        <li>Email (HMAC webhook)</li>
-                        <li>Telegram</li>
-                        <li>Microsoft Teams (Bot Framework)</li>
-                        <li>Teams Outgoing Webhook</li>
-                        <li>Web Chat</li>
-                        <li>Microsoft Copilot Studio</li>
-                    </ul>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Program memory survives turnover</h3>
+                    <p>Coordinators rotate. Faculty leave. Without a single source of truth, every transition costs months of rediscovery. ProgramOS treats the program folder as the institutional memory&mdash;and the bot as the friendly front door to it.</p>
                 </div>
-
-                <div class="tech-card">
-                    <span class="tech-icon">&#128221;</span>
-                    <h3>Two Modes</h3>
-                    <ul class="tech-list">
-                        <li>Question mode (read-only sandbox)</li>
-                        <li>Status-update mode (workspace-write)</li>
-                        <li>Mode chosen at dispatch, not by agent</li>
-                        <li>Granular commits per category</li>
-                    </ul>
+                <div class="content-card">
+                    <h3>Stakeholders meet you where they are</h3>
+                    <p>Students live on Telegram or WhatsApp. Faculty live in email and Teams. Industry partners live wherever you last met them. One coordinator on every channel beats four siloed tools nobody checks.</p>
                 </div>
-
-                <div class="tech-card">
-                    <span class="tech-icon">&#128194;</span>
-                    <h3>Curriculum Repo Contract</h3>
-                    <ul class="tech-list">
-                        <li>CURRICULUM.md, EMAIL_ALLOWLIST.md</li>
-                        <li>DECISIONS, ACTION_ITEMS, OPEN_QUESTIONS</li>
-                        <li>Per-channel audit log</li>
-                        <li>Markdown only&mdash;reviewable by humans</li>
-                    </ul>
-                </div>
-
-                <div class="tech-card">
-                    <span class="tech-icon">&#128203;</span>
-                    <h3>Audit Trail</h3>
-                    <ul class="tech-list">
-                        <li>Every inbound and outbound logged</li>
-                        <li>Markdown files in git history</li>
-                        <li>Accreditation-ready</li>
-                        <li>Survives container destruction</li>
-                    </ul>
+                <div class="content-card">
+                    <h3>Privacy stays in your hands</h3>
+                    <p>The reference deployment serves a real Master&rsquo;s program with stakeholder PII, internal allowlists, and accreditation drafts. ProgramOS is the public recipe; everything sensitive stays in a private folder you own and control.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why this approach -->
+    <!-- Architecture diagram -->
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Why a Spec-Only Repo</h2>
-                <p class="section-subtitle">Cloned templates go stale. Specs stay useful.</p>
+                <h2>How K-ai Is Wired</h2>
+                <p class="section-subtitle">The Gies MSBAi deployment: five channels, one container, one program repo</p>
             </div>
 
-            <div class="content-grid">
-                <div class="content-card">
-                    <h3>The engine moves</h3>
-                    <p>NanoClaw upstream evolves. A fork-once template would freeze you at a point in time. With a spec, your agent reads the current NanoClaw and the spec together, producing an adaptation that matches both.</p>
+            <div style="background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm);">
+                <svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="K-ai architecture: five inbound channels route into the ProgramOS agent container, which operates in two modes against the msba-online program repository and an append-only audit log." style="width: 100%; height: auto; max-width: 900px; display: block; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+                    <defs>
+                        <marker id="arrow-navy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M0,0 L10,5 L0,10 z" fill="#13294B"/>
+                        </marker>
+                        <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M0,0 L10,5 L0,10 z" fill="#ff6900"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Channels row -->
+                    <g font-size="13" font-weight="600" fill="#13294B" text-anchor="middle">
+                        <rect x="30"  y="20" width="140" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                        <text x="100" y="44">Email</text>
+                        <text x="100" y="62" font-size="11" font-weight="400" fill="#5a6577">webhook → Resend</text>
+
+                        <rect x="190" y="20" width="140" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                        <text x="260" y="44">Telegram</text>
+                        <text x="260" y="62" font-size="11" font-weight="400" fill="#5a6577">Bot API long-poll</text>
+
+                        <rect x="350" y="20" width="200" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                        <text x="450" y="44">Microsoft Teams</text>
+                        <text x="450" y="62" font-size="11" font-weight="400" fill="#5a6577">Bot Framework + Webhook</text>
+
+                        <rect x="570" y="20" width="140" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                        <text x="640" y="44">Web Chat</text>
+                        <text x="640" y="62" font-size="11" font-weight="400" fill="#5a6577">REST /chat</text>
+
+                        <rect x="730" y="20" width="140" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                        <text x="800" y="44">Copilot Studio</text>
+                        <text x="800" y="62" font-size="11" font-weight="400" fill="#5a6577">pass-through</text>
+                    </g>
+
+                    <!-- Funnel arrows down to the agent -->
+                    <g stroke="#13294B" stroke-width="1.5" fill="none" marker-end="url(#arrow-navy)">
+                        <line x1="100" y1="80" x2="380" y2="155"/>
+                        <line x1="260" y1="80" x2="420" y2="155"/>
+                        <line x1="450" y1="80" x2="450" y2="155"/>
+                        <line x1="640" y1="80" x2="480" y2="155"/>
+                        <line x1="800" y1="80" x2="520" y2="155"/>
+                    </g>
+
+                    <!-- HTTP shim label -->
+                    <text x="450" y="135" text-anchor="middle" font-size="11" fill="#5a6577" font-style="italic">single Node process · port 3003 · path-routed</text>
+
+                    <!-- Agent container -->
+                    <rect x="120" y="160" width="660" height="180" rx="14" fill="#13294B"/>
+                    <text x="450" y="190" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">ProgramOS Agent · Docker-isolated</text>
+                    <text x="450" y="210" text-anchor="middle" font-size="12" fill="#ff8533">NanoClaw runtime · Claude Code in a container</text>
+
+                    <!-- Two modes inside -->
+                    <rect x="160" y="230" width="280" height="90" rx="10" fill="#1a3a6b" stroke="#ff6900" stroke-width="1.5"/>
+                    <text x="300" y="256" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Read-only mode</text>
+                    <text x="300" y="278" text-anchor="middle" font-size="12" fill="#e2e8f0">Questions → search repo</text>
+                    <text x="300" y="296" text-anchor="middle" font-size="12" fill="#e2e8f0">Reply with citations</text>
+                    <text x="300" y="312" text-anchor="middle" font-size="11" fill="#ff8533">no commits</text>
+
+                    <rect x="460" y="230" width="280" height="90" rx="10" fill="#1a3a6b" stroke="#ff6900" stroke-width="1.5"/>
+                    <text x="600" y="256" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Workspace-write mode</text>
+                    <text x="600" y="278" text-anchor="middle" font-size="12" fill="#e2e8f0">Extract decisions / actions</text>
+                    <text x="600" y="296" text-anchor="middle" font-size="12" fill="#e2e8f0">Granular commits + push</text>
+                    <text x="600" y="312" text-anchor="middle" font-size="11" fill="#ff8533">explicit, human-triggered</text>
+
+                    <!-- Allowlist gate label -->
+                    <text x="450" y="358" text-anchor="middle" font-size="11" fill="#5a6577">↓  EMAIL_ALLOWLIST gate · sender authorization enforced before any mode runs  ↓</text>
+
+                    <!-- Arrows down to data stores -->
+                    <g stroke="#ff6900" stroke-width="1.5" fill="none" marker-end="url(#arrow-orange)">
+                        <line x1="300" y1="368" x2="220" y2="410"/>
+                        <line x1="600" y1="368" x2="680" y2="410"/>
+                    </g>
+
+                    <!-- Program repo -->
+                    <rect x="40" y="415" width="360" height="100" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                    <text x="220" y="440" text-anchor="middle" font-size="14" font-weight="700" fill="#13294B">msba-online (program repo)</text>
+                    <text x="220" y="462" text-anchor="middle" font-size="12" fill="#5a6577">CURRICULUM.md · courses/ · design/</text>
+                    <text x="220" y="480" text-anchor="middle" font-size="12" fill="#5a6577">discussions/ · DECISIONS · ACTION_ITEMS</text>
+                    <text x="220" y="498" text-anchor="middle" font-size="11" fill="#ff6900" font-style="italic">plain markdown · version-controlled · program owns it</text>
+
+                    <!-- Audit log -->
+                    <rect x="500" y="415" width="360" height="100" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
+                    <text x="680" y="440" text-anchor="middle" font-size="14" font-weight="700" fill="#13294B">Audit log</text>
+                    <text x="680" y="462" text-anchor="middle" font-size="12" fill="#5a6577">append-only · every inbound message,</text>
+                    <text x="680" y="480" text-anchor="middle" font-size="12" fill="#5a6577">every outbound reply, every commit</text>
+                    <text x="680" y="498" text-anchor="middle" font-size="11" fill="#ff6900" font-style="italic">private git repo · accreditation-ready</text>
+                </svg>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem; max-width: 720px; margin-left: auto; margin-right: auto;">
+                One Node process routes five channels into a single container-isolated agent. The agent runs in read-only or workspace-write mode per message, operates against a plain-markdown program repository the institution owns, and writes everything &mdash; messages, replies, and commits &mdash; into an append-only audit log.
+            </p>
+        </div>
+    </section>
+
+    <!-- Deployment tiers -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Small, Grow Up</h2>
+                <p class="section-subtitle">Same recipe, same program folder&mdash;only the plumbing changes as you scale</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128187;</span>
+                    <h3>Tier 1: Laptop</h3>
+                    <p>Telegram bot up by end of an afternoon. No IT ticket. Email follows within a week. Perfect for piloting with one program.</p>
                 </div>
-                <div class="content-card">
-                    <h3>Programs are different</h3>
-                    <p>Your channels, sender allowlists, decision-authority rules, and curriculum structure are unique. A template would force you into someone else&rsquo;s shape. The spec describes contracts, not code.</p>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#127757;</span>
+                    <h3>Tier 2: Small Server</h3>
+                    <p>24/7 uptime, web chat embedded in your program site, Teams channels for faculty. Low monthly cost on a cheap VPS.</p>
                 </div>
-                <div class="content-card">
-                    <h3>Privacy by default</h3>
-                    <p>The reference deployment serves a real Master&rsquo;s program with stakeholder PII, internal allowlists, and accreditation drafts. The spec is the part that generalizes&mdash;everything sensitive stays in adopter-owned private repos.</p>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#127970;</span>
+                    <h3>Tier 3: Cloud</h3>
+                    <p>Multi-program deployment behind your university&rsquo;s SSO and compliance posture. Same spec, enterprise plumbing.</p>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128214;</span>
+                    <h3>Illinois shortcut</h3>
+                    <p>UIUC programs can wire <code>@illinois.edu</code> email into the bot without a Microsoft 365 admin app registration. Recipe included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why a spec -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Spec, Not a Fork</h2>
+                <p class="section-subtitle">We share the recipe. Your AI assistant cooks it for your program.</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Bootstrap your program folder</h3>
+                        <p>One command scaffolds a fresh folder with the right structure&mdash;policies, decisions, action items, audit log. A &ldquo;brainstorm&rdquo; prompt sits inside it, ready to interview you about your program.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Hand the spec to a coding agent</h3>
+                        <p>Open Claude Code (or Cursor, or Codex). Point it at the spec and your fresh program folder. It asks clarifying questions about your stakeholders and channels, then builds the bot to match.</p>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Iterate in plain English</h3>
+                        <p>Most program-specific behavior lives in plain-text instruction files (one per channel) and in the structure of your program folder. Both stay readable. Both stay editable. No deep code dive required.</p>
+                    </div>
                 </div>
             </div>
         </div>

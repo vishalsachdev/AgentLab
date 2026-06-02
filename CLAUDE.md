@@ -5,13 +5,10 @@ Static website for AgentLab — student-led multi-agent AI for education at Gies
 ## Deploy
 
 ```bash
-# IMPORTANT: unset CF_API_TOKEN first. The cfut_… token in ~/.env lacks
-# Pages:Edit + Cache-Purge on this account, and wrangler prefers it over the
-# working OAuth login — so `wrangler pages deploy` fails with auth error 10000
-# whenever CF_API_TOKEN is exported. Unsetting it falls back to `wrangler login`
-# OAuth, which has account access. (Confirmed 2026-06-01.)
-env -u CF_API_TOKEN -u CF_API_TOKEN_AIREADY npx wrangler pages deploy . --project-name agentlab --commit-dirty=true
+npx wrangler pages deploy . --project-name agentlab --commit-dirty=true
 ```
+
+`CF_API_TOKEN` in `~/.env` was rolled 2026-06-02 with the right scopes (Account→Pages:Edit + Account Settings:Read, User→User Details:Read, Zone→DNS:Edit + Cache Purge), so wrangler now uses it directly — no more `env -u CF_API_TOKEN` workaround. (Wrangler still prints a deprecation warning preferring `CLOUDFLARE_API_TOKEN`; harmless. Rename the var in `~/.env` if you want it gone.) To purge the CDN after a deploy: `curl -X POST "https://api.cloudflare.com/client/v4/zones/3d671dada34cb589cc78de7e9153408a/purge_cache" -H "Authorization: Bearer $CF_API_TOKEN" -H "Content-Type: application/json" -d '{"purge_everything":true}'`.
 
 Live at: https://agentlab.illinihunt.org/ (Pages production alias: https://agentlab-8ot.pages.dev/)
 

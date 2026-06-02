@@ -15,7 +15,11 @@ env -u CF_API_TOKEN -u CF_API_TOKEN_AIREADY npx wrangler pages deploy . --projec
 
 Live at: https://agentlab.illinihunt.org/ (Pages production alias: https://agentlab-8ot.pages.dev/)
 
-**Cache caveat:** the `illinihunt.org` zone edge-caches HTML aggressively — after a deploy, `agentlab-8ot.pages.dev` is fresh immediately but `agentlab.illinihunt.org` can serve a stale copy (`cf-cache-status: HIT`) until the cache is purged. Neither `CF_API_TOKEN` nor the wrangler OAuth token has Cache-Purge on the zone, so purge from the **Cloudflare dashboard** (illinihunt.org → Caching → Configuration → Purge Everything / by-URL), or add `Zone → Cache Purge` to a token. Permanent fix: recreate the `cf-illinihunt-zone-and-pages` token with Account→Pages:Edit + Zone→Cache Purge + Zone→DNS:Edit, then update `~/.env`.
+**Domain wiring (fixed 2026-06-01):** `agentlab.illinihunt.org` is a **Pages custom domain** on the `agentlab` project, via a proxied `CNAME → agentlab-8ot.pages.dev` (same pattern as `canvas-mcp.illinihunt.org`) plus a null worker route to bypass `illinihunt-reverse-proxy`. `wrangler pages deploy` + this CNAME is the whole serving path.
+
+Why deploys looked "broken" Apr 28–Jun 1: the custom domain used to be attached to a **separate Worker** named `agentlab` (last deployed 2026-04-28), which created a read-only `AAAA 100::` record and *owned the hostname*. Meanwhile the workflow had switched to `wrangler pages deploy` (this repo has no `wrangler.toml`). So every Pages deploy succeeded but went to a project nothing pointed at, while the domain kept serving the frozen Apr-28 Worker copy. Fix was: detach the worker custom domain → replace the `AAAA 100::` with `CNAME → agentlab-8ot.pages.dev` → the Pages custom domain serves current production. The orphaned `agentlab` **worker script** was left in place as a dormant fallback (no domain attached); safe to delete later.
+
+**If a deploy ever stops showing on the live domain again:** confirm `agentlab.illinihunt.org` still resolves via `CNAME → agentlab-8ot.pages.dev` and isn't re-attached to a worker — `curl -s "https://api.cloudflare.com/client/v4/accounts/<acct>/workers/domains?hostname=agentlab.illinihunt.org" -H "Authorization: Bearer $OAUTH"` should return an empty result.
 
 ## Hosting
 

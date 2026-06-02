@@ -5,10 +5,17 @@ Static website for AgentLab — student-led multi-agent AI for education at Gies
 ## Deploy
 
 ```bash
-npx wrangler pages deploy . --project-name agentlab --commit-dirty=true
+# IMPORTANT: unset CF_API_TOKEN first. The cfut_… token in ~/.env lacks
+# Pages:Edit + Cache-Purge on this account, and wrangler prefers it over the
+# working OAuth login — so `wrangler pages deploy` fails with auth error 10000
+# whenever CF_API_TOKEN is exported. Unsetting it falls back to `wrangler login`
+# OAuth, which has account access. (Confirmed 2026-06-01.)
+env -u CF_API_TOKEN -u CF_API_TOKEN_AIREADY npx wrangler pages deploy . --project-name agentlab --commit-dirty=true
 ```
 
-Live at: https://agentlab.illinihunt.org/
+Live at: https://agentlab.illinihunt.org/ (Pages production alias: https://agentlab-8ot.pages.dev/)
+
+**Cache caveat:** the `illinihunt.org` zone edge-caches HTML aggressively — after a deploy, `agentlab-8ot.pages.dev` is fresh immediately but `agentlab.illinihunt.org` can serve a stale copy (`cf-cache-status: HIT`) until the cache is purged. Neither `CF_API_TOKEN` nor the wrangler OAuth token has Cache-Purge on the zone, so purge from the **Cloudflare dashboard** (illinihunt.org → Caching → Configuration → Purge Everything / by-URL), or add `Zone → Cache Purge` to a token. Permanent fix: recreate the `cf-illinihunt-zone-and-pages` token with Account→Pages:Edit + Zone→Cache Purge + Zone→DNS:Edit, then update `~/.env`.
 
 ## Hosting
 

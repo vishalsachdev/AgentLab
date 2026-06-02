@@ -56,18 +56,18 @@
             </header>
 
             <div class="article-content">
-                <p>AgentLab is releasing <a href="../programos.html">ProgramOS</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, Microsoft Teams, web chat, and Microsoft Copilot Studio&mdash;all from a single process, with a Markdown-only audit trail that lives in the program&rsquo;s curriculum repository.</p>
+                <p>AgentLab is releasing <a href="../programos.html">ProgramOS</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, Microsoft Teams, web chat, and Microsoft Copilot Studio&mdash;all from a single process, with a Markdown-only audit trail that lives in the program repository.</p>
 
                 <h2>Why a Spec, Not a Template</h2>
                 <p>The temptation with a working system is to template it. Fork it, scrub it, push it. We tried that mentally and walked it back. Two reasons.</p>
                 <p>First, NanoClaw moves. Upstream improves the framework on its own cadence&mdash;a fork-once template would freeze adopters at a point in time, with the rebase debt growing month over month. A spec stays useful: an adopter&rsquo;s coding agent reads the current NanoClaw and the current spec together, producing an adaptation that matches both.</p>
-                <p>Second, programs differ. Channels, sender allowlists, decision-authority rules, audit conventions, curriculum structure&mdash;every program has its own shape. A template would force adopters into someone else&rsquo;s shape. The spec describes contracts: this is what each channel handler must do, this is what the curriculum repo must contain, this is what the audit log must record. The implementation belongs to the adopter.</p>
+                <p>Second, programs differ. Channels, sender allowlists, decision-authority rules, audit conventions, program structure&mdash;every program has its own shape. A template would force adopters into someone else&rsquo;s shape. The spec describes contracts: this is what each channel handler must do, this is what the program repo must contain, this is what the audit log must record. The implementation belongs to the adopter.</p>
 
                 <h2>What the Spec Covers</h2>
                 <ul>
                     <li><strong>Six channels</strong> &mdash; email (HMAC webhook), Telegram, Teams (Bot Framework), Teams Outgoing Webhook, web chat, Microsoft Copilot Studio. Each with its own auth pattern, reply format, and JID convention.</li>
                     <li><strong>Two operating modes</strong> &mdash; question (read-only sandbox, cite and reply) and status-update (workspace-write, extract decisions/actions/questions and commit). The mode is chosen at dispatch by the channel handler, not by the agent mid-run.</li>
-                    <li><strong>Curriculum repository contract</strong> &mdash; a separate, adopter-owned repo with a defined structure: <code>CURRICULUM.md</code>, <code>EMAIL_ALLOWLIST.md</code>, <code>DECISIONS.md</code>, <code>ACTION_ITEMS.md</code>, <code>OPEN_QUESTIONS.md</code>, and per-channel audit-log directories.</li>
+                    <li><strong>Program repository contract</strong> &mdash; a separate, adopter-owned repo with a defined structure: <code>CONCEPT.md</code>, <code>EMAIL_ALLOWLIST.md</code>, <code>DECISIONS.md</code>, <code>ACTION_ITEMS.md</code>, <code>OPEN_QUESTIONS.md</code>, and per-channel audit-log directories.</li>
                     <li><strong>Audit log format</strong> &mdash; one Markdown file per inbound, one per outbound, with a YAML frontmatter capturing channel, sender, mode, files modified, and commit SHAs. Reviewable by anyone with <code>git log</code> and <code>cat</code>.</li>
                     <li><strong>Customization checklist</strong> &mdash; a flat list of what to rename, what to leave generic, and what privacy decisions to make before going live.</li>
                 </ul>
@@ -76,19 +76,19 @@
                 <p>Roughly four steps:</p>
                 <ol>
                     <li>Fork NanoClaw upstream (<code>gh repo fork qwibitai/nanoclaw</code>).</li>
-                    <li>Create a private curriculum repository following the skeleton in <code>examples/curriculum-repo/SKELETON.md</code>.</li>
+                    <li>Create a private program repository following the skeleton in <code>examples/program-repo/SKELETON.md</code>.</li>
                     <li>Hand <code>SPEC.md</code> to a coding agent (Claude Code, Cursor, Codex) along with the NanoClaw fork. The agent reads both and produces a working adaptation, asking clarifying questions as needed.</li>
                     <li>Iterate on the per-channel <code>groups/&lt;channel&gt;/CLAUDE.md</code> agent prompts and the audit-log pipeline using the docs in the spec repo as reference.</li>
                 </ol>
-                <p>The reference deployment fits in roughly 1,000&ndash;1,500 lines of code on top of NanoClaw, plus the curriculum repo content. Most of the program-specific behavior lives in agent prompts and channel handlers&mdash;not in framework changes.</p>
+                <p>The reference deployment fits in roughly 1,000&ndash;1,500 lines of code on top of NanoClaw, plus the program repo content. Most of the program-specific behavior lives in agent prompts and channel handlers&mdash;not in framework changes.</p>
 
                 <div class="highlight-box">
-                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programos" target="_blank">github.com/vishalsachdev/programos</a> (public, MIT). Six markdown docs, four agent prompt templates, and a curriculum-repo skeleton. Zero lines of code&mdash;the engine is NanoClaw.</p>
+                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programos" target="_blank">github.com/vishalsachdev/programos</a> (public, MIT). Ten markdown docs, four agent prompt templates, and a program-repo skeleton. Zero lines of code&mdash;the engine is NanoClaw.</p>
                 </div>
 
                 <h2>What&rsquo;s Public, What&rsquo;s Not</h2>
                 <p>The spec is public; the production deployment that informed it is not. The reference instance contains stakeholder PII, real allowlists, internal program strategy, and accreditation drafts&mdash;none of that generalizes, none of that should leak. The spec captures only the part that other programs can pick up and adapt.</p>
-                <p>That privacy posture is itself part of the spec: ProgramOS assumes the curriculum repo is private, the audit log is private, and the bot fork is the adopter&rsquo;s choice. The spec includes a scrub-script recommendation for adopters who want to make their fork public.</p>
+                <p>That privacy posture is itself part of the spec: ProgramOS assumes the program repo is private, the audit log is private, and the bot fork is the adopter&rsquo;s choice. The spec includes a scrub-script recommendation for adopters who want to make their fork public.</p>
 
                 <h2>Where It Fits</h2>
                 <p>ProgramOS sits alongside the other claws in the AgentLab portfolio&mdash;<a href="../illiniclaw.html">IlliniClaw</a> for student-facing course support, <a href="../canvas-mcp.html">Canvas MCP</a> for LMS integration&mdash;but it&rsquo;s the first to be released as a pattern rather than a service. If you run an academic program and you want a single AI coordinator that fields stakeholder questions and captures decisions across every channel your stakeholders actually use, ProgramOS is what we&rsquo;d hand you.</p>

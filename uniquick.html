@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniQuick - Zero-Config Backend for AI-Built Web Apps | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / UniQuick
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>UniQuick</h1>
+                    <p>A "deploy in one prompt" backend for AI-built web apps at Illinois. Faculty and students ask their AI coding agent for an app&mdash;a poll, a guestbook, a live dashboard, an AI tutor&mdash;and it goes live on a campus URL in seconds. Illinois sign-in, shared data, file uploads, realtime, and AI are already wired in: no accounts, no API keys, no servers to manage. A lightweight on-ramp that gives non-developers a reason to start building with agents.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Prompt to Live</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Built-in Services</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Config Required</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://quick.disruptionlab.illinois.edu" class="btn btn-primary">Open the Platform</a>
+                        <a href="https://quick.disruptionlab.illinois.edu/start" class="btn btn-secondary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>From Prompt to Live URL</h2>
+                <p class="section-subtitle">No accounts to create, no API keys to manage, no servers to provision</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">&#128172;</div>
+                    <div class="step-content">
+                        <h3>1. Ask Your Agent</h3>
+                        <p>Describe the app you want to any AI coding agent&mdash;Claude Code, Cursor, Codex, or anything that speaks MCP. UniQuick ships an npm package and an MCP server so the agent knows how to build against the platform.</p>
+                        <ul class="outputs-list">
+                            <li>npx -y uniquick &mdash; CLI, no clone needed</li>
+                            <li>npx -y -p uniquick uniquick-mcp &mdash; MCP server</li>
+                            <li>Agent-neutral onboarding at /start</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">&#9889;</div>
+                    <div class="step-content">
+                        <h3>2. Deploy in One Command</h3>
+                        <p>The agent generates a static front end and deploys it to a campus URL at <code>/s/&lt;slug&gt;/</code>. The browser SDK is served from <code>/sdk.js</code>&mdash;every backend service is one function call away, with zero configuration.</p>
+                        <ul class="outputs-list">
+                            <li>Sites served at quick.disruptionlab.illinois.edu/s/&lt;slug&gt;/</li>
+                            <li>Capability-URL file uploads</li>
+                            <li>Deploy tokens scoped per site</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">&#127757;</div>
+                    <div class="step-content">
+                        <h3>3. Share &amp; Discover</h3>
+                        <p>Owners flip a switch to publish to an opt-in public gallery, so colleagues can discover and reuse what others have built. A super-admin dashboard curates featured apps and tracks usage across campus.</p>
+                        <ul class="outputs-list">
+                            <li>Opt-in public gallery at /gallery</li>
+                            <li>Owner dashboard at /my</li>
+                            <li>View counts and featuring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Built-in Services -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Five Services, Already Wired In</h2>
+                <p class="section-subtitle">The backend every AI-built app needs&mdash;without writing or hosting any of it</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128273;</span>
+                    <h3>Illinois Sign-In</h3>
+                    <ul class="tech-list">
+                        <li>Entra ID (Azure AD) SSO</li>
+                        <li>Every visitor verified by NetID</li>
+                        <li>No accounts to build or manage</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128202;</span>
+                    <h3>Shared Data</h3>
+                    <ul class="tech-list">
+                        <li>Per-site Postgres-backed storage</li>
+                        <li>Read/write from the browser SDK</li>
+                        <li>No schema or migrations to manage</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128228;</span>
+                    <h3>File Uploads</h3>
+                    <ul class="tech-list">
+                        <li>Azure blob store backend</li>
+                        <li>Capability-URL upload links</li>
+                        <li>Deployed site files served from blob</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128225;</span>
+                    <h3>Realtime</h3>
+                    <ul class="tech-list">
+                        <li>WebSocket rooms out of the box</li>
+                        <li>Live cursors, presence, multiplayer</li>
+                        <li>No socket server to stand up</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#129302;</span>
+                    <h3>AI</h3>
+                    <ul class="tech-list">
+                        <li>Azure OpenAI proxy (gpt-4o-mini)</li>
+                        <li>No API keys for builders</li>
+                        <li>Per-visitor daily token budget</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128296;</span>
+                    <h3>Platform</h3>
+                    <ul class="tech-list">
+                        <li>Fastify 5 ESM monolith on Azure</li>
+                        <li>Browser SDK + CLI + MCP server</li>
+                        <li>Open-source uniquick npm package</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why It Matters</h2>
+                <p class="section-subtitle">Lowering the floor so non-developers can build with agents</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>An On-Ramp to Agentic Tools</h3>
+                    <p>The hardest part of an AI-built app isn't the front end&mdash;it's the backend: auth, a database, file storage, realtime, and an AI key. UniQuick removes all of it so a first prompt can actually ship something real on a campus URL.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Safe by Default</h3>
+                    <p>Every visitor is verified by Illinois sign-in, and AI usage is metered per end-user with a daily token budget&mdash;so a popular app can't run up campus AI cost, and the creator is never charged for their students' usage.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Open Source &amp; Live</h3>
+                    <p>Running live on Azure at quick.disruptionlab.illinois.edu, with the client published as the open-source <code>uniquick</code> package on npm. One <code>npx</code> command&mdash;no clone, no setup&mdash;and an agent can start deploying.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="uniquick.html">UniQuick</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
+                    <a href="programos.html">ProgramOS</a>
+                    <a href="giesclaw.html">GiesClaw</a>
+                    <a href="inquiring-agents.html">Inquiring Agents</a>
+                    <a href="cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="mindforum.html">MindForum</a>
+                    <a href="hackclaw.html">HackClaw</a>
+                    <a href="text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="https://github.com/gies-ai-experiments/uniquick" target="_blank" rel="noopener">View on GitHub</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

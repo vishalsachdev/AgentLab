@@ -34,6 +34,18 @@ Cloudflare Pages via wrangler (not GitHub Pages — Actions is disabled on this 
 - `js/main.js` — Mobile nav, back-to-top, news filters
 - `assets/` — IlliniClaw logo SVG
 
+## Adding or significantly updating a project
+
+When a project is **added** (or changes significantly enough to announce — a launch, major feature, going live), update the whole surface, not just one file. Checklist:
+
+1. **Detail page** — `<project>.html` (copy an existing one like `canvas-mcp.html` as the template).
+2. **Cards** — add a card on `index.html` (homepage showcase) AND `projects.html`. The `projects.html` card's primary button links to the detail page ("Project Details" / "Learn More").
+3. **News post** — `news-posts/YYYY-MM-<slug>-launch.html` (copy a recent post as the template). Always file a news item for a new project or a significant update.
+4. **News listing** — add a `news-card` to the top of the grid in `news.html` (newest first).
+5. **Homepage "Latest from AgentLab"** — feature the new post; keep it to 3 cards (drop the oldest).
+6. **Footer "Projects" list** — add the project to the footer on **every** page (the list must stay in sync across all `*.html`, including `news-posts/*`).
+7. **Deploy** — `npx wrangler pages deploy` + purge CDN cache (see Deploy section), then commit + push.
+
 ## Design System
 
 Navy (`--navy: #13294B`) + orange (`--orange: #ff6900`). Hero sections use navy background with `radial-gradient` orange accent. Cards use borders, not heavy shadows. Buttons are rounded-rect (8px), not pill-shaped.

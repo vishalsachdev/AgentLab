@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniQuick: Deploy an AI-Built App in One Prompt - AgentLab</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem; }
+        .article-category { background: var(--navy); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 500; display: inline-block; margin-bottom: 1rem; }
+        .article-title { font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy); line-height: 1.2; font-weight: 800; }
+        .article-excerpt { font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
+        .article-content { line-height: 1.8; font-size: 1rem; }
+        .article-content h2 { color: var(--navy); margin: 2rem 0 1rem 0; font-size: 1.5rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content ul { margin: 1rem 0; padding-left: 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-alt); padding: 1.5rem; border-left: 4px solid var(--orange); margin: 2rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .navigation-links { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: var(--orange); text-decoration: none; font-weight: 600; }
+        .back-link:hover { color: var(--orange-dark); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 2rem; }
+            .article-container { padding: 1rem; }
+            .navigation-links { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../team.html">Team</a></li>
+                <li><a href="../news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / UniQuick Launches
+        </div>
+    </div>
+
+    <main class="container">
+        <article class="article-container">
+            <header class="article-header">
+                <div class="article-meta">Published on June 14, 2026</div>
+                <span class="article-category">Release</span>
+                <h1 class="article-title">UniQuick: Deploy an AI-Built App in One Prompt</h1>
+                <p class="article-excerpt">A zero-config backend for AI-built web apps at Illinois. Ask your AI coding agent for an app and it goes live on a campus URL in seconds&mdash;sign-in, data, uploads, realtime, and AI already wired in.</p>
+            </header>
+
+            <div class="article-content">
+                <p>AgentLab is releasing <a href="../uniquick.html">UniQuick</a>, a &ldquo;deploy in one prompt&rdquo; backend for AI-built web apps at the University of Illinois. It targets the hardest part of building with an AI coding agent: not the front end, but everything behind it&mdash;authentication, a database, file storage, realtime, and an AI key.</p>
+
+                <h2>The Problem</h2>
+                <p>AI coding agents are great at generating a front end. But the moment an app needs to remember anything, sign someone in, or call an AI model, a non-developer hits a wall: accounts to create, API keys to manage, servers to provision. That wall is where most first projects die.</p>
+                <p>UniQuick removes it. Faculty and students describe the app they want&mdash;a poll, a guestbook, a live dashboard, an AI tutor&mdash;and the agent deploys it to a campus URL in seconds, with the backend already in place.</p>
+
+                <h2>Five Services, Already Wired In</h2>
+                <ul>
+                    <li><strong>Illinois sign-in</strong> &mdash; every visitor is verified by NetID through campus SSO, with no accounts to build.</li>
+                    <li><strong>Shared data</strong> &mdash; per-site storage readable and writable straight from the browser SDK, with no schema to manage.</li>
+                    <li><strong>File uploads</strong> &mdash; an Azure blob store with capability-URL upload links.</li>
+                    <li><strong>Realtime</strong> &mdash; WebSocket rooms out of the box for live cursors, presence, and multiplayer.</li>
+                    <li><strong>AI</strong> &mdash; a managed Azure OpenAI proxy, so builders never handle an API key, metered with a per-visitor daily token budget.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Stack:</strong> Fastify 5 (ESM) on Azure, PostgreSQL, Azure blob storage, WebSocket rooms, Entra ID SSO. Ships a browser SDK, a CLI, and an MCP server&mdash;published as the open-source <code>uniquick</code> package on npm. <a href="https://github.com/gies-ai-experiments/uniquick" target="_blank">View on GitHub &rarr;</a></p>
+                </div>
+
+                <h2>An On-Ramp to Agentic Tools</h2>
+                <p>UniQuick is deliberately a low floor, not a high ceiling. One <code>npx</code> command&mdash;no clone, no setup&mdash;and an agent can start deploying. An opt-in public gallery lets people discover and reuse what others have built, and AI usage is metered per end-user so a popular app can&rsquo;t run up campus cost and creators are never charged for their students&rsquo; usage.</p>
+
+                <p>UniQuick is live at <a href="https://quick.disruptionlab.illinois.edu" target="_blank">quick.disruptionlab.illinois.edu</a>. Visit the <a href="../uniquick.html">UniQuick project page</a> for the full architecture, or <a href="https://quick.disruptionlab.illinois.edu/start" target="_blank">get started</a> with your own agent.</p>
+            </div>
+
+            <nav class="navigation-links">
+                <a href="../news.html" class="back-link">&larr; Back to News</a>
+                <a href="../uniquick.html" class="back-link">Learn More About UniQuick &rarr;</a>
+            </nav>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="../projects.html">Projects</a>
+                    <a href="../team.html">Team</a>
+                    <a href="../news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="../venturebot.html">VentureBots</a>
+                    <a href="../uniquick.html">UniQuick</a>
+                    <a href="../pathshaper.html">PathShaper</a>
+                    <a href="../canvas-mcp.html">Canvas MCP</a>
+                    <a href="../illiniclaw.html">IlliniClaw</a>
+                    <a href="../programos.html">ProgramOS</a>
+                    <a href="../giesclaw.html">GiesClaw</a>
+                    <a href="../inquiring-agents.html">Inquiring Agents</a>
+                    <a href="../cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="../mindforum.html">MindForum</a>
+                    <a href="../hackclaw.html">HackClaw</a>
+                    <a href="../text-2-sql.html">Text-2-SQL Agent</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="https://github.com/vishalsachdev/AgentLab/issues/new/choose" target="_blank" rel="noopener">Submit an Issue</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

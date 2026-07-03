@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cognitive Swarm Joins AgentLab - AgentLab</title>
+    <title>GiesChat Launches a Self-Hosted AI Chat Platform - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="../index.html" class="logo">Agent<span>Lab</span></a>
@@ -41,60 +40,54 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / The Cognitive Swarm Joins AgentLab
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / GiesChat Launches
         </div>
     </div>
 
-    <!-- Article Content -->
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on March 15, 2026</div>
+                <div class="article-meta">Published on July 3, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">The Cognitive Swarm Joins AgentLab</h1>
-                <p class="article-excerpt">A real-time, multimodal brainstorming application that enables groups to generate, cluster, and converge on ideas through voice, 3D visualization, and quadratic voting.</p>
+                <h1 class="article-title">GiesChat Launches a Self-Hosted AI Chat Platform for Campus</h1>
+                <p class="article-excerpt">A single, campus-controlled interface for Claude, GPT, Gemini, DeepSeek, and dozens of other providers&mdash;with agents, MCP skills, artifacts, and code interpretation built in.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab welcomes The Cognitive Swarm to its project portfolio. Built by Keshav Dalmia, the application brings real-time collaborative brainstorming to large groups&mdash;combining voice input, AI-powered idea extraction, and a 3D swarm visualization into one seamless experience.</p>
+                <p>AgentLab is releasing <a href="../gieschat.html">GiesChat</a>, a self-hosted AI chat platform built on LibreChat. It gives students and faculty one place to work with multiple AI providers without sending research data, course content, or student conversations to consumer chat apps.</p>
 
-                <h2>Brainstorming, Reimagined</h2>
-                <p>Traditional brainstorming tools struggle with scale. Post-it notes don&rsquo;t work for 50 people, and text-based tools lose the energy of live conversation. The Cognitive Swarm solves both problems: participants contribute ideas through voice while AI extracts and clusters them in real time.</p>
+                <h2>Multi-Model by Default</h2>
+                <p>GiesChat supports the major providers and endpoints used in education and research: OpenAI, Azure OpenAI, Anthropic, AWS Bedrock, Google Gemini, Vertex AI, OpenAI Responses API, Groq, OpenRouter, DeepSeek, Mistral, Ollama, and any OpenAI-compatible custom endpoint. Users switch models with a dropdown, and presets can be saved and shared.</p>
+
+                <h2>Agents, MCP, and Artifacts</h2>
+                <p>Beyond chat, GiesChat supports LibreChat Agents: no-code custom assistants that can use MCP servers, file search, code execution, and reusable <code>SKILL.md</code> instruction bundles. It also supports subagents for isolated child-agent runs, code artifacts for React/HTML/Mermaid generation, and a sandboxed code interpreter for Python, Node.js, Go, and more.</p>
 
                 <ul>
-                    <li><strong>Live voice anchor</strong> &mdash; an AI facilitator powered by Google Gemini Live that keeps sessions focused and energized</li>
-                    <li><strong>3D swarm visualization</strong> &mdash; ideas rendered as particles that form visible constellations as clusters emerge</li>
-                    <li><strong>Automatic clustering</strong> &mdash; Gemini-powered semantic analysis groups related ideas without manual sorting</li>
-                    <li><strong>Quadratic voting</strong> &mdash; fair, credit-based prioritization that prevents any single voice from dominating</li>
+                    <li><strong>One interface</strong> for 40+ AI providers and endpoints</li>
+                    <li><strong>MCP integration</strong> connects agents to Canvas, file systems, search, and custom tools</li>
+                    <li><strong>Artifacts and code interpreter</strong> generate and run code directly in the chat</li>
+                    <li><strong>Image generation</strong> through DALL-E, Stable Diffusion, Flux, and MCP servers</li>
                 </ul>
 
-                <h2>Built for Real-Time Collaboration</h2>
-                <p>The application uses Socket.IO for WebSocket connections, keeping brainstorm state synchronized across all participants with sub-second latency. Whether it&rsquo;s a classroom of 30 or a workshop of 100, everyone sees ideas appear, cluster, and evolve in real time.</p>
-
                 <div class="highlight-box">
-                    <p><strong>Modern stack:</strong> React + Vite frontend, Express.js + Socket.IO backend, 88% TypeScript, with Docker support for easy deployment. <a href="https://github.com/keshavdalmia10/the_cognitive_swarm" target="_blank">View on GitHub &rarr;</a></p>
+                    <p><strong>Campus-controlled infrastructure.</strong> GiesChat is self-hostable and scales from a single server to a Redis-backed deployment with OAuth2, LDAP, or email authentication. <a href="https://github.com/gies-ai-experiments/GiesChat" target="_blank">View on GitHub &rarr;</a></p>
                 </div>
 
-                <h2>From Divergence to Convergence</h2>
-                <p>The session flow mirrors the best practices of design thinking. It starts with open-ended ideation where anything goes, moves through AI-powered clustering that surfaces themes, and ends with quadratic voting that democratically identifies the strongest ideas. The system then generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes.</p>
+                <h2>Why It Matters</h2>
+                <p>Universities face a fragmented AI landscape: students use ChatGPT, Claude, and course-specific tools in parallel, and institutional data leaves campus boundaries. GiesChat keeps the interface familiar while giving the university control over authentication, data, and model choice. The open-source stack also means the platform can be extended and audited.</p>
 
-                <h2>Use Cases in Education</h2>
-                <p>The Cognitive Swarm is designed for any scenario where groups need to think together: classroom brainstorms, design sprints, strategic planning sessions, and research workshops. By combining voice, visualization, and voting, it gives every participant a voice&mdash;not just the loudest ones in the room.</p>
-
-                <p>Visit the <a href="../cognitive-swarm.html">Cognitive Swarm project page</a> for the full technical architecture and use cases.</p>
+                <p>Visit the <a href="../gieschat.html">GiesChat project page</a> for the full feature list and stack.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../cognitive-swarm.html" class="back-link">Learn More About The Cognitive Swarm &rarr;</a>
+                <a href="../gieschat.html" class="back-link">Learn More About GiesChat &rarr;</a>
             </nav>
         </article>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">

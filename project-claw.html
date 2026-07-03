@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HackClaw - AI Hackathon Assistant for Discord | AgentLab</title>
+    <title>ProjectClaw - Slack Project Assistant | AgentLab</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / HackClaw
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / ProjectClaw
         </div>
     </div>
 
@@ -31,25 +31,24 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>HackClaw</h1>
-                    <p>AI-powered Discord assistant built for the Gies <em>AI for Impact Challenge</em>&mdash;a 24-hour hackathon where students build AI agents with no-code and low-code tools. HackClaw answers questions, routes help tickets to mentors, and learns from every resolution.</p>
-                    <p style="opacity: 0.85; margin-top: -0.5rem;"><strong>Project Lead:</strong> <a href="https://github.com/ashcastelinocs124" style="color: var(--orange);" target="_blank">Ash Castelino</a></p>
+                    <h1>ProjectClaw</h1>
+                    <p>A Slack-based AI project assistant that keeps track of open PRs, recent merges, meeting decisions, and action items across multiple projects. It combines GitHub repo data with Granola meeting transcripts so a team can ask &ldquo;what&rsquo;s open right now?&rdquo; or &ldquo;what did we decide about auth?&rdquo; and get a cited answer in seconds.</p>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-number">24h</span>
-                            <span class="stat-label">Hackathon Coverage</span>
+                            <span class="stat-number">GitHub</span>
+                            <span class="stat-label">Repo Awareness</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Channels (Discord + Email)</span>
+                            <span class="stat-number">Granola</span>
+                            <span class="stat-label">Meeting Sync</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">KB</span>
-                            <span class="stat-label">Self-Building Knowledge</span>
+                            <span class="stat-number">2&times;/day</span>
+                            <span class="stat-label">Standup Posts</span>
                         </div>
                     </div>
                     <div class="cta-buttons">
-                        <a href="https://github.com/gies-ai-experiments/hackclaw" class="btn btn-primary">View on GitHub</a>
+                        <a href="https://github.com/gies-ai-experiments/project-claw" class="btn btn-primary">View on GitHub</a>
                     </div>
                 </div>
             </div>
@@ -60,52 +59,52 @@
     <section class="tech-section">
         <div class="container">
             <div class="section-header">
-                <h2>What HackClaw Does</h2>
-                <p class="section-subtitle">Three systems working together to support participants and mentors</p>
+                <h2>What ProjectClaw Does</h2>
+                <p class="section-subtitle">Mention the bot in a project channel or DM it</p>
             </div>
 
             <div class="tech-grid">
                 <div class="tech-card">
-                    <span class="tech-icon">&#129504;</span>
-                    <h3>Brain-Routed Knowledge</h3>
+                    <span class="tech-icon">&#128269;</span>
+                    <h3>Open Work &amp; Shipments</h3>
                     <ul class="tech-list">
-                        <li>Topic-specific brain files&mdash;schedule, rules, tracks, judging</li>
-                        <li>Router reads the index to pick the right section</li>
-                        <li>Loads only targeted content for accurate answers</li>
-                        <li>No context bloat, no hallucinated rules</li>
+                        <li>&ldquo;What&rsquo;s open right now?&rdquo; &rarr; non-draft PRs awaiting review</li>
+                        <li>&ldquo;What shipped this week?&rdquo; &rarr; recently merged PRs + meeting notes</li>
+                        <li>&ldquo;Who owns the auth refactor?&rdquo; &rarr; cross-references assignees</li>
+                        <li>Every answer cites <code>repo#NUMBER</code> sources</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
-                    <span class="tech-icon">&#127903;&#65039;</span>
-                    <h3>Help Ticket Queue</h3>
+                    <span class="tech-icon">&#127908;</span>
+                    <h3>Meeting Memory</h3>
                     <ul class="tech-list">
-                        <li><code>/helpme</code> posts to <code>#help-queue</code> with mentor buttons</li>
-                        <li>Claim / Unclaim / Resolve directly from Discord</li>
-                        <li>Mentors auto-added to team channels on claim</li>
-                        <li>Unclaimed tickets re-ping after 10 minutes</li>
+                        <li>Connects to a Granola folder per project</li>
+                        <li>&ldquo;Summarize the latest meeting&rdquo; pulls the most recent transcript</li>
+                        <li>&ldquo;What did we decide about X?&rdquo; searches recent notes + closed PRs</li>
+                        <li>Never guesses outside the mapped project scope</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
-                    <span class="tech-icon">&#128161;</span>
-                    <h3>Learning Loop</h3>
+                    <span class="tech-icon">&#128197;</span>
+                    <h3>Scheduled Standups</h3>
                     <ul class="tech-list">
-                        <li>New tickets check past resolutions via embedding similarity</li>
-                        <li>Suggests prior solutions before creating a ticket</li>
-                        <li>Resolving a ticket prompts &ldquo;how did you fix it?&rdquo;</li>
-                        <li>Answers grow the knowledge base automatically</li>
+                        <li><strong>Daily standup</strong> (Tue&ndash;Fri 9am): open PRs + last 24h merges</li>
+                        <li><strong>Weekly summary</strong> (Mon 9am): last 7d merges, aging PRs, issue activity</li>
+                        <li>Driven by cron jobs in the Slack workspace</li>
+                        <li>Same agent loop handles scheduled and user-typed messages</li>
                     </ul>
                 </div>
 
                 <div class="tech-card">
-                    <span class="tech-icon">&#127891;</span>
-                    <h3>Copilot Studio Expert</h3>
+                    <span class="tech-icon">&#128721;</span>
+                    <h3>Scoped by Design</h3>
                     <ul class="tech-list">
-                        <li>Dedicated <code>#ask-hackclaw-copilot</code> channel</li>
-                        <li>Answers only from the Copilot Studio textbook</li>
-                        <li>No general hackathon knowledge leaks in</li>
-                        <li>Keeps tool-specific help focused and reliable</li>
+                        <li>Slack channel ID maps to a project with explicit repos and folder</li>
+                        <li>Always-on skill forbids tool calls outside the project scope</li>
+                        <li><code>repo:&lt;repo&gt;</code> qualifier prevents GitHub global-search leakage</li>
+                        <li>If no project is mapped, the bot asks rather than guessing</li>
                     </ul>
                 </div>
             </div>
@@ -117,21 +116,21 @@
         <div class="container">
             <div class="section-header">
                 <h2>Why Build It</h2>
-                <p class="section-subtitle">Hackathons don&rsquo;t have enough mentors, and the same questions repeat all night</p>
+                <p class="section-subtitle">Project status lives in two places: GitHub and meeting notes. ProjectClaw connects them.</p>
             </div>
 
             <div class="content-grid">
                 <div class="content-card">
-                    <h3>Answer the FAQ Instantly</h3>
-                    <p>Most hackathon questions have been asked before. HackClaw answers schedule, rules, and tooling questions in seconds&mdash;so mentors can spend their time on real technical problems.</p>
+                    <h3>Answer the Status Questions</h3>
+                    <p>Team leads spend hours chasing open PRs, merges, and decisions. ProjectClaw answers the routine questions directly in Slack so leads can focus on blockers instead of status checks.</p>
                 </div>
                 <div class="content-card">
-                    <h3>A Queue, Not a Flood</h3>
-                    <p>Without a system, help requests get lost in channel noise. The ticket queue gives mentors a clear list, with claim buttons and reminders so nothing falls through.</p>
+                    <h3>Meeting Context, Not Just Minutes</h3>
+                    <p>Granola transcripts capture what was said, but they are hard to search. ProjectClaw turns those transcripts into a queryable memory layer tied to the project&rsquo;s code activity.</p>
                 </div>
                 <div class="content-card">
-                    <h3>Gets Smarter as the Night Goes On</h3>
-                    <p>Every resolved ticket adds to the solutions KB. Common issues get auto-suggested answers on the second occurrence&mdash;so by 3am, HackClaw is handling what took mentors all evening.</p>
+                    <h3>Safe Multi-Project Scope</h3>
+                    <p>When one Slack workspace hosts many projects, a bot can accidentally leak context. ProjectClaw&rsquo;s channel-to-project map and scope rules keep each answer inside its intended boundary.</p>
                 </div>
             </div>
         </div>
@@ -144,12 +143,12 @@
                 <h2>Stack</h2>
             </div>
             <div class="tech-tags" style="justify-content: center;">
-                <span class="tech-tag">Python 3.11+</span>
-                <span class="tech-tag">Discord.py</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Slack Socket Mode</span>
+                <span class="tech-tag">GitHub CLI</span>
+                <span class="tech-tag">Granola API</span>
                 <span class="tech-tag">OpenAI API</span>
-                <span class="tech-tag">Embedding Similarity</span>
-                <span class="tech-tag">Markdown Brain Files</span>
-                <span class="tech-tag">Email Channel</span>
+                <span class="tech-tag">NanoClaw</span>
             </div>
         </div>
     </section>

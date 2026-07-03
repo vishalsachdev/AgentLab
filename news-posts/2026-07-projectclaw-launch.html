@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cognitive Swarm Joins AgentLab - AgentLab</title>
+    <title>ProjectClaw: A Slack AI Assistant for Project Management - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="../index.html" class="logo">Agent<span>Lab</span></a>
@@ -41,60 +40,55 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / The Cognitive Swarm Joins AgentLab
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / ProjectClaw Launches
         </div>
     </div>
 
-    <!-- Article Content -->
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on March 15, 2026</div>
+                <div class="article-meta">Published on July 3, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">The Cognitive Swarm Joins AgentLab</h1>
-                <p class="article-excerpt">A real-time, multimodal brainstorming application that enables groups to generate, cluster, and converge on ideas through voice, 3D visualization, and quadratic voting.</p>
+                <h1 class="article-title">ProjectClaw: A Slack AI Assistant for Project Management</h1>
+                <p class="article-excerpt">A Slack-based assistant that connects GitHub repos with Granola meeting transcripts to answer status questions, cite PRs, and post daily standups and weekly summaries.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab welcomes The Cognitive Swarm to its project portfolio. Built by Keshav Dalmia, the application brings real-time collaborative brainstorming to large groups&mdash;combining voice input, AI-powered idea extraction, and a 3D swarm visualization into one seamless experience.</p>
+                <p>AgentLab is releasing <a href="../project-claw.html">ProjectClaw</a>, a Slack AI assistant built for teams that manage multiple projects. It answers the routine questions that consume a project lead&rsquo;s day&mdash;&ldquo;what&rsquo;s open right now?&rdquo;, &ldquo;what shipped this week?&rdquo;, &ldquo;what did we decide about auth?&rdquo;&mdash;by pulling together GitHub repo activity and Granola meeting notes.</p>
 
-                <h2>Brainstorming, Reimagined</h2>
-                <p>Traditional brainstorming tools struggle with scale. Post-it notes don&rsquo;t work for 50 people, and text-based tools lose the energy of live conversation. The Cognitive Swarm solves both problems: participants contribute ideas through voice while AI extracts and clusters them in real time.</p>
+                <h2>Code + Meeting Context in One Place</h2>
+                <p>Most project status is split between GitHub and meeting transcripts. ProjectClaw connects the two. A single Slack channel maps to a project with explicit repos and a Granola folder, so the bot can answer questions that span both sources and cite where the answer came from.</p>
 
                 <ul>
-                    <li><strong>Live voice anchor</strong> &mdash; an AI facilitator powered by Google Gemini Live that keeps sessions focused and energized</li>
-                    <li><strong>3D swarm visualization</strong> &mdash; ideas rendered as particles that form visible constellations as clusters emerge</li>
-                    <li><strong>Automatic clustering</strong> &mdash; Gemini-powered semantic analysis groups related ideas without manual sorting</li>
-                    <li><strong>Quadratic voting</strong> &mdash; fair, credit-based prioritization that prevents any single voice from dominating</li>
+                    <li><strong>Open work</strong> &mdash; non-draft PRs awaiting review, with repo and author</li>
+                    <li><strong>Recent shipments</strong> &mdash; merged PRs in the last 24 hours or week</li>
+                    <li><strong>Meeting summaries</strong> &mdash; latest Granola note for the project folder</li>
+                    <li><strong>Decision search</strong> &mdash; recent meeting notes plus closed PR descriptions</li>
+                    <li><strong>Ownership</strong> &mdash; cross-reference Granola action items with GitHub assignees</li>
                 </ul>
 
-                <h2>Built for Real-Time Collaboration</h2>
-                <p>The application uses Socket.IO for WebSocket connections, keeping brainstorm state synchronized across all participants with sub-second latency. Whether it&rsquo;s a classroom of 30 or a workshop of 100, everyone sees ideas appear, cluster, and evolve in real time.</p>
-
                 <div class="highlight-box">
-                    <p><strong>Modern stack:</strong> React + Vite frontend, Express.js + Socket.IO backend, 88% TypeScript, with Docker support for easy deployment. <a href="https://github.com/keshavdalmia10/the_cognitive_swarm" target="_blank">View on GitHub &rarr;</a></p>
+                    <p><strong>Answers cite their sources.</strong> Every response references PRs as <code>repo#NUMBER</code> or meetings by title and date. On tool failure the bot returns a partial answer and surfaces the failure inline&mdash;it never silently fabricates. <a href="https://github.com/gies-ai-experiments/project-claw" target="_blank">View on GitHub &rarr;</a></p>
                 </div>
 
-                <h2>From Divergence to Convergence</h2>
-                <p>The session flow mirrors the best practices of design thinking. It starts with open-ended ideation where anything goes, moves through AI-powered clustering that surfaces themes, and ends with quadratic voting that democratically identifies the strongest ideas. The system then generates structured artifacts&mdash;including Mermaid diagrams&mdash;that capture the session&rsquo;s outcomes.</p>
+                <h2>Scheduled Standups</h2>
+                <p>ProjectClaw posts two recurring updates per channel. A <strong>daily standup</strong> (Tuesday&ndash;Friday at 9am) covers open PRs and the last 24 hours of merges. A <strong>weekly summary</strong> (Monday at 9am) covers the last seven days of merges, aging open PRs, and issue activity. Both are driven by cron jobs registered in the Slack workspace and processed by the same agent loop that handles user mentions.</p>
 
-                <h2>Use Cases in Education</h2>
-                <p>The Cognitive Swarm is designed for any scenario where groups need to think together: classroom brainstorms, design sprints, strategic planning sessions, and research workshops. By combining voice, visualization, and voting, it gives every participant a voice&mdash;not just the loudest ones in the room.</p>
+                <h2>Scoped by Design</h2>
+                <p>When a Slack workspace hosts many projects, a helpful bot can become a liability if it leaks context across channels. ProjectClaw maps each Slack channel to a specific project scope, and an always-on skill forbids tool calls outside that scope. If a user asks in an unmapped channel, the bot refuses to guess and asks which project to use.</p>
 
-                <p>Visit the <a href="../cognitive-swarm.html">Cognitive Swarm project page</a> for the full technical architecture and use cases.</p>
+                <p>Visit the <a href="../project-claw.html">ProjectClaw project page</a> for the full architecture, setup guide, and stack.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../cognitive-swarm.html" class="back-link">Learn More About The Cognitive Swarm &rarr;</a>
+                <a href="../project-claw.html" class="back-link">Learn More About ProjectClaw &rarr;</a>
             </nav>
         </article>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">

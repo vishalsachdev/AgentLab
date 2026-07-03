@@ -25,8 +25,8 @@ Cloudflare Pages via wrangler (not GitHub Pages — Actions is disabled on this 
 ## Structure
 
 - `index.html` — Homepage with project showcase and latest news
-- `projects.html` — All 11 projects with stats and tech tags
-- Project detail pages: `venturebot.html`, `pathshaper.html`, `canvas-mcp.html`, `illiniclaw.html`, `programos.html`, `giesclaw.html`, `inquiring-agents.html`, `cognitive-swarm.html`, `mindforum.html`, `hackclaw.html`, `text-2-sql.html`
+- `projects.html` — All 14 projects with stats and tech tags
+- Project detail pages: `venturebot.html`, `uniquick.html`, `pathshaper.html`, `canvas-mcp.html`, `illiniclaw.html`, `programos.html`, `giesclaw.html`, `inquiring-agents.html`, `cognitive-swarm.html`, `mindforum.html`, `hackclaw.html`, `text-2-sql.html`, `gieschat.html`, `project-claw.html`
 - `team.html` — Current team (Spring 2026) + semester timeline
 - `news.html` — News grid with filter buttons
 - `news-posts/` — Individual news article pages
@@ -52,8 +52,8 @@ Navy (`--navy: #13294B`) + orange (`--orange: #ff6900`). Hero sections use navy 
 
 ## Session Log
 
-### 2026-06-02
-- Completed: **Fixed the months-long "deploy blocked" bug — root cause was a domain/serving mismatch, not the token.** `agentlab.illinihunt.org` was attached as a custom domain to a **separate Worker** named `agentlab` (last deployed 2026-04-28, read-only `AAAA 100::` record) that *owned the hostname*, while the workflow had switched to `wrangler pages deploy` (Pages project `agentlab` → `agentlab-8ot.pages.dev`). So every Pages deploy succeeded but went nowhere visible. Fix: detached the worker custom domain → replaced `AAAA 100::` with proxied `CNAME → agentlab-8ot.pages.dev` (mirrors canvas-mcp) → Pages now serves the domain. Orphan `agentlab` worker script left as dormant fallback. Also updated `programos.html` (marked Teams + Copilot Studio dormant in the K-ai diagram; "five channels" → "five channels wired (three active today)") and `news-posts/2026-04-programos-launch.html` (curriculum→program repo rename, broken skeleton path, Six→Ten docs, CURRICULUM.md→CONCEPT.md). User rolled `CF_API_TOKEN` with correct scopes (Pages:Edit + Account Settings:Read + User Details:Read + DNS:Edit + Cache Purge) — `wrangler pages deploy` now works directly, no `env -u` workaround. Live site verified fresh; cache purged.
-- Next: Optional cleanup — Pages custom-domain status API may still read `pending` (cosmetic; CNAME serves correctly, will flip to active or clear via dashboard "Retry"); orphan `agentlab` worker script can be deleted once fallback no longer wanted; rename `CF_API_TOKEN`→`CLOUDFLARE_API_TOKEN` in `~/.env` to silence wrangler's deprecation warning.
+### 2026-07-03
+- Completed: Added two new projects from `gies-ai-experiments` — **GiesChat** (self-hosted multi-model AI chat platform on LibreChat) and **ProjectClaw** (Slack project assistant with GitHub + Granola integration). Created `gieschat.html` and `project-claw.html` detail pages, added cards to `index.html` and `projects.html`, featured both launches in the homepage "Latest from AgentLab" section, wrote individual launch news posts (`news-posts/2026-07-gieschat-launch.html` and `news-posts/2026-07-projectclaw-launch.html`), added them to the top of `news.html`, and synced the project footer list across all 31 HTML pages. Deployed to Cloudflare Pages via `npx wrangler pages deploy` and committed + pushed to GitHub (`67ff159`, +917 lines across 31 files). Updated CLAUDE.md structure list to 14 projects and archived prior session log.
+- Next: None pending.
 
 *Older entries archived to `docs/session-archive.md`.*

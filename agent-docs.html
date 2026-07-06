@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentDocs (Proof + mdocs) - Collaborative Documents for AI Agents | AgentLab</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Agent<span>Lab</span></a>
+            <ul class="nav-links">
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / <a href="projects.html">Projects</a> / AgentDocs
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>AgentDocs</h1>
+                    <p>Collaborative documents where AI agents work alongside people&mdash;no accounts, no logins. AgentDocs is two complementary services behind one idea: <strong>Proof</strong> for live, Google-Docs-style co-editing with shared cursors, and <strong>mdocs</strong> for lightweight async review with margin comments, suggestions, and full revision history. Both self-hosted at Gies; every document lives behind an unguessable capability link, and AI agents join as named, attributed collaborators.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Services, 1 Idea</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">MCP Tools (mdocs)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Accounts Needed</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://proof.illinihunt.org/start" class="btn btn-primary">Get Started with Proof</a>
+                        <a href="https://docs.illinihunt.org" class="btn btn-secondary">Open mdocs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Services -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Two Services, One Idea</h2>
+                <p class="section-subtitle">The link is the key&mdash;every document is shareable, agent-readable, and account-free</p>
+            </div>
+
+            <div class="journey-steps">
+                <div class="step-detail">
+                    <div class="step-number">&#9997;&#65039;</div>
+                    <div class="step-content">
+                        <h3>Proof &mdash; Live Co-Editing</h3>
+                        <p>Google-Docs-style realtime collaboration with shared cursors, built on EveryInc&rsquo;s open-source proof-sdk. We deploy from our own fork that integrates six community fixes for the agent-edit path&mdash;upstream had stalled, and our fork made API edits, optimistic locking, and browser sync actually work on self-hosted deployments.</p>
+                        <ul class="outputs-list">
+                            <li>Shared cursors and realtime presence, like Google Docs</li>
+                            <li>Agents edit through the same API humans use&mdash;attributed, not anonymous</li>
+                            <li>Self-hosted fork with six upstream-stalled fixes applied</li>
+                        </ul>
+                        <div class="cta-buttons" style="margin-top: 1rem;">
+                            <a href="https://proof.illinihunt.org/start" class="btn btn-sm-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-detail">
+                    <div class="step-number">&#128221;</div>
+                    <div class="step-content">
+                        <h3>mdocs &mdash; Async Review</h3>
+                        <p>Built from scratch in a weekend: an agent-first document service for margin comments, track-changes suggestions, and full revision history. Optimistic-locking edits mean agents can never silently clobber a human&rsquo;s changes, and role-scoped share links (view &lt; comment &lt; suggest &lt; edit) control exactly what each collaborator can do.</p>
+                        <ul class="outputs-list">
+                            <li>Margin comments, suggestions, and complete revision history</li>
+                            <li>Optimistic locking&mdash;no silent overwrite, human or agent</li>
+                            <li>12-tool MCP server: Claude Desktop, Claude Code, Codex, and VS Code agents connect natively</li>
+                            <li>Abuse guardrails: gated creation, rate limits, per-doc ceilings</li>
+                        </ul>
+                        <div class="cta-buttons" style="margin-top: 1rem;">
+                            <a href="https://docs.illinihunt.org" class="btn btn-sm-primary">Open mdocs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try It -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Try It</h2>
+                <p class="section-subtitle">Open a shared link in a browser&mdash;no account needed</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">&#9997;&#65039;</span>
+                    <h3>Proof: Get Started</h3>
+                    <ul class="tech-list">
+                        <li><a href="https://proof.illinihunt.org/start">proof.illinihunt.org/start</a></li>
+                        <li>Live, shared-cursor co-editing</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#128221;</span>
+                    <h3>mdocs: Home</h3>
+                    <ul class="tech-list">
+                        <li><a href="https://docs.illinihunt.org">docs.illinihunt.org</a></li>
+                        <li>Async review, comments, suggestions</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#127918;</span>
+                    <h3>mdocs: Public Playground</h3>
+                    <ul class="tech-list">
+                        <li><a href="https://docs.illinihunt.org/d/nXxtEwlJAn6w?key=ea5e8361797e68963b2688761a7621f1">Open the playground doc</a></li>
+                        <li>Comment or suggest right now, no signup</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <span class="tech-icon">&#129302;</span>
+                    <h3>Agent API Cheat Sheet</h3>
+                    <ul class="tech-list">
+                        <li><a href="https://docs.illinihunt.org/agents.md">docs.illinihunt.org/agents.md</a></li>
+                        <li>Everything an agent needs to connect</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p class="section-subtitle">Capability links, not accounts&mdash;agents as named collaborators, not anonymous scripts</p>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>The Link Is the Key</h3>
+                    <p>No login screens. Every document lives behind an unguessable capability link, and role-scoped share links (view, comment, suggest, edit) decide what a given link can do&mdash;for humans and agents alike.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Agents as Collaborators</h3>
+                    <p>AI agents don&rsquo;t edit through a side-channel script&mdash;they join as named, attributed collaborators through the same API and permission model people use, with optimistic locking so nothing gets silently clobbered.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Self-Hosted at Gies</h3>
+                    <p>Both services run on Gies-controlled infrastructure. Proof is deployed from a maintained fork of EveryInc&rsquo;s open-source proof-sdk with six community fixes upstream hadn&rsquo;t merged; mdocs was purpose-built for the agent-review use case.</p>
+                </div>
+            </div>
+
+            <div class="tech-grid" style="margin-top: 2rem;">
+                <div class="tech-card">
+                    <span class="tech-icon">&#128295;</span>
+                    <h3>Stack</h3>
+                    <ul class="tech-list">
+                        <li>TypeScript, Hono, SQLite</li>
+                        <li>Docker + nginx, self-hosted</li>
+                        <li>Yjs realtime sync (Proof)</li>
+                        <li>MCP server (mdocs, 12 tools)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">&#128274;</span>
+                    <h3>Access</h3>
+                    <ul class="tech-list">
+                        <li>Open any shared link in a browser&mdash;no account needed</li>
+                        <li>Creating documents or connecting an agent needs a token</li>
+                        <li>Email <a href="mailto:vishal@illinois.edu?subject=docs%20token">vishal@illinois.edu</a> from an @illinois address&mdash;subject &ldquo;docs token&rdquo; or &ldquo;proof key&rdquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="projects.html">Projects</a>
+                    <a href="team.html">Team</a>
+                    <a href="news.html">News</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Projects</h3>
+                    <a href="venturebot.html">VentureBots</a>
+                    <a href="uniquick.html">UniQuick</a>
+                    <a href="pathshaper.html">PathShaper</a>
+                    <a href="canvas-mcp.html">Canvas MCP</a>
+                    <a href="illiniclaw.html">IlliniClaw</a>
+                    <a href="programos.html">ProgramOS</a>
+                    <a href="giesclaw.html">GiesClaw</a>
+                    <a href="inquiring-agents.html">Inquiring Agents</a>
+                    <a href="cognitive-swarm.html">The Cognitive Swarm</a>
+                    <a href="mindforum.html">MindForum</a>
+                    <a href="hackclaw.html">HackClaw</a>
+                    <a href="text-2-sql.html">Text-2-SQL Agent</a>
+                    <a href="gieschat.html">GiesChat</a>
+                    <a href="project-claw.html">ProjectClaw</a>
+                    <a href="agent-docs.html">AgentDocs</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="https://github.com/vishalsachdev/AgentLab/issues/new/choose" target="_blank" rel="noopener">Submit an Issue</a>
+                    <a href="https://github.com/gies-ai-experiments" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgentLab &mdash; Gies College of Business, University of Illinois</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f6e8d77284b0466eb2ca753f03d64ec0"}'></script>
+</body>
+</html>

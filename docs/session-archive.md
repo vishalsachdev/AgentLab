@@ -36,3 +36,7 @@ Older session-log entries from CLAUDE.md. Full history also available via claude
 
 ### 2026-03-07
 - Completed: Full site overhaul — added PathShaper, Canvas MCP, IlliniClaw pages. Redesigned UI. Restructured team page with semester timeline. Added 4 news items. Renamed BADM 554 Bot → IlliniClaw. Migrated to Cloudflare Pages.
+
+### 2026-07-03
+- Completed: Added two new projects from `gies-ai-experiments` — **GiesChat** (self-hosted multi-model AI chat platform on LibreChat) and **ProjectClaw** (Slack project assistant with GitHub + Granola integration). Created `gieschat.html` and `project-claw.html` detail pages, added cards to `index.html` and `projects.html`, featured both launches in the homepage "Latest from AgentLab" section, wrote individual launch news posts (`news-posts/2026-07-gieschat-launch.html` and `news-posts/2026-07-projectclaw-launch.html`), added them to the top of `news.html`, and synced the project footer list across all 31 HTML pages. Deployed to Cloudflare Pages via `npx wrangler pages deploy` and committed + pushed to GitHub (`67ff159`, +917 lines across 31 files). Updated CLAUDE.md structure list to 14 projects and archived prior session log. Closed and deleted stale PR #4 (`claude/ai-scaling-proposal-jSa6o`).
+- Next: None pending.

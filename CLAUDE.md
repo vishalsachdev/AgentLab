@@ -25,8 +25,8 @@ Cloudflare Pages via wrangler (not GitHub Pages — Actions is disabled on this 
 ## Structure
 
 - `index.html` — Homepage with project showcase and latest news
-- `projects.html` — All 14 projects with stats and tech tags
-- Project detail pages: `venturebot.html`, `uniquick.html`, `pathshaper.html`, `canvas-mcp.html`, `illiniclaw.html`, `programos.html`, `giesclaw.html`, `inquiring-agents.html`, `cognitive-swarm.html`, `mindforum.html`, `hackclaw.html`, `text-2-sql.html`, `gieschat.html`, `project-claw.html`
+- `projects.html` — All 15 projects with stats and tech tags
+- Project detail pages: `venturebot.html`, `uniquick.html`, `pathshaper.html`, `canvas-mcp.html`, `illiniclaw.html`, `programos.html`, `giesclaw.html`, `inquiring-agents.html`, `cognitive-swarm.html`, `mindforum.html`, `hackclaw.html`, `text-2-sql.html`, `gieschat.html`, `project-claw.html`, `agent-docs.html`
 - `team.html` — Current team (Spring 2026) + semester timeline
 - `news.html` — News grid with filter buttons
 - `news-posts/` — Individual news article pages
@@ -52,8 +52,8 @@ Navy (`--navy: #13294B`) + orange (`--orange: #ff6900`). Hero sections use navy 
 
 ## Session Log
 
-### 2026-07-03
-- Completed: Added two new projects from `gies-ai-experiments` — **GiesChat** (self-hosted multi-model AI chat platform on LibreChat) and **ProjectClaw** (Slack project assistant with GitHub + Granola integration). Created `gieschat.html` and `project-claw.html` detail pages, added cards to `index.html` and `projects.html`, featured both launches in the homepage "Latest from AgentLab" section, wrote individual launch news posts (`news-posts/2026-07-gieschat-launch.html` and `news-posts/2026-07-projectclaw-launch.html`), added them to the top of `news.html`, and synced the project footer list across all 31 HTML pages. Deployed to Cloudflare Pages via `npx wrangler pages deploy` and committed + pushed to GitHub (`67ff159`, +917 lines across 31 files). Updated CLAUDE.md structure list to 14 projects and archived prior session log. Closed and deleted stale PR #4 (`claude/ai-scaling-proposal-jSa6o`).
-- Next: None pending.
+### 2026-07-06
+- Completed: Added **AgentDocs** (Proof + mdocs) — one project page covering two complementary self-hosted document services: Proof (live co-editing, shared cursors, deployed from a fork of EveryInc's proof-sdk with six agent-edit fixes) and mdocs (async review with comments, suggestions, revision history, 12-tool MCP server). Created `agent-docs.html` detail page and `news-posts/2026-07-agentdocs-launch.html`, added cards to `index.html` and `projects.html`, featured the launch in the homepage "Latest from AgentLab" (dropped UniQuick, now GiesChat/ProjectClaw), added it to the top of `news.html`, and synced the project footer list across all 32 HTML pages (verified via grep — zero missing). Deployed to Cloudflare Pages via `npx wrangler pages deploy` + CDN purge; verified `agent-docs.html` returns 200 and contains "mdocs". Updated CLAUDE.md structure list to 15 projects and archived prior session log.
+- Next: None pending. GitHub repo link intentionally omitted from the page — location still being decided.
 
 *Older entries archived to `docs/session-archive.md`.*

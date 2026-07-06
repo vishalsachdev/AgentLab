@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IlliniClaw Spec Published - AgentLab</title>
+    <title>AgentDocs Goes Live: Shared Documents Where AI Agents Are Real Collaborators - AgentLab</title>
     <link rel="stylesheet" href="../css/main.css">
     <style>
         .article-container { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
@@ -29,7 +29,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="../index.html" class="logo">Agent<span>Lab</span></a>
@@ -41,65 +40,54 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / IlliniClaw Spec Published
+            <a href="../index.html">Home</a> / <a href="../news.html">News</a> / AgentDocs Goes Live
         </div>
     </div>
 
-    <!-- Article Content -->
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on March 8, 2026</div>
+                <div class="article-meta">Published on July 6, 2026</div>
                 <span class="article-category">Release</span>
-                <h1 class="article-title">IlliniClaw Spec Published</h1>
-                <p class="article-excerpt">AgentLab publishes IlliniClaw, the open-source architecture spec for WhatsApp AI teaching assistants, enabling any educator to build a course bot with an AI coding agent.</p>
+                <h1 class="article-title">AgentDocs Goes Live: Shared Documents Where AI Agents Are Real Collaborators</h1>
+                <p class="article-excerpt">Two self-hosted services, one idea: the link is the key, and AI agents join documents as named, attributed collaborators&mdash;not anonymous scripts.</p>
             </header>
 
             <div class="article-content">
-                <p>After a successful private deployment serving 36 students in BADM 554 (Enterprise Database Management), we're publishing IlliniClaw&mdash;the complete architecture spec for building WhatsApp AI teaching assistants&mdash;as an open-source blueprint.</p>
+                <p>AgentLab is releasing <a href="../agent-docs.html">AgentDocs</a>, a pair of complementary document services for a world where people and AI agents write, comment, and edit together. Faculty and students need documents that both humans and AI assistants can read, comment on, suggest changes to, and edit&mdash;without accounts or logins. AgentDocs answers that with two services behind one idea: every document lives behind an unguessable capability link, and agents join as named, attributed collaborators, never anonymous scripts operating on the side.</p>
 
-                <h2>Proven in Production</h2>
-                <p>The BADM 554 bot (a private implementation of IlliniClaw) has been running live throughout the semester, providing students with instant AI-powered answers to course questions via WhatsApp. The system uses AI with RAG (Retrieval-Augmented Generation) over course materials to deliver accurate, contextual responses.</p>
+                <h2>Proof: Live, Google-Docs-Style Co-Editing</h2>
+                <p><a href="https://proof.illinihunt.org/start">Proof</a> is realtime co-editing with shared cursors, built on EveryInc&rsquo;s open-source proof-sdk. Upstream development had stalled, so we deploy from our own fork that integrates six community fixes for the agent-edit path&mdash;the work that makes API edits, optimistic locking, and browser sync actually hold up on a self-hosted deployment.</p>
+
+                <h2>mdocs: Async Review, Built for Agents</h2>
+                <p><a href="https://docs.illinihunt.org">mdocs</a> was built from scratch in a weekend: a lightweight, agent-first document service with margin comments, track-changes suggestions, and full revision history. Optimistic-locking edits mean an agent can never silently clobber a human&rsquo;s changes. Role-scoped share links (view &lt; comment &lt; suggest &lt; edit) control exactly what each collaborator can do, and a 12-tool MCP server lets Claude Desktop, Claude Code, Codex, and VS Code agents connect natively&mdash;with abuse guardrails (gated creation, rate limits, per-doc ceilings) built in from day one.</p>
 
                 <ul>
-                    <li><strong>36 students</strong> actively using the bot throughout the semester</li>
-                    <li><strong>109 sessions</strong> of student-bot interaction</li>
-                    <li><strong>97+ hours</strong> of total student engagement</li>
-                    <li><strong>3 drip campaigns</strong> for proactive course communication</li>
-                </ul>
-
-                <h2>What the Spec Covers</h2>
-                <p>The published specification includes the complete architecture for building a WhatsApp-based course assistant:</p>
-                <ul>
-                    <li>WhatsApp Business API integration for student messaging</li>
-                    <li>Claude AI with RAG for grounding responses in course materials</li>
-                    <li>Professor dashboard for managing broadcasts and drip campaigns</li>
-                    <li>PostgreSQL schema for conversation history and analytics</li>
-                    <li>JWT authentication for secure dashboard access</li>
-                    <li>Canvas LMS integration for course data synchronization</li>
+                    <li><strong>The link is the key</strong>&mdash;no accounts, no logins, just an unguessable capability link</li>
+                    <li><strong>Agents as collaborators</strong>&mdash;named, attributed, and permission-scoped like any human editor</li>
+                    <li><strong>Proof</strong> for live, shared-cursor co-editing; <strong>mdocs</strong> for async comments, suggestions, and revision history</li>
+                    <li><strong>12-tool MCP server</strong> connects agent coding tools to mdocs natively</li>
                 </ul>
 
                 <div class="highlight-box">
-                    <p><strong>Open for replication:</strong> Feed the IlliniClaw spec to any AI coding agent (Claude Code, Cursor, Copilot) and it builds the entire working system for your course. <a href="https://github.com/vishalsachdev/illiniclaw" target="_blank">View the spec on GitHub &rarr;</a></p>
+                    <p><strong>Try it right now.</strong> Open the <a href="https://docs.illinihunt.org/d/nXxtEwlJAn6w?key=ea5e8361797e68963b2688761a7621f1">public mdocs playground</a> in your browser&mdash;no signup required&mdash;or start a live session with <a href="https://proof.illinihunt.org/start">Proof</a>. Agents can get connected via the <a href="https://docs.illinihunt.org/agents.md">agent API cheat sheet</a>.</p>
                 </div>
 
-                <h2>Why WhatsApp?</h2>
-                <p>Students already use WhatsApp daily. By meeting students where they are, the bot removes friction from asking questions and accessing course support. There's no new app to install, no new interface to learn &mdash; just text a question and get an answer grounded in course materials.</p>
+                <h2>Why It Matters</h2>
+                <p>As AI agents take on more of the actual work of drafting and revising, documents need a collaboration model built for both audiences at once&mdash;not a human tool with an agent bolted on. AgentDocs keeps that model simple: capability links instead of accounts, and agents that show up as real, attributed collaborators rather than invisible edits from nowhere.</p>
 
-                <p>Visit the <a href="../illiniclaw.html">IlliniClaw project page</a> for the full architecture breakdown.</p>
+                <p>Creating documents or connecting an agent needs a token&mdash;email <a href="mailto:vishal@illinois.edu?subject=docs%20token">vishal@illinois.edu</a> from an @illinois address with the subject &ldquo;docs token&rdquo; or &ldquo;proof key.&rdquo; Visit the <a href="../agent-docs.html">AgentDocs project page</a> for the full story on both services.</p>
             </div>
 
             <nav class="navigation-links">
                 <a href="../news.html" class="back-link">&larr; Back to News</a>
-                <a href="../illiniclaw.html" class="back-link">Learn More About IlliniClaw &rarr;</a>
+                <a href="../agent-docs.html" class="back-link">Learn More About AgentDocs &rarr;</a>
             </nav>
         </article>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -111,7 +99,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>Projects</h3>
-                                        <a href="../venturebot.html">VentureBots</a>
+                    <a href="../venturebot.html">VentureBots</a>
                     <a href="../uniquick.html">UniQuick</a>
                     <a href="../pathshaper.html">PathShaper</a>
                     <a href="../canvas-mcp.html">Canvas MCP</a>

@@ -49,14 +49,14 @@
     <main class="container">
         <article class="article-container">
             <header class="article-header">
-                <div class="article-meta">Published on April 25, 2026</div>
+                <div class="article-meta">Published on April 25, 2026 &middot; Updated June 2026</div>
                 <span class="article-category">Release</span>
                 <h1 class="article-title">ProgramOS: An Open Spec for AI Program Coordinators</h1>
-                <p class="article-excerpt">A spec, not a fork. Hand <code>SPEC.md</code> to your coding agent along with a fresh NanoClaw clone, and you get a multi-channel program coordinator covering email, Telegram, Teams, and web chat&mdash;extracted from a production deployment serving an online Master&rsquo;s program.</p>
+                <p class="article-excerpt">A spec, not a fork. Hand <code>SPEC.md</code> to your coding agent along with a fresh NanoClaw clone, and you get a multi-channel program coordinator covering email, Telegram, and web chat&mdash;extracted from a production deployment serving an online Master&rsquo;s program.</p>
             </header>
 
             <div class="article-content">
-                <p>AgentLab is releasing <a href="../programos.html">ProgramOS</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, Microsoft Teams, web chat, and Microsoft Copilot Studio&mdash;all from a single process, with a Markdown-only audit trail that lives in the program repository.</p>
+                <p>AgentLab is releasing <a href="../programos.html">ProgramOS</a>, an open spec for turning a <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw</a> deployment into a multi-channel AI academic program coordinator. The pattern was extracted from a production deployment that has been quietly running for months: an AI coordinator handling questions and capturing decisions from faculty, advisors, admissions, and staff across email, Telegram, and web chat&mdash;all from a single process, with a Markdown-only audit trail that lives in the program repository. Teams and Microsoft Copilot Studio handlers were built early and retired in June 2026 as the deployment consolidated on the channels stakeholders actually used.</p>
 
                 <h2>Why a Spec, Not a Template</h2>
                 <p>The temptation with a working system is to template it. Fork it, scrub it, push it. We tried that mentally and walked it back. Two reasons.</p>
@@ -65,10 +65,12 @@
 
                 <h2>What the Spec Covers</h2>
                 <ul>
-                    <li><strong>Six channels</strong> &mdash; email (HMAC webhook), Telegram, Teams (Bot Framework), Teams Outgoing Webhook, web chat, Microsoft Copilot Studio. Each with its own auth pattern, reply format, and JID convention.</li>
+                    <li><strong>Channel contracts</strong> &mdash; the reference deployment runs email (HMAC webhook or IMAP poll), Telegram, and web chat. Handler templates for Teams (Bot Framework, Outgoing Webhook) and Microsoft Copilot Studio are included but were retired from the reference deployment in June 2026. Each channel has its own auth pattern, reply format, and JID convention.</li>
                     <li><strong>Two operating modes</strong> &mdash; question (read-only sandbox, cite and reply) and status-update (workspace-write, extract decisions/actions/questions and commit). The mode is chosen at dispatch by the channel handler, not by the agent mid-run.</li>
-                    <li><strong>Program repository contract</strong> &mdash; a separate, adopter-owned repo with a defined structure: <code>CONCEPT.md</code>, <code>EMAIL_ALLOWLIST.md</code>, <code>DECISIONS.md</code>, <code>ACTION_ITEMS.md</code>, <code>OPEN_QUESTIONS.md</code>, and per-channel audit-log directories.</li>
+                    <li><strong>Program repository contract</strong> &mdash; a separate, adopter-owned repo with a defined structure: <code>program/CONCEPT.md</code>, <code>program/EMAIL_ALLOWLIST.md</code>, <code>program/courses/</code>, <code>program/policies/</code>, <code>discussions/DECISIONS.md</code>, <code>discussions/ACTION_ITEMS.md</code>, <code>discussions/OPEN_QUESTIONS.md</code>, <code>discussions/audit-log/</code>, and a <code>skills/</code> directory. Optional read-only mounts can bring in Box, SharePoint, or other team content stores.</li>
                     <li><strong>Audit log format</strong> &mdash; one Markdown file per inbound, one per outbound, with a YAML frontmatter capturing channel, sender, mode, files modified, and commit SHAs. Reviewable by anyone with <code>git log</code> and <code>cat</code>.</li>
+                    <li><strong>Delivery gate</strong> &mdash; a uniform outbound validation step on every channel that refuses known agent-scaffolding signatures, checks delivery completeness, and machine-logs verdicts to the audit trail. Added after a July 2026 production incident in which raw session scaffolding reached stakeholders.</li>
+                    <li><strong>Learning loop</strong> &mdash; a <code>skills/</code> directory the agent reads and proposes additions to via human-reviewed pull requests, plus an optional SQLite FTS5 index over the audit log for episodic recall. No autonomous self-modification.</li>
                     <li><strong>Customization checklist</strong> &mdash; a flat list of what to rename, what to leave generic, and what privacy decisions to make before going live.</li>
                 </ul>
 
@@ -83,7 +85,7 @@
                 <p>The reference deployment fits in roughly 1,000&ndash;1,500 lines of code on top of NanoClaw, plus the program repo content. Most of the program-specific behavior lives in agent prompts and channel handlers&mdash;not in framework changes.</p>
 
                 <div class="highlight-box">
-                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programos" target="_blank">github.com/vishalsachdev/programos</a> (public, MIT). Ten markdown docs, four agent prompt templates, and a program-repo skeleton. Zero lines of code&mdash;the engine is NanoClaw.</p>
+                    <p><strong>Spec repository:</strong> <a href="https://github.com/vishalsachdev/programos" target="_blank">github.com/vishalsachdev/programos</a> (public, MIT). Ten markdown docs, four agent prompt templates, a program-repo skeleton, and a bootstrap script. The spec repo itself has no code&mdash;your coding agent produces a roughly 1,000&ndash;1,500 line NanoClaw adaptation for your program.</p>
                 </div>
 
                 <h2>What&rsquo;s Public, What&rsquo;s Not</h2>

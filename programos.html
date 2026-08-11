@@ -43,8 +43,8 @@
                             <span class="stat-label">Live Channels</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">0</span>
-                            <span class="stat-label">Lines of Code to Copy</span>
+                            <span class="stat-number">1K&ndash;1.5K</span>
+                            <span class="stat-label">LoC on NanoClaw</span>
                         </div>
                     </div>
                     <div class="cta-buttons">
@@ -140,7 +140,7 @@
                     <g font-size="13" font-weight="600" fill="#13294B" text-anchor="middle">
                         <rect x="120" y="20" width="180" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
                         <text x="210" y="44">Email</text>
-                        <text x="210" y="62" font-size="11" font-weight="400" fill="#5a6577">webhook → Resend</text>
+                        <text x="210" y="62" font-size="11" font-weight="400" fill="#5a6577">webhook → email service</text>
 
                         <rect x="360" y="20" width="180" height="56" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
                         <text x="450" y="44">Telegram</text>
@@ -175,9 +175,9 @@
 
                     <rect x="460" y="230" width="280" height="90" rx="10" fill="#1a3a6b" stroke="#ff6900" stroke-width="1.5"/>
                     <text x="600" y="256" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Workspace-write mode</text>
-                    <text x="600" y="278" text-anchor="middle" font-size="12" fill="#e2e8f0">Extract decisions / actions</text>
+                    <text x="600" y="278" text-anchor="middle" font-size="12" fill="#e2e8f0">Extract decisions / actions / questions</text>
                     <text x="600" y="296" text-anchor="middle" font-size="12" fill="#e2e8f0">Granular commits + push</text>
-                    <text x="600" y="312" text-anchor="middle" font-size="11" fill="#ff8533">explicit, human-triggered</text>
+                    <text x="600" y="312" text-anchor="middle" font-size="11" fill="#ff8533">explicit signal or role</text>
 
                     <!-- Gate labels: inbound allowlist, outbound delivery gate -->
                     <text x="450" y="354" text-anchor="middle" font-size="11" fill="#5a6577">in: EMAIL_ALLOWLIST gate · sender authorization enforced before any mode runs</text>
@@ -191,10 +191,11 @@
 
                     <!-- Program repo -->
                     <rect x="40" y="415" width="360" height="100" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
-                    <text x="220" y="440" text-anchor="middle" font-size="14" font-weight="700" fill="#13294B">msba-online (program repo)</text>
-                    <text x="220" y="462" text-anchor="middle" font-size="12" fill="#5a6577">CURRICULUM.md · courses/ · design/</text>
-                    <text x="220" y="480" text-anchor="middle" font-size="12" fill="#5a6577">discussions/ · DECISIONS · ACTION_ITEMS</text>
-                    <text x="220" y="498" text-anchor="middle" font-size="11" fill="#ff6900" font-style="italic">plain markdown · version-controlled · program owns it</text>
+                    <text x="220" y="435" text-anchor="middle" font-size="14" font-weight="700" fill="#13294B">msba-online (program repo)</text>
+                    <text x="220" y="453" text-anchor="middle" font-size="12" fill="#5a6577">program/CONCEPT.md · EMAIL_ALLOWLIST.md</text>
+                    <text x="220" y="471" text-anchor="middle" font-size="12" fill="#5a6577">program/courses/ · program/policies/ · skills/</text>
+                    <text x="220" y="489" text-anchor="middle" font-size="12" fill="#5a6577">discussions/DECISIONS · ACTION_ITEMS · OPEN_QUESTIONS</text>
+                    <text x="220" y="507" text-anchor="middle" font-size="11" fill="#ff6900" font-style="italic">plain markdown · version-controlled · program owns it</text>
 
                     <!-- Audit log -->
                     <rect x="500" y="415" width="360" height="100" rx="10" fill="#ffffff" stroke="#13294B" stroke-width="1.5"/>
@@ -206,7 +207,7 @@
             </div>
 
             <p style="text-align: center; color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem; max-width: 720px; margin-left: auto; margin-right: auto;">
-                One Node process routes three channels (email, Telegram, web chat) into a single container-isolated agent. The agent runs in read-only or workspace-write mode per message, operates against a plain-markdown program repository the institution owns, and writes everything &mdash; messages, replies, gate verdicts, and commits &mdash; into an append-only audit log. Traffic is gated in both directions: a sender allowlist on the way in, and a uniform delivery gate on the way out that validates every reply before it reaches a stakeholder (a hardening lesson from production). Teams and Copilot Studio integrations were built early on and retired in June 2026 as the deployment consolidated on the channels stakeholders actually used; an independent behaviour sensor now re-checks outbound replies against the program records, and out-of-scope requests are escalated to the program director for human review.
+                One Node process routes three channels (email, Telegram, web chat) into a single container-isolated agent. The agent runs in read-only or workspace-write mode per message, operates against a plain-markdown program repository the institution owns, and writes everything &mdash; messages, replies, gate verdicts, and commits &mdash; into an append-only audit log. Traffic is gated in both directions: a sender allowlist on the way in, and a uniform delivery gate on the way out that validates every reply before it reaches a stakeholder, refusing known agent-scaffolding signatures and surfacing refusals to the operator (a hardening lesson from production; see SPEC &sect;3). Teams and Copilot Studio handlers were built early on and retired in June 2026 as the deployment consolidated on the channels stakeholders actually used. The program repo also carries a <code>skills/</code> directory the agent reads and proposes additions to via pull request, and optional read-only extra mounts let it cite content that lives in Box, SharePoint, or other team stores while keeping the program repo as the system of record.
             </p>
         </div>
     </section>
@@ -229,13 +230,13 @@
                 <div class="tech-card">
                     <span class="tech-icon">&#127757;</span>
                     <h3>Tier 2: Small Server</h3>
-                    <p>24/7 uptime, web chat embedded in your program site, Teams channels for faculty. Low monthly cost on a cheap VPS.</p>
+                    <p>24/7 uptime, web chat, email via webhook, and the channels from Tier 1 on a cheap VPS. Teams (Bot Framework) and Copilot Studio stay deferred until you have M365 admin support.</p>
                 </div>
 
                 <div class="tech-card">
                     <span class="tech-icon">&#127970;</span>
                     <h3>Tier 3: Cloud</h3>
-                    <p>Multi-program deployment behind your university&rsquo;s SSO and compliance posture. Same spec, enterprise plumbing.</p>
+                    <p>Managed runtime behind your university&rsquo;s SSO and compliance posture. Same spec, enterprise plumbing. Still one program per deployment; multi-tenant is out of scope for this spec.</p>
                 </div>
 
                 <div class="tech-card">
@@ -276,7 +277,7 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Iterate in plain English</h3>
-                        <p>Most program-specific behavior lives in plain-text instruction files (one per channel) and in the structure of your program folder. Both stay readable. Both stay editable. No deep code dive required.</p>
+                        <p>Most program-specific behavior lives in plain-text instruction files (one per channel), in the structure of your program folder, and in a <code>skills/</code> directory the agent reads and proposes additions to via pull request. All stay readable, editable, and reviewable. No deep code dive required.</p>
                     </div>
                 </div>
             </div>
@@ -301,6 +302,7 @@
                     <a href="canvas-mcp.html">Canvas MCP</a>
                     <a href="illiniclaw.html">IlliniClaw</a>
                     <a href="programos.html">ProgramOS</a>
+                    <a href="giesclaw.html">GiesClaw</a>
                     <a href="inquiring-agents.html">Inquiring Agents</a>
                     <a href="cognitive-swarm.html">The Cognitive Swarm</a>
                     <a href="mindforum.html">MindForum</a>

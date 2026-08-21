@@ -61,3 +61,23 @@ Navy (`--navy: #13294B`) + orange (`--orange: #ff6900`). Hero sections use navy 
 - Next: None pending.
 
 *Older entries archived to `docs/session-archive.md`.*
+
+## ⚠️ Two figures on the public site are wrong — do not reuse them
+
+Caught 2026-08-21 while assembling evidence for a college report.
+
+1. **"36 active students and 97+ hours of engagement"** (BADM 554 WhatsApp bot).
+   The **36 is real** — message #1 delivered to 36/36 students. **The 97 hours is not student
+   engagement.** It is *Vishal's own Claude Code usage* across 109 development sessions, taken
+   from `badm554-bot/articles/2026-03-05-insights-feedback-loop.md` and conflated with student
+   activity on `projects.html:180`. Publishing it as engagement would misrepresent a build metric
+   as a learning-outcome metric. The bot itself was a **Spring 2026 pilot and is now dormant**
+   (last real activity March 2026).
+
+2. **"25 students, summer pilot"** (VentureBots) is **self-reported site copy**
+   (`projects.html:51`, `.claude/project-config.md:159`), not instrumented, and the pages
+   disagree on whether the pilot was summer 2025 or current. Attribute it as a self-reported
+   figure or drop it.
+
+**Fix the site copy when convenient** — as long as it stands, anyone citing this lab in good
+faith will repeat the error.
